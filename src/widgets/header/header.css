@@ -1,0 +1,72 @@
+:root {
+    --header-height: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    height: 120px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__logo {
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+}
+
+.header__title {
+    font-family: 'ClashGrotesk-Semibold';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header__button {
+    position: relative;
+    cursor: pointer;
+    fill: transparent;
+}
+
+.header__button-text {
+    font-family: 'ClashGrotesk-Semibold';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+
+    position: relative;
+    right: 175px;
+
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    display: flex;
+}
