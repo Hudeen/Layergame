@@ -1,4 +1,5 @@
 import './header.css'
+import './headerGsap'
 const Header = () => {
 
     return (
