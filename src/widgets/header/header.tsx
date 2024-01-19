@@ -25,7 +25,6 @@ const Header = () => {
               </defs>
            </svg>
            <HeaderGsap/>
-  
            <div className='header__button-text'>Launch App</div>
         </div>
   

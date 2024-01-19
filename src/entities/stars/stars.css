@@ -1,0 +1,39 @@
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  top: 500px;
+  /* background-color: blue; */
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+h1 {
+  color: white;
+  text-transform: uppercase;
+}
+h2 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 34px;
+    background: linear-gradient(94deg, #20C7ED 0%, #D251FD 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+}
+.star {
+  position: absolute;
+}

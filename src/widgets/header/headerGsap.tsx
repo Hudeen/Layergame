@@ -12,7 +12,7 @@ const HeaderGsap: React.FC = () => { // Определяем компонент 
        const options = { // Определяем опции для плагина ScrollTrigger (это делается для того, чтобы не повторять код)
            trigger: container,
            start: "-35px",
-           markers: true,
+         //   markers: true,
            toggleActions: "restart none none reverse",
        };
 
