@@ -10,9 +10,12 @@
 .header {
     position: fixed;
     height: 120px;
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
+
+
+    padding-left: 10%;
+    padding-right: 10%;
+
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -24,10 +27,18 @@
     align-items: center;
 }
 
+.header__ctas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 450px;
+}
+
 .header__logo {
     width: 65px;
     height: 65px;
     margin-right: 15px;
+    transition: 0.2s linear;
 }
 
 .header__title {
@@ -51,15 +62,16 @@
 
 .header__button-text {
     font-family: 'ClashGrotesk-Semibold';
-    font-size: 18px;
+    font-size: 16px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: capitalize;
 
-    position: relative;
-    right: 175px;
-
+    position: absolute;
+    right: 250px;
+    top: 51px;
+    
     background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -68,4 +80,165 @@
 
 .container {
     display: flex;
+    cursor: pointer;
 }
+
+.navigaion {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 600px;
+    transform: translateY(-100%);
+    transition: transform .8s ease-in-out;
+    z-index: -1;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    background:
+        linear-gradient(#000 0 0) padding-box,
+
+        linear-gradient(93.97deg,
+            rgba(32, 199, 237, 1) 0%,
+            rgba(210, 81, 253, 1) 100%) border-box;
+    color: #313149;
+    border: 1px solid transparent;
+    border-radius: 0 0 30px 30px;
+}
+
+.navigaion.open {
+  transform: translateY(0);
+}
+
+.navigaion__title {
+    font-size: 64px;
+    font-weight: 500;
+    font-family: "ClashGrotesk-Medium", sans-serif;
+
+    background-image: linear-gradient(93.97deg,
+            rgba(48, 187, 238, 1) 0%,
+            rgba(198, 89, 252, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navigaion__text {
+    font-family: "ClashGrotesk-Medium", sans-serif;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.navigaion__link {
+    margin-top: 120px;
+}
+
+.navigaion__link-text {
+    font-family: "ClashGrotesk-Medium", sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 0 50px 0 50px;
+    transition: color 0.6s linear;
+}
+
+.navigaion__link-text:hover {
+    cursor: pointer;
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navigaion-link {
+    color: #FFF;
+    font-family: "Clash Grotesk";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.navigaion__nav {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    pointer-events: none;
+    transition: 0.2s linear;
+}
+
+.navigaion__nav.open {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+.navigaion__nav-text {
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.navigaion__nav-text:hover {
+    cursor: pointer;
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.ellipse-39 {
+    background: linear-gradient(93.97deg, rgba(48, 187, 238, 1) 0%, rgba(198, 89, 252, 1) 100%);
+    border-radius: 50%;
+    width: 601px;
+    height: 601px;
+    position: absolute;
+    left: -170px;
+    top: 290px;
+    z-index: -1;
+    filter: blur(250px);
+}
+
+.link-with-info {
+    position: relative;
+  }
+  
+  .info {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+  }
+  
+  .link-with-info:hover .info {
+    display: block;
+  }
+
+  a.active {
+    /* Add your desired styles here */
+    /* For example: */
+    font-weight: bold;
+    color: blue;
+  }

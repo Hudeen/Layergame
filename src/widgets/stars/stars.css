@@ -6,9 +6,6 @@ section {
   justify-content: center;
   align-items: center;
   gap: 10px;
-  position: relative;
-  top: 500px;
-  /* background-color: blue; */
 }
 .content {
   display: flex;
