@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import './header.css'
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import logo from '../../assets/logo.svg'
+import logo from '../../shared/assets/icons/logo.svg'
 
 gsap.registerPlugin(ScrollTrigger);
 
