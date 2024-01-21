@@ -1,0 +1,46 @@
+.main {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 120px;
+}
+
+
+#lottie-animation {
+    width: 65%;
+}
+
+.main__text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 65%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+.main__title {
+    font-size: 11rem;
+    color: #02020b;
+
+    background: linear-gradient(94deg, #20C7ED 0%, #D251FD 99.79%);
+
+    -webkit-background-clip: text;
+    -webkit-text-stroke: 8px transparent;
+}
+
+.main__h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    font-family: 'ClashGrotesk-Medium';
+}
+
