@@ -20,7 +20,6 @@ const Projects = () => {
         start: 'top center', // Adjust the start position as per your requirement
         end: 'bottom center', // Adjust the end position as per your requirement
         scrub: true, // Smooth scrubbing
-        markers: true, // Add markers
       },
     });
   }, []);

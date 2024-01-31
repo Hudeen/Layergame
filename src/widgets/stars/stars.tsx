@@ -18,7 +18,6 @@ const Stars: React.FC = () => {
       trigger: container,
       start: '-150px',
       toggleActions: 'restart none none reverse',
-      // markers: true,
     }
 
     gsap.from(starsContainer, {
