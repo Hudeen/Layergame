@@ -77,8 +77,8 @@ const Stars: React.FC = () => {
   return (
     <section className='section'>
       <div className='content'>
-        <h1>Tortor, arcu si.</h1>
-        <h2>Sed in consectetur risus sed sit velit.</h2>
+        <h1 className='content__title'>Tortor, arcu si.</h1>
+        <h2 className='content__text'>Sed in consectetur risus sed sit velit.</h2>
       </div>
       <div className='stars-container'>
         {/* <img src={comet} alt="" /> */}

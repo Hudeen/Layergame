@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import groovyWalkAnimation from "./animation.json";
-import "./banner.css";
+import "./Main.css";
 
 const Main: React.FC = () => {
     useEffect(() => {
@@ -35,7 +35,6 @@ const Main: React.FC = () => {
                 start: "-275px top",
                 end: "700px center",
                 scrub: true,
-                markers: true
             }
         });
 
@@ -56,7 +55,6 @@ const Main: React.FC = () => {
                 start: "-50px top",
                 end: "bottom center",
                 scrub: true,
-                markers: true
             },
         });
     }, []);

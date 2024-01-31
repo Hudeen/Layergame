@@ -13,11 +13,11 @@ section {
   justify-content: center;
   align-items: center;
 }
-h1 {
+.content__title {
   color: white;
   text-transform: uppercase;
 }
-h2 {
+.content__text {
     color: white;
     text-transform: uppercase;
     font-size: 34px;
