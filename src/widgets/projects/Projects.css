@@ -1,0 +1,35 @@
+.wrapper {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.title {
+    background: linear-gradient(90deg, #20C7ED 0%, #D251FD 100%);
+    -webkit-background-clip: text;
+    color: transparent;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 48px;
+    margin-bottom: 28px;
+}
+
+.divider {
+    background-color: #12111C;
+    border-radius: 25px;
+    height: 10px;
+    width: 100%;
+    margin-bottom: 29px;
+}
+
+.card__container {
+    opacity: 1;
+    display: flex;
+    gap: 50px;
+}
+
+.card__container-wrapper {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
+  }
