@@ -26,10 +26,10 @@ function App() {
     <>
       <Header />
       <Main />
-      <Stars />
-      <AboutUs />
-      {/* <Projects /> */}
-      {/* <Home /> */}
+      {/* <Stars />
+      <AboutUs /> */}
+      {/* <Projects />
+      <Home /> */}
     </>
   )
 }

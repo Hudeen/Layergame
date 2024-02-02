@@ -14,9 +14,11 @@ const Stars: React.FC = () => {
     const content = document.querySelector('.content') as HTMLElement
     const starsContainer = document.querySelector('.stars-container') as HTMLElement
 
+    
+
     const options = {
       trigger: container,
-      start: '-150px',
+      start: 'top+=10',
       toggleActions: 'restart none none reverse',
     }
 
