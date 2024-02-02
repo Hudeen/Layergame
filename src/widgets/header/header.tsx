@@ -101,6 +101,15 @@ const Header: React.FC = () => {
                         <stop offset="1" stop-color="#C659FC" />
                      </linearGradient>
                   </defs>
+                  {/* <div className='header__button-text'>Launch App</div> */}
+                  <defs>
+                     <linearGradient id="gradient" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#30BBEE"></stop>
+                        <stop offset="99.79%" stop-color="#C659FC"></stop>
+                     </linearGradient>
+                  </defs>
+                  <text style={{cursor: "pointer"}} x="15" y="30" fill="url(#gradient)">Launch App</text>
+
                </svg>
 
                <div className="container" ref={containerRef}
@@ -129,7 +138,6 @@ const Header: React.FC = () => {
                </div>
             </div>
          </div>
-         <div className='header__button-text'>Launch App</div>
       </header>
    )
 }

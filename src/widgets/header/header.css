@@ -61,25 +61,7 @@
     cursor: pointer;
     fill: transparent;
 }
-
-.header__button-text {
-    font-family: 'ClashGrotesk-Semibold';
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: capitalize;
-
-    position: absolute;
-    right: 250px;
-    top: 51px;
-    
-    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
+ 
 .container {
     display: flex;
     cursor: pointer;
