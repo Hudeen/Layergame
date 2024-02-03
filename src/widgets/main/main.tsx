@@ -32,14 +32,13 @@ const Main: React.FC = () => {
 
         gsap.to("#lottie-animation", {
             opacity: 0,
-            scale: 1.5,
+            scale: 1,
             duration: 0.2,
             scrollTrigger: {
                 trigger: "#lottie-animation",
                 start: "-50px top",
                 end: "bottom center",
                 scrub: true,
-                markers: true
             },
         });
     }, []);
