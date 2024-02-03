@@ -8,14 +8,14 @@ import { useGSAP } from '@gsap/react'
 import './about.css'
 
 //Import images
-import earth from '../../../assets/earth.svg'
-import rocket from '../../../assets/rocket.svg'
-import cardLine from '../../../assets/cardLine.svg'
-import lineOne from '../../../assets/lineOne.svg'
-import lineTwo from '../../../assets/lineTwo.svg'
-import character from '../../../assets/character.svg'
-import spaceship from '../../../assets/spaceship.svg'
-import character2 from '../../../assets/character2.svg'
+import earth from '../../assets/earth.svg'
+import rocket from '../../assets/rocket.svg'
+import cardLine from '../../assets/cardLine.svg'
+import lineOne from '../../assets/lineOne.svg'
+import lineTwo from '../../assets/lineTwo.svg'
+import character from '../../assets/character.svg'
+import spaceship from '../../assets/spaceship.svg'
+import character2 from '../../assets/character2.svg'
 
 const About: React.FC = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -36,21 +36,19 @@ const About: React.FC = () => {
       trigger: containerRef.current,
       toggleActions: 'restart none none reverse',
       start: 'top center',
-      end: 'bottom center',
-      markers: true,
+      end: 'bottom bottom',
     }
 
     gsap.from([titleRef.current, cardOneRef.current], {
       opacity: 0,
       scale: 0.3,
-      top: -200,
       scrollTrigger: cardOne,
     })
 
     gsap.to([titleRef.current, cardOneRef.current], {
       opacity: 1,
       scale: 1,
-      duration: 0.3,
+      duration: 0.5,
       scrollTrigger: cardOne,
     })
 
@@ -58,7 +56,7 @@ const About: React.FC = () => {
       trigger: cardOneRef.current,
       toggleActions: 'restart none none reverse',
       start: 'bottom center',
-      end: 'bottom center',
+      end: 'bottom top',
       markers: true,
     }
 
@@ -71,7 +69,7 @@ const About: React.FC = () => {
     gsap.to([cardTwoRef.current, lineOneRef.current], {
       opacity: 1,
       scale: 1,
-      duration: 0.3,
+      duration: 0.5,
       scrollTrigger: cardTwo,
     })
 
@@ -79,7 +77,7 @@ const About: React.FC = () => {
       trigger: cardTwoRef.current,
       toggleActions: 'restart none none reverse',
       start: 'bottom center',
-      end: 'bottom center',
+      end: 'bottom top',
       markers: true,
     }
 
@@ -92,7 +90,7 @@ const About: React.FC = () => {
     gsap.to([cardThreeRef.current, lineTwoRef.current], {
       opacity: 1,
       scale: 1,
-      duration: 0.3,
+      duration: 0.5,
       scrollTrigger: cardThree,
     })
   }, [])
