@@ -14,32 +14,34 @@ const Planets: React.FC = () => {
             scrollTrigger: {
                 trigger: ".aboutUs_block",
                 start: "bottom top",
-                end: "2000px center",
+                end: "bottom top",
                 scrub: true,
                 markers: true
 
             }, opacity: 0, scale: 1.5
         });
 
-        gsap.to(".test", {
-            scrollTrigger: {
-                trigger: ".palnets",
-                scrub: true,
-            },
-            opacity: 1,
-            ease: "power1.inOut",
-            x: 100,
-        });
+        // gsap.to(".test", {
+        //     scrollTrigger: {
+        //         trigger: ".palnets",
+        //         scrub: true,
+        //         // markers: true
+        //     },
+        //     opacity: 1,
+        //     ease: "power1.inOut",
+        //     x: 100,
+        // });
 
-        gsap.to(".universe", {
-            scrollTrigger: {
-                trigger: ".palnets",
-                scrub: true,
-            },
-            opacity: 1,
-            ease: "power1.inOut",
-            y: -100
-        });
+        // gsap.to(".universe", {
+        //     scrollTrigger: {
+        //         trigger: ".palnets",
+        //         scrub: true,
+        //         // markers: true
+        //     },
+        //     opacity: 1,
+        //     ease: "power1.inOut",
+        //     y: -100
+        // });
     });
 
     return (

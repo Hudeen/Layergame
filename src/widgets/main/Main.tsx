@@ -52,9 +52,6 @@ const Main: React.FC = () => {
           y: -180,
           scale: 1.5,
           opacity: 0,
-          onComplete: () => {
-            gsap.set(".main", { scale: 1 });
-          },
         });
       });
 

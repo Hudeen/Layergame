@@ -1,13 +1,14 @@
 import './App.css'
-import Stars from '../widgets/stars/stars'
 import Header from '../widgets/header/header'
-import Main from '../widgets/main/Main'
-import AboutUs from '../entities/about_us/about_us'
-import Projects from '../widgets/projects/Projects'
-import Planets from '../entities/Planets/Planets'
+import Main from '../widgets/main/main'
+import About from '../widgets/about/about'
+import Introducing from '../widgets/introducing/introducing'
 import Lenis from '@studio-freight/lenis'
+import AboutUs from '../entities/about_us/about_us'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import Planets from '../entities/Planets/Planets'
+
 
 
 function App() {
@@ -24,16 +25,16 @@ function App() {
   
   gsap.ticker.lagSmoothing(0)
 
-  return (
-    <>
-      <Header />
-      <Main />
-      <Planets/>
-      {/* <Stars /> */}
-      <AboutUs />
-      {/* <Projects /> */}
-    </>
-  )
-}
-
-export default App
+    return (
+      <>
+        <Header />
+        <Main />
+        <Introducing />
+        <Planets/>
+        <AboutUs/>
+        <About />
+      </>
+    )
+  }
+  
+  export default App

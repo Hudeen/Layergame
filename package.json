@@ -12,6 +12,7 @@
   "dependencies": {
     "@gsap/react": "^2.1.0",
     "@studio-freight/lenis": "^1.0.34",
+    "@gsap/react": "^2.1.0",
     "bodymovin": "^4.13.0",
     "gsap": "^3.12.4",
     "jquery": "^3.7.1",
