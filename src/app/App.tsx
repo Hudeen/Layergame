@@ -1,10 +1,10 @@
 import './App.css'
 import Stars from '../widgets/stars/stars'
 import Header from '../widgets/header/header'
-import Main from '../widgets/banner/Main'
+import Main from '../widgets/main/Main'
 import AboutUs from '../entities/about_us/about_us'
 import Projects from '../widgets/projects/Projects'
-import Home from '../entities/home/home'
+import Planets from '../entities/Planets/Planets'
 import Lenis from '@studio-freight/lenis'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -12,12 +12,14 @@ import ScrollTrigger from 'gsap/ScrollTrigger'
 
 function App() {
 
-  const lenis = new Lenis()
+  const lenis = new Lenis({
+    duration: 1.5
+  })
   
   lenis.on('scroll', ScrollTrigger.update)
   
   gsap.ticker.add((time)=>{
-    lenis.raf(time * 1000)
+    lenis.raf(time * 800)
   })
   
   gsap.ticker.lagSmoothing(0)
@@ -26,10 +28,10 @@ function App() {
     <>
       <Header />
       <Main />
-      {/* <Stars />
-      <AboutUs /> */}
-      {/* <Projects />
-      <Home /> */}
+      <Planets/>
+      {/* <Stars /> */}
+      <AboutUs />
+      {/* <Projects /> */}
     </>
   )
 }

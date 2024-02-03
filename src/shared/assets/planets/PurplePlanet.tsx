@@ -7,8 +7,8 @@ const PurplePlanet = () => {
                 style={{
                     position: "absolute",
                     zIndex: 9,
-                    top: "49%",
-                    left: "64%",
+                    top: "43%",
+                    left: "63%",
                     transform: "translate(-50%, -50%)",
                     width: "15vw"
                 }}
@@ -25,8 +25,8 @@ const PurplePlanet = () => {
                 style={{
                     position: "absolute",
                     zIndex: 9,
-                    top: "58%",
-                    left: "68%",
+                    top: "55%",
+                    left: "66%",
                     transform: "translate(-50%, -50%)",
                     width: "15vw"
                 }}
@@ -62,8 +62,8 @@ const PurplePlanet = () => {
                 style={{
                     position: "absolute",
                     zIndex: 9,
-                    top: "52%",
-                    left: "70%",
+                    top: "48%",
+                    left: "68%",
                     transform: "translate(-50%, -50%)",
                     width: "7vw"
                 }}

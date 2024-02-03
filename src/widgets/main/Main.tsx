@@ -1,10 +1,11 @@
-import React, { useEffect, useRef } from "react";
-import Lottie from "lottie-react";
-import gsap from "gsap";
-import groovyWalkAnimation from "./animation.json";
-import BluePlanet from "../../shared/assets/planets/BluePlanet";
-import PurplePlanet from "../../shared/assets/planets/PurplePlanet";
 import "./Main.css";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import Lottie from "lottie-react";
+import React, { useEffect, useRef } from "react";
+import groovyWalkAnimation from "./animation.json";
+import Saturn from "../../shared/assets/planets/Saturn";
+import PurplePlanet from "../../shared/assets/planets/PurplePlanet";
 
 const Main: React.FC = () => {
     const lottieContainerRef = useRef<HTMLDivElement>(null);
@@ -19,7 +20,7 @@ const Main: React.FC = () => {
     `;
 
         const elementsToChange = lottieContainerRef.current?.querySelectorAll(
-            "#__lottie_element_65, #__lottie_element_79, #__lottie_element_107"
+            "#__lottie_element_65, #__lottie_element_79, #__lottie_element_51"
         );
 
         if (elementsToChange) {
@@ -37,34 +38,39 @@ const Main: React.FC = () => {
             });
         }
 
-        gsap.to(".main", {
-            scrollTrigger: {
-                trigger: ".main",
-                start: "top+=1 top",
-                end: "bottom top",
-                scrub: true,
-                pin: true
-            },
-            y: -150,
-            scale: 1.5,
-            opacity: 0
-        });
     }, []);
+
+    useGSAP(() => {
+        gsap.to(".main", {
+          scrollTrigger: {
+            trigger: ".main",
+            start: "top+=1 top",
+            end: "500px top",
+            scrub: true,
+            pin: true,
+          },
+          y: -180,
+          scale: 1.5,
+          opacity: 0,
+          onComplete: () => {
+            gsap.set(".main", { scale: 1 });
+          },
+        });
+      });
 
     return (
         <div className="main" ref={lottieContainerRef}>
-            <div className="glare_purple"></div>
-            <div className="glare_blue"></div>
-            <div id="lottie-animation">
-                <Lottie animationData={groovyWalkAnimation} loop={true} />
-                <div className="main__text">
-                    <h1 className="main__title">LAYERGAME</h1>
-                    <h2 className="main__h2">Blurring the lines between Web2 and Web3</h2>
+            <div className="main__glare-purple"></div>
+            <div className="main__glare-blue"></div>
+            <div className="main__animation" id="lottie-animation">
+                <Lottie className="main__animation" animationData={groovyWalkAnimation} loop={true} />
+                <div className="main__animation-item">
+                    <h1 className="main__animation-title">LAYERGAME</h1>
+                    <h2 className="main__animation-subtitle">Blurring the lines between Web2 and Web3</h2>
                 </div>
-                <BluePlanet />
-                <PurplePlanet/>
+                <Saturn />
+                <PurplePlanet />
             </div>
-
         </div>
     );
 };

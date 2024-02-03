@@ -2,9 +2,7 @@
   width: 100%;
   height: auto;
   overflow: hidden;
-
 }
-
 
 #lottie-animation {
   width: 65%;
@@ -13,55 +11,49 @@
   position: relative;
 }
 
-.main__text {
+.main__animation-item {
   position: absolute;
-  top: 35%;
+  top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
 
-
-.main__title {
-  font-size: 10vw;
+.main__animation-title {
+  font-size: 8vw;
   color: #02020b;
-
   background: linear-gradient(90deg, #30BBEE 20%, #C659FC 70%);
-
   -webkit-background-clip: text;
   -webkit-text-stroke: 6px transparent;
 }
 
-.main__h2 {
-  font-size: 1.7vw;
+.main__animation-subtitle {
+  font-size: 1.5vw;
   font-weight: 400;
   font-family: 'ClashGrotesk-Medium';
   background: linear-gradient(90deg, #30BBEE 20%, #C659FC 70%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-
+  filter: drop-shadow(0 0 5px) brightness(110%);
 }
 
-.glare_purple {
+.main__glare-purple {
   position: absolute;
   width: 315px;
   height: 315px;
   right: -225.79px;
   top: 300px;
-
-
   filter: blur(200px);
   background: rgb(195, 92, 252);
 }
 
-.glare_blue {
+.main__glare-blue {
   position: absolute;
   width: 315px;
   height: 315px;
   left: -315px;
   top: 400px;
-
   filter: blur(200px);
   background: rgb(20, 209, 232);
 }
