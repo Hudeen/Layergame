@@ -1,6 +1,6 @@
 import './App.css'
 import Header from '../widgets/header/header'
-import Main from '../widgets/main/main'
+import Main from '../widgets/main/Main'
 import About from '../widgets/about/about'
 import Introducing from '../widgets/introducing/introducing'
 import Lenis from '@studio-freight/lenis'
