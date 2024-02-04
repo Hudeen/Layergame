@@ -38,22 +38,31 @@
   filter: drop-shadow(0 0 5px) brightness(110%);
 }
 
+.purplePlanet {
+  position: absolute;
+  z-index: 9;
+  top: 43%;
+  left: 63%;
+  transform: translate(-50%, -50%);
+  width: 15vw;
+}
+
 .main__glare-purple {
   position: absolute;
-  width: 315px;
-  height: 315px;
-  right: -225.79px;
-  top: 300px;
+  width: 15vw;
+  height: 15vw;
+  right: -25vw;
+  top: 12vw;
   filter: blur(200px);
   background: rgb(195, 92, 252);
 }
 
 .main__glare-blue {
   position: absolute;
-  width: 315px;
-  height: 315px;
-  left: -315px;
-  top: 400px;
+  width: 215px;
+  height: 215px;
+  left: -215px;
+  top: 18vw;
   filter: blur(200px);
   background: rgb(20, 209, 232);
 }

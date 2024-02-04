@@ -4,8 +4,8 @@ import { useGSAP } from "@gsap/react";
 import Lottie from "lottie-react";
 import React, { useEffect, useRef } from "react";
 import groovyWalkAnimation from "./animation.json";
-import Saturn from "../../shared/assets/planets/Saturn";
-import PurplePlanet from "../../shared/assets/planets/PurplePlanet";
+import Saturn from "../../shared/assets/planets/Saturn/Saturn";
+import PurplePlanet from "../../shared/assets/planets/PurplePlanet/PurplePlanet";
 
 const Main: React.FC = () => {
     const lottieContainerRef = useRef<HTMLDivElement>(null);
@@ -41,25 +41,25 @@ const Main: React.FC = () => {
     }, []);
 
     useGSAP(() => {
-        gsap.to(".main", {
-          scrollTrigger: {
-            trigger: ".main",
-            start: "top+=1 top",
-            end: "500px top",
-            scrub: true,
-            pin: true,
-          },
-          y: -180,
-          scale: 1.5,
-          opacity: 0,
+        gsap.to(".main__animation", {
+            scrollTrigger: {
+                trigger: ".main",
+                start: "top+=1 top",
+                end: "500px top",
+                scrub: true,
+                pin: true,
+            },
+            y: -180,
+            scale: 1.5,
+            opacity: 0,
         });
-      });
+    });
 
     return (
         <div className="main" ref={lottieContainerRef}>
-            <div className="main__glare-purple"></div>
-            <div className="main__glare-blue"></div>
             <div className="main__animation" id="lottie-animation">
+                <div className="main__glare-purple"></div>
+                <div className="main__glare-blue"></div>
                 <Lottie className="main__animation" animationData={groovyWalkAnimation} loop={true} />
                 <div className="main__animation-item">
                     <h1 className="main__animation-title">LAYERGAME</h1>
