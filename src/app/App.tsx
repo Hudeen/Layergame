@@ -1,14 +1,14 @@
 import './App.css'
 import Header from '../widgets/header/header'
-import Main from '../widgets/main/main'
+import Main from '../widgets/main/Main'
 import About from '../widgets/about/about'
 import Introducing from '../widgets/introducing/introducing'
 import Lenis from '@studio-freight/lenis'
-import AboutUs from '../entities/about_us/about_us'
+import AboutUs from '../widgets/about_us/about_us'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Planets from '../entities/Planets/Planets'
-
+import Planets1 from '../entities/planets/Planets1'
+import Projects from '../widgets/projects/Projects'
 
 
 function App() {
@@ -30,9 +30,10 @@ function App() {
         <Header />
         <Main />
         <Introducing />
-        <Planets/>
+        <Planets1/>
         <AboutUs/>
         <About />
+        <Projects/>
       </>
     )
   }
