@@ -12,7 +12,7 @@ const Header: React.FC = () => {
    const containerRef = useRef<HTMLDivElement>(null);
    const navigationRef = useRef<HTMLDivElement>(null);
    const [isOpened, setIsOpened] = useState(false);
-   const [isAnimating, setIsAnimating] = React.useState(false);
+   const [, setIsAnimating] = React.useState(false);
 
    const handleButtonClick = () => {
       setIsOpened(!isOpened);

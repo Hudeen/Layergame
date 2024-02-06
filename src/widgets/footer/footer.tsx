@@ -7,10 +7,10 @@ import './footer.css'
 
 //Import images
 import logo from '../../shared/assets/icons/logo.svg'
-import twitter from '../../shared/assets/icons/twitter.png'
-import facebook from '../../shared/assets/icons/facebook.png'
-import linked from '../../shared/assets/icons/linked.png'
-import telegram from '../../shared/assets/icons/telegram.png'
+// import twitter from '../../shared/assets/icons/twitter.png'
+// import facebook from '../../shared/assets/icons/facebook.png'
+// import linked from '../../shared/assets/icons/linked.png'
+// import telegram from '../../shared/assets/icons/telegram.png'
 
 const Footer: React.FC = () => {
   gsap.registerPlugin(ScrollTrigger)

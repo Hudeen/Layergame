@@ -1,9 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
 import "./orbitBlue.css";
-import BluePlanet from '../../../shared/assets/planets/BluePlanet/BluePlanetBig';
-import PurplePlanet from '../../../shared/assets/planets/PurplePlanet/PurplePlanet';
 import BluePlanetSmall from '../../../shared/assets/planets/BluePlanet/BluePlanetSmall';
 
 const OrbitPurple: React.FC = () => {

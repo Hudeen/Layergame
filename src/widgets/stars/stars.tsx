@@ -1,20 +1,18 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import gsap from 'gsap'
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import './stars.css'
 
 gsap.registerPlugin(ScrollTrigger)
 
-import comet from '../../assets/cometa.svg'
-
 const Stars: React.FC = () => {
-  useEffect(() => {
+  useGSAP(()  => {
     const container = document.querySelector('.section') as HTMLElement
     const content = document.querySelector('.content') as HTMLElement
     const starsContainer = document.querySelector('.stars-container') as HTMLElement
 
-    
 
     const options = {
       trigger: container,
@@ -55,7 +53,7 @@ const Stars: React.FC = () => {
       const maxX = starsContainer.clientWidth
       const maxY = starsContainer.clientHeight
 
-      Array.from(starsContainer.children).forEach((star, index) => {
+      Array.from(starsContainer.children).forEach((star) => {
         const maxXPosition = maxX - star.clientWidth * 2
         const maxYPosition = maxY - star.clientHeight * 2
         gsap.set(star, {

@@ -4,7 +4,6 @@ import gsap from 'gsap';
 import './Planest1.css';
 import OrbitPurple from '../orbits/orbitPurple/OrbitPurple';
 import BluePlanetBig from '../../shared/assets/planets/BluePlanet/BluePlanetBig';
-import OrbitBlue from '../orbits/orbitBlue/orbitBlue';
 
 gsap.registerPlugin(ScrollTrigger)
 

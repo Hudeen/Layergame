@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
 import PurplePlanet from "../../../shared/assets/planets/PurplePlanet/PurplePlanet";
