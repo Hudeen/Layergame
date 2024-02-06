@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import './header.css'
 import { gsap } from 'gsap';
+import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import logo from '../../shared/assets/icons/logo.svg'
 
@@ -34,7 +35,7 @@ const Header: React.FC = () => {
       setIsAnimating(false);
    };
 
-   React.useEffect(() => {
+   useGSAP(() => {
       const options = {
          trigger: containerRef.current,
          start: "-35px",
