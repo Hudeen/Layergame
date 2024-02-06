@@ -7,7 +7,7 @@ import Lenis from '@studio-freight/lenis'
 import AboutUs from '../widgets/about_us/about_us'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Planets1 from '../entities/planets/Planets1'
+import Planets1 from '../entities/Planets/Planets1'
 import Projects from '../widgets/projects/Projects'
 
 
