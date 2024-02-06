@@ -5,93 +5,70 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
 //Import styles
-import './about.css'
+import './acquaintance.css'
 
 //Import images
-import earth from '../../shared/assets/icons/earth.svg'
-import rocket from '../../shared/assets/icons/rocket.svg'
-import cardLine from '../../shared/assets/icons/cardLine.svg'
-import lineOne from '../../shared/assets/icons/lineOne.svg'
-import lineTwo from '../../shared/assets/icons/lineTwo.svg'
-import character from '../../shared/assets/icons/character.svg'
-import spaceship from '../../shared/assets/icons/spaceship.svg'
-import character2 from '../../shared/assets/icons/character2.svg'
+import astronaut from '../../shared/assets/icons/astronaut.svg'
+import acquaintancePlanet from '../../shared/assets/icons/acquaintancePlanet.svg'
+import amico from '../../shared/assets/icons/amico.svg'
+import virtual from '../../shared/assets/icons/virtual.svg'
+import rocketAcq from '../../shared/assets/icons/rocketAcq.svg'
+import chapterFlag from '../../shared/assets/icons/chapterFlag.svg'
 
 const Acquaintance: React.FC = () => {
   gsap.registerPlugin(ScrollTrigger)
 
   const containerRef = useRef<HTMLDivElement>(null)
-  const contentRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
-  const cardOneRef = useRef<HTMLDivElement>(null)
-  const cardTwoRef = useRef<HTMLDivElement>(null)
-  const cardThreeRef = useRef<HTMLDivElement>(null)
-  const lineOneRef = useRef<HTMLImageElement>(null)
-  const lineTwoRef = useRef<HTMLImageElement>(null)
+  const subTitleRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
 
-  //Content animation
   useGSAP(() => {
-    const cardOne = {
+    //Animation titles
+    const optionsTitles = {
       trigger: containerRef.current,
       toggleActions: 'restart none none reverse',
       start: 'top center',
       end: 'bottom bottom',
-
     }
 
-    gsap.from([titleRef.current, cardOneRef.current], {
+    gsap.from([titleRef.current, subTitleRef.current], {
       opacity: 0,
-      scale: 0.3,
-      scrollTrigger: cardOne,
-    })
-
-    gsap.to([titleRef.current, cardOneRef.current], {
-      opacity: 1,
-      scale: 1,
       duration: 0.5,
-      scrollTrigger: cardOne,
+      scale: 0.3,
+      scrollTrigger: optionsTitles,
     })
 
-    const cardTwo = {
-      trigger: cardOneRef.current,
+    gsap.to([titleRef.current, subTitleRef.current], {
+      opacity: 1,
+      duration: 0.5,
+      scale: 1,
+      scrollTrigger: optionsTitles,
+    })
+
+    //Animation cards
+    const optionsCards = {
+      trigger: cardsRef.current,
       toggleActions: 'restart none none reverse',
-      start: 'bottom center',
-      end: 'bottom top',
+      start: 'center bottom',
+      end: 'bottom bottom',
     }
 
-    gsap.from([cardTwoRef.current, lineOneRef.current], {
+    gsap.from(cardsRef.current, {
+      y: -150,
       opacity: 0,
-      scale: 0.3,
-      scrollTrigger: cardTwo,
+      duration: 0.8,
+      scale: 0.9,
+      scrollTrigger: optionsCards,
     })
 
-    gsap.to([cardTwoRef.current, lineOneRef.current], {
+    gsap.to(cardsRef.current, {
+      y: 0,
       opacity: 1,
+      duration: 0.8,
       scale: 1,
-      duration: 0.5,
-      scrollTrigger: cardTwo,
-    })
-
-    const cardThree = {
-      trigger: cardTwoRef.current,
-      toggleActions: 'restart none none reverse',
-      start: 'bottom center',
-      end: 'bottom top',
-
-    }
-
-    gsap.from([cardThreeRef.current, lineTwoRef.current], {
-      opacity: 0,
-      scale: 0.3,
-      scrollTrigger: cardThree,
-    })
-
-    gsap.to([cardThreeRef.current, lineTwoRef.current], {
-      opacity: 1,
-      scale: 1,
-      duration: 0.5,
-      scrollTrigger: cardThree,
+      scrollTrigger: optionsCards,
     })
   }, [])
 
@@ -100,9 +77,9 @@ const Acquaintance: React.FC = () => {
     const options = {
       trigger: containerRef.current,
       toggleActions: 'restart none none reverse',
-      start: 'top center',
+      start: 'top bottom',
       end: 'bottom center',
-
+      markers: true,
     }
 
     gsap.from(starsRef.current, {
@@ -146,106 +123,80 @@ const Acquaintance: React.FC = () => {
 
   return (
     <section
-      className='about'
+      className='acquaintance'
       ref={containerRef}>
-      <div
-        className='about__content'
-        ref={contentRef}>
+      <div className='acquaintance__content'>
         <h2
-          className='about__title'
+          className='acquaintance__title'
           ref={titleRef}>
-          getting to know us
+          Surprise The Gaming World Today
         </h2>
-        <div className='about__cards'>
-          <div className='about__card-container'>
-            <div
-              className='about__card-1'
-              ref={cardOneRef}>
-              <p className='about__text-card-1'>
-                Getting to know us
-                <img
-                  src={cardLine}
-                  alt='cardLine'
-                  className='about__triangle'
-                />
+        <p
+          className='acquaintance__sub-title'
+          ref={subTitleRef}>
+          Are You With Us?
+        </p>
+        <div
+          className='acquaintance__cards'
+          ref={cardsRef}>
+          <div className='acquaintance__card'>
+            <img
+              src={acquaintancePlanet}
+              alt='acquaintancePlanet'
+              className='acquaintance__acquaintancePlanet'
+            />
+            <div className='acquaintance__card-content'>
+              <p className='acquaintance__card-title one'>Getting to know us</p>
+              <p className='acquaintance__card-description'>
+                Learn more about us and our plans, join our community, and have a cup of coffee
               </p>
-              <p className='about__text-card-2'>Find out more about our upcoming future</p>
-              <p className='about__text-card-3'>01</p>
               <img
-                src={earth}
-                alt='earth'
-                className='about__earth'
-              />
-              <img
-                src={rocket}
-                alt='rocket'
-                className='about__rocket'
+                src={astronaut}
+                alt='astronaut'
+                className='acquaintance__astronaut'
               />
             </div>
-            <img
-              src={lineOne}
-              alt='lineOne'
-              className='about__card-line-1'
-              ref={lineOneRef}
-            />
           </div>
-          <div className='about__card-container'>
-            <div
-              className='about__card-2'
-              ref={cardTwoRef}>
-              <p className='about__text-card-1'>
-                become a part of our community
-                <img
-                  src={cardLine}
-                  alt='cardLine'
-                  className='about__triangle'
-                />
+          <div className='acquaintance__card'>
+            <img
+              src={rocketAcq}
+              alt='rocketAcq'
+              className='acquaintance__rocketAcq'
+            />
+            <div className='acquaintance__card-content'>
+              <p className='acquaintance__card-title two'>Dive in our app</p>
+              <p className='acquaintance__card-description'>
+                Start your amazing adventure into the new world of gaming now
               </p>
-              <p className='about__text-card-2'>the world of upcoming events and interesting activities</p>
-              <p className='about__text-card-3'>02</p>
               <img
-                src={character}
-                alt='character'
-                className='about__character'
-              />
-              <img
-                src={spaceship}
-                alt='spaceship'
-                className='about__spaceship'
+                src={amico}
+                alt='amico'
+                className='acquaintance__amico'
               />
             </div>
-            <img
-              src={lineTwo}
-              alt='lineTwo'
-              className='about__card-line-2'
-              ref={lineTwoRef}
-            />
           </div>
-          <div className='about__card-container'>
-            <div
-              className='about__card-3'
-              ref={cardThreeRef}>
-              <p className='about__text-card-1'>
-                leave feedback
-                <img
-                  src={cardLine}
-                  alt='cardLine'
-                  className='about__triangle'
-                />
+          <div className='acquaintance__card'>
+            <img
+              src={chapterFlag}
+              alt='acquaintance__chapterFlag'
+              className='acquaintance__chapterFlag'
+            />
+            <div className='acquaintance__card-content'>
+              <p className='acquaintance__card-title three'>Explore the technology</p>
+              <p className='acquaintance__card-description'>
+                Build your amazing game that will blow up all the charts!
               </p>
-              <p className='about__text-card-2'>tell us about your comments and suggestions</p>
-              <p className='about__text-card-3'>03</p>
               <img
-                src={character2}
-                alt='character2'
-                className='about__character2'
+                src={virtual}
+                alt='virtual'
+                className='acquaintance__virtual'
               />
             </div>
           </div>
         </div>
       </div>
       <div
-        className='about__stars-container'
+        className='acquaintance__stars-container'
         ref={starsRef}>
         {[...Array(65)].map((_, index) => (
           <svg

@@ -42,13 +42,11 @@ const About: React.FC = () => {
 
     gsap.from([titleRef.current, cardOneRef.current], {
       opacity: 0,
-      scale: 0.3,
       scrollTrigger: cardOne,
     })
 
     gsap.to([titleRef.current, cardOneRef.current], {
       opacity: 1,
-      scale: 1,
       duration: 0.5,
       scrollTrigger: cardOne,
     })
@@ -62,13 +60,11 @@ const About: React.FC = () => {
 
     gsap.from([cardTwoRef.current, lineOneRef.current], {
       opacity: 0,
-      scale: 0.3,
       scrollTrigger: cardTwo,
     })
 
     gsap.to([cardTwoRef.current, lineOneRef.current], {
       opacity: 1,
-      scale: 1,
       duration: 0.5,
       scrollTrigger: cardTwo,
     })
@@ -83,13 +79,11 @@ const About: React.FC = () => {
 
     gsap.from([cardThreeRef.current, lineTwoRef.current], {
       opacity: 0,
-      scale: 0.3,
       scrollTrigger: cardThree,
     })
 
     gsap.to([cardThreeRef.current, lineTwoRef.current], {
       opacity: 1,
-      scale: 1,
       duration: 0.5,
       scrollTrigger: cardThree,
     })

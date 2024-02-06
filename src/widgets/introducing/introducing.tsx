@@ -44,8 +44,8 @@ const Introducing: React.FC = () => {
   useGSAP(() => {
     const options = {
       trigger: containerRef.current,
-      start: '-100px',
-      end: 'bottom center',
+      // start: '-100px',
+      end: 'center center',
       toggleActions: 'restart none none reverse',
     }
 
@@ -102,12 +102,12 @@ const Introducing: React.FC = () => {
   useGSAP(() => {
     const options = {
       trigger: containerRef.current,
-      start: '-100px',
+      start: 'center center',
       toggleActions: 'restart none none reverse',
     }
 
     gsap.from(starsRef.current, {
-      y: '100%',
+      // y: '100%',
       opacity: 0,
       duration: 0.8,
       scale: 0.3,
