@@ -79,7 +79,6 @@ const Acquaintance: React.FC = () => {
       toggleActions: 'restart none none reverse',
       start: 'top bottom',
       end: 'bottom center',
-      markers: true,
     }
 
     gsap.from(starsRef.current, {
