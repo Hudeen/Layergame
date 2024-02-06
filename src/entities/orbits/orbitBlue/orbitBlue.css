@@ -1,0 +1,56 @@
+.bluePlanetSmall {
+    position: absolute;
+    z-index: 9;
+    top: 55%;
+    left: 66%;
+    transform: translate(-50%, -50%);
+    width: 15vw;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+:root {
+    --orbit: 3.5rem;
+    --earth_o: 25;
+    --earth_orbit: calc(var(--orbit) * var(--earth_o));
+    --earth_dia: calc(var(--dia) * var(--earth_o));
+}
+
+.universe_b {
+    position: absolute;
+    z-index: 5;
+    top: 15%;
+    opacity: 0;
+    right: 70%;
+    transform: translate(-50%, -50%);
+}
+
+.planet {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1em;
+    height: 1em;
+    margin-top: -0.5em;
+    margin-left: -0.5em;
+    border-radius: 50%;
+}
+
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 10px solid rgba(34, 34, 34, 0.2);
+    border-radius: 50%;
+}
+
+#earth.orbit {
+    width: var(--earth_orbit);
+    height: var(--earth_orbit);
+    margin-top: var(--earth_dia);
+    margin-left: var(--earth_dia);
+}
