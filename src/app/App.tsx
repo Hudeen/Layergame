@@ -9,6 +9,8 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import Planets1 from '../entities/Planets/Planets1'
 import Projects from '../widgets/projects/Projects'
+import Acquaintance from '../widgets/acquaintance/acquaintance'
+import Footer from '../widgets/footer/footer'
 
 
 function App() {
@@ -34,6 +36,8 @@ function App() {
         <AboutUs/>
         <About />
         <Projects/>
+        <Acquaintance />
+        <Footer />
       </>
     )
   }
