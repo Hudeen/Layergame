@@ -1,6 +1,15 @@
 .aboutUs {
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs__line {
+    position: absolute;
+    z-index: 99;
 }
 
 .aboutUs_block {
@@ -14,8 +23,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 100px;
+    width: 70%;
 }
 
 .aboutUs__item-img {
@@ -191,6 +201,7 @@ svg g {
 .btn-3 {
     background: transparent;
     box-shadow: none;
+    margin-top: 100px;
 }
 
 .btn-3:before {

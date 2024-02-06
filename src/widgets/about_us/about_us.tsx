@@ -86,6 +86,17 @@ const AboutUs: React.FC = () => {
     return (
         <div className='aboutUs_block'>
             <div className="aboutUs">
+                <svg className='aboutUs__line' width="4" height="1721" viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2 0L2.00008 1721" stroke="url(#paint0_linear_262_457)" stroke-width="3" />
+                    <defs>
+                        <linearGradient id="paint0_linear_262_457" x1="2.5" y1="-2.18557e-08" x2="2.50008" y2="1721" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="#14D1E8" stop-opacity="0" />
+                            <stop offset="0.0851144" stop-color="#14D1E8" />
+                            <stop offset="0.915868" stop-color="#C35CFC" />
+                            <stop offset="1" stop-color="#C35CFC" stop-opacity="0" />
+                        </linearGradient>
+                    </defs>
+                </svg>
                 <div className="aboutUs__item">
                     <div className="aboutUs__item-number">
                         <img className='aboutUs__item-img one' src={BlueAustro} />
@@ -122,7 +133,7 @@ const AboutUs: React.FC = () => {
 
                 <div className="aboutUs__item aboutUs__item-2" ref={container3}>
                     <div className="aboutUs__item-number">
-                    <img className='aboutUs__item-img five' src={Rocket} />
+                        <img className='aboutUs__item-img five' src={Rocket} />
                         <h1 className="aboutUs__number-title">03</h1>
                     </div>
                     <div className="aboutUs__item-text">
