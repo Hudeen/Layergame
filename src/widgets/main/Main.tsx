@@ -48,6 +48,7 @@ const Main: React.FC = () => {
                 end: "500px top",
                 scrub: true,
                 pin: true,
+                pinType: "transform"
             },
             y: -180,
             scale: 1.5,
