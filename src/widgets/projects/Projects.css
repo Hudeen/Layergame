@@ -1,6 +1,7 @@
 .wrapper {
     padding-left: 10%;
     padding-right: 10%;
+    margin-top: 250px;
 }
 
 .title {
@@ -13,13 +14,27 @@
     margin-bottom: 28px;
 }
 
-.divider {
+.progress {
     background-color: #12111C;
     border-radius: 25px;
     height: 10px;
     width: 100%;
-    margin-bottom: 29px;
+    margin-bottom: 30px;
+    
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    display: flex;
 }
+
+.progress-value {
+    animation: load 3s normal forwards;
+    border-radius: 100px;
+    background: linear-gradient(94deg, #20c7ed 0%, #d251fd 99.79%);
+    height: 10px;
+    width: 0;
+}
+
 
 .card__container {
     opacity: 1;
@@ -31,5 +46,6 @@
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* for smooth scrolling on mobile devices */
-  }
+    -webkit-overflow-scrolling: touch;
+    /* for smooth scrolling on mobile devices */
+}
