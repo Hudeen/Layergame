@@ -15,7 +15,6 @@ const Planets: React.FC = () => {
         start: 'bottom top',
         end: 'bottom top',
         scrub: true,
-        markers: true,
       },
       opacity: 0,
       scale: 1.5,
