@@ -11,15 +11,11 @@
     position: fixed;
     height: 120px;
     width: 100%;
-
-
     padding-left: 10%;
     padding-right: 10%;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-
     z-index: 999;
 }
 
@@ -29,11 +25,8 @@
     align-items: center;
 }
 
-.header__ctas {
+.header__buttons {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 450px;
 }
 
 .header__logo {
@@ -61,8 +54,8 @@
     cursor: pointer;
     fill: transparent;
 }
- 
-.container {
+
+.header__buttons-navigation {
     display: flex;
     cursor: pointer;
 }
@@ -95,7 +88,7 @@
 }
 
 .navigaion.open {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .navigaion__title {
@@ -110,7 +103,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.navigaion__text {
+.navigaion__subtitle {
     font-family: "ClashGrotesk-Medium", sans-serif;
     margin-top: 30px;
     color: #ffffff;
@@ -121,11 +114,19 @@
     text-transform: capitalize;
 }
 
-.navigaion__link {
+.navigaion__item {
     margin-top: 120px;
+
+    color: #FFF;
+    font-family: "Clash Grotesk";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
 }
 
-.navigaion__link-text {
+.navigaion__item-link {
     font-family: "ClashGrotesk-Medium", sans-serif;
     color: #FFF;
     font-size: 18px;
@@ -137,7 +138,7 @@
     transition: color 0.6s linear;
 }
 
-.navigaion__link-text:hover {
+.navigaion__item-link:hover {
     cursor: pointer;
     background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
     background-clip: text;
@@ -145,17 +146,7 @@
     -webkit-text-fill-color: transparent;
 }
 
-.navigaion-link {
-    color: #FFF;
-    font-family: "Clash Grotesk";
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    text-transform: capitalize;
-}
-
-.navigaion__nav {
+.navigaion__menu {
     opacity: 0;
     display: flex;
     flex-direction: row;
@@ -164,14 +155,15 @@
     width: 250px;
     pointer-events: none;
     transition: 0.2s linear;
+    padding: 0 15px 0 15px;
 }
 
-.navigaion__nav.open {
+.navigaion__menu.open {
     opacity: 1;
     pointer-events: all;
-  }
+}
 
-.navigaion__nav-text {
+.navigaion__menu-link {
     color: #FFF;
     font-size: 15px;
     font-style: normal;
@@ -180,7 +172,7 @@
     text-transform: capitalize;
 }
 
-.navigaion__nav-text:hover {
+.navigaion__menu-link:hover {
     cursor: pointer;
     background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
     background-clip: text;
@@ -189,7 +181,8 @@
     cursor: pointer;
 }
 
-.ellipse-39 {
+
+.navigation__glare {
     background: linear-gradient(93.97deg, rgba(48, 187, 238, 1) 0%, rgba(198, 89, 252, 1) 100%);
     border-radius: 50%;
     width: 601px;
@@ -203,9 +196,9 @@
 
 .link-with-info {
     position: relative;
-  }
-  
-  .info {
+}
+
+.info {
     position: absolute;
     background-color: #f9f9f9;
     border: 1px solid #ccc;
@@ -214,15 +207,15 @@
     left: 0;
     width: 100%;
     display: none;
-  }
-  
-  .link-with-info:hover .info {
-    display: block;
-  }
+}
 
-  a.active {
+.link-with-info:hover .info {
+    display: block;
+}
+
+a.active {
     /* Add your desired styles here */
     /* For example: */
     font-weight: bold;
     color: blue;
-  }
+}
