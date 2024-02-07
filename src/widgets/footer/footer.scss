@@ -1,0 +1,121 @@
+/* 
+   Основные стили для футера 
+*/
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: 100vw;
+  padding: 25px;
+  border-top: solid 2px #bd60fb;
+  box-shadow: -10px 10px 20px #29c1ee, -20px 20px 40px #bd60fb;
+  background: linear-gradient(180deg, rgb(0, 0, 0), rgb(3, 3, 10) 73.318%);
+
+  /* 
+    Стили для главного блока внутри футера 
+  */
+  .main {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    /* 
+      Стили для логотипа внутри главного блока 
+    */
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      /* 
+        Стили для заголовка h1 внутри логотипа 
+      */
+      h1 {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 44px;
+        text-transform: uppercase;
+        background: linear-gradient(134.13deg, rgb(48, 187, 238), #bd60fb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+
+    /* 
+      Стили для блока с социальными иконками внутри главного блока 
+    */
+    .social {
+      display: flex;
+      gap: 12px;
+
+      /* 
+        Стили для изображений в блоке с социальными иконками 
+      */
+      img {
+        width: 32px;
+        height: 32px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  /* 
+    Стили для блока с ссылками внутри футера 
+  */
+  .links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    /* 
+      Стили для абзацев в блоке с ссылками 
+    */
+    p {
+      color: #505050;
+      font-size: 18px;
+      font-weight: 400;
+
+      /* 
+        Стили для первого абзаца в блоке с ссылками 
+      */
+      &:first-of-type {
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 600;
+        line-height: 39px;
+        margin-bottom: 10px;
+      }
+
+      /* 
+        Эффект при наведении на абзац 
+      */
+      &:hover {
+        transition: color 0.3s ease-in-out;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+/* 
+  Медиазапрос для экранов шириной более 1200px 
+*/
+@media only screen and (min-width: 1200px) {
+  footer {
+    padding: 50px;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+
+// & в SCSS:
+
+// & используется для ссылки на родительский селектор вложенного правила.
+// Например, &:hover будет применять стили к родительскому элементу при наведении на него курсора.
+// first-of-type:
+
+// first-of-type - это псевдокласс, который выбирает первый элемент определенного типа внутри своего родителя.
+// В данном коде, &:first-of-type применяет стили только к первому абзацу в блоке .links, позволяя выделить его с другими абзацами.

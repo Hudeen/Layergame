@@ -12,34 +12,32 @@ import Projects from '../widgets/projects/Projects'
 import Acquaintance from '../widgets/acquaintance/acquaintance'
 import Footer from '../widgets/footer/footer'
 
-
 function App() {
-
   const lenis = new Lenis({
-    duration: 1.5
+    duration: 1.5,
   })
-  
+
   lenis.on('scroll', ScrollTrigger.update)
-  
-  gsap.ticker.add((time)=>{
+
+  gsap.ticker.add(time => {
     lenis.raf(time * 800)
   })
-  
+
   gsap.ticker.lagSmoothing(0)
 
-    return (
-      <>
-        <Header />
-        <Main />
-        <Introducing />
-        <Planets1/>
-        <AboutUs/>
-        <About />
-        <Projects/>
-        <Acquaintance />
-        <Footer />
-      </>
-    )
-  }
-  
-  export default App
+  return (
+    <>
+      <Header />
+      <Main />
+      <Introducing />
+      <Planets1 />
+      <AboutUs />
+      <About />
+      <Projects />
+      <Acquaintance />
+      <Footer />
+    </>
+  )
+}
+
+export default App
