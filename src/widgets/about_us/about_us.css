@@ -174,9 +174,28 @@ svg g {
     transition: .3;
 }
 
-.btn-3 span:hover {
-    background: linear-gradient(94deg, #20c7ed 0%, #d251fd 99.79%);
+.btn-3 span:hover::after {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
 }
+
+.btn-3:hover::after {
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+}
+
+.btn-3 span:hover::before {
+    height: 100%;
+    width: 2px;
+}
+
+.btn-3:hover::before {
+    height: 100%;
+    width: 2px;
+}
+
 
 .btn-3:before,
 .btn-3:after {
@@ -190,12 +209,12 @@ svg g {
 
 .btn-3:before {
     height: 0%;
-    width: 1px;
+    width: 2px;
 }
 
 .btn-3:after {
     width: 0%;
-    height: 1px;
+    height: 2px;
 }
 
 .btn-3 {
@@ -227,13 +246,13 @@ svg g {
 }
 
 .btn-3 span:before {
-    width: 1px;
+    width: 2px;
     height: 0%;
 }
 
 .btn-3 span:after {
     width: 0%;
-    height: 1px;
+    height: 2px;
 }
 
 .btn-3 span:before {
