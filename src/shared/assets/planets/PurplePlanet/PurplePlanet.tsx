@@ -3,7 +3,7 @@ import './PurplePlanet.css'
 const PurplePlanet = () => {
     return (
         <>
-            <svg className='purplePlanet' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+            {/* <svg className='purplePlanet' width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.540261 4.3019C-0.722181 9.55613 5.62668 12.6211 9.0565 8.50523C12.7052 4.12669 8.12965 -1.68941 3.06519 0.915835C0.788365 2.13453 1.11675 1.74047 0.540261 4.3019Z" fill="url(#paint0_linear_138_19)" fill-opacity="0.3" />
                 <defs>
                     <linearGradient id="paint0_linear_138_19" x1="0.940245" y1="7.5552" x2="10.5163" y2="2.94411" gradientUnits="userSpaceOnUse">
@@ -11,8 +11,8 @@ const PurplePlanet = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
-            <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
+            </svg> */}
+            {/* <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg"
                 style={{
                     position: "absolute",
                     zIndex: 9,
@@ -29,9 +29,9 @@ const PurplePlanet = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
+            </svg> */}
 
-            <svg
+            {/* <svg
                 width="11"
                 height="11"
                 viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,7 +42,7 @@ const PurplePlanet = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
+            </svg> */}
 
             <svg className='purplePlanet'
                 width="162"
@@ -50,14 +50,6 @@ const PurplePlanet = () => {
                 viewBox="0 0 162 162"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
-                style={{
-                    position: "absolute",
-                    zIndex: 9,
-                    top: "48%",
-                    left: "68%",
-                    transform: "translate(-50%, -50%)",
-                    width: "7vw"
-                }}
             >
                 <g opacity="0.6">
                     <path className="orbit1"

@@ -4,7 +4,7 @@ const Saturn = () => {
     return (
         <>
 
-            <svg
+            {/* <svg
                 width="26"
                 height="27"
                 viewBox="0 0 26 27"
@@ -26,9 +26,9 @@ const Saturn = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
+            </svg> */}
 
-            <svg
+            {/* <svg
                 width="10"
                 height="10"
                 viewBox="0 0 10 10"
@@ -50,9 +50,9 @@ const Saturn = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
+            </svg> */}
 
-            <svg
+            {/* <svg
                 width="19"
                 height="19"
                 viewBox="0 0 19 19"
@@ -74,9 +74,9 @@ const Saturn = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
+            </svg> */}
 
-            <svg
+            {/* <svg
                 width="11"
                 height="11"
                 viewBox="0 0 11 11"
@@ -98,25 +98,10 @@ const Saturn = () => {
                         <stop offset="0.683233" stop-color="#523A70" stop-opacity="0" />
                     </linearGradient>
                 </defs>
-            </svg>
+            </svg> */}
 
 
-            <svg className='saturn'
-                width="200"
-                height="360"
-                viewBox="0 0 387 397"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                style={{
-                    position: "absolute",
-                    zIndex: 9,
-                    top: "50%",
-                    left: "35%",
-                    transform: "translate(-50%, -50%)",
-                    width: "15vw"
-                }}
-            >
-
+            <svg className='saturn' width="200" height="360" viewBox="0 0 387 397" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g opacity="0.6">
                     <path
                         d="M149.299 254.967C187.786 284.326 242.787 276.927 272.147 238.439C301.506 199.952 294.106 144.951 255.619 115.591C217.131 86.232 162.13 93.6317 132.771 132.119C103.412 170.607 110.811 225.608 149.299 254.967Z"
