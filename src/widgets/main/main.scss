@@ -1,0 +1,115 @@
+main {
+    width: 100%;
+    overflow: hidden;
+    max-width: 100%;
+    height: 100vh;
+    position: relative;
+
+    .header {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding-left: 20px;
+        margin-bottom: 25px;
+
+        img {
+            width: 45px;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 600;
+            line-height: 44px;
+            text-transform: uppercase;
+            background: linear-gradient(134.13deg, rgb(48, 187, 238), #bd60fb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-left: 5px;
+        }
+    }
+
+    .animation {
+        overflow: hidden !important;
+        scale: 1.1;
+        position: relative;
+
+        .item {
+            position: absolute;
+            top: 33%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+
+            h1 {
+                font-size: 12vw;
+                color: #02020b;
+                background: linear-gradient(90deg, #30BBEE 20%, #C659FC 70%);
+                -webkit-background-clip: text;
+                -webkit-text-stroke: 2px transparent;
+            }
+
+            h2 {
+                font-size: 2.8vw;
+                font-weight: 400;
+                font-family: 'ClashGrotesk-Medium';
+                background: linear-gradient(90deg, #30BBEE 20%, #C659FC 70%);
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                filter: drop-shadow(0 0 5px) brightness(110%);
+            }
+        }
+
+        .saturn {
+            position: absolute;
+            z-index: 999;
+            top: 72%;
+            left: 5%;
+            transform: translate(-50%, -50%);
+            width: 75vw;
+            height: 75vw;
+            rotate: 12deg;
+        }
+
+        .purplePlanet {
+            position: absolute;
+            z-index: 9;
+            top: 58%;
+            right: -21%;
+            transform: translate(-50%, -50%);
+            width: 32vw;
+            height: 32vw;
+        }
+    }
+
+    .glarePurple {
+        position: absolute;
+        width: 30vw;
+        height: 30vw;
+        top: 40%;
+        right: -5%;
+        filter: blur(15vw);
+        background: rgb(195, 92, 252);
+        z-index: 999;
+        border-radius: 100px;
+        opacity: .5;
+    }
+
+    .glareBlue {
+        position: absolute;
+        z-index: 9;
+        top: 60%;
+        left: 15%;
+        transform: translate(-50%, -50%);
+        width: 40vw;
+        height: 40vw;
+
+        filter: blur(100px);
+        background: rgb(20, 209, 232);
+        z-index: 999;
+        border-radius: 100px;
+        opacity: .2;
+    }
+}
