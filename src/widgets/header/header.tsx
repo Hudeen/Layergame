@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import './header.css'
+import './header.scss'
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -58,16 +59,16 @@ const Header: React.FC = () => {
    }, []);
 
    return (
-      <header className="header">
+      <header>
          <div className={`navigaion ${isOpened ? 'open' : ''}`} ref={navigationRef} onMouseLeave={handleMouseLeave} onAnimationStart={handleAnimationStart} onAnimationEnd={handleAnimationEnd}>
-            <h1 className='navigaion__title'>Platea vitae interdum.</h1>
-            <h2 className='navigaion__subtitle'>Dui cras et. Malesuada eget odio. Pellentesque orci.</h2>
-            <div className='navigaion__item'>
-               <a className='navigaion__item-link'>Link1</a>
-               <a className='navigaion__item-link'>Link2</a>
-               <a className='navigaion__item-link'>Link3</a>
+            <h1 className='title'>Platea vitae interdum.</h1>
+            <h2 className='subtitle'>Dui cras et. Malesuada eget odio. Pellentesque orci.</h2>
+            <div className='item'>
+               <a className='link'>Link1</a>
+               <a className='link'>Link2</a>
+               <a className='link'>Link3</a>
             </div>
-            <div className="navigation__glare"></div>
+            <div className="glare"></div>
          </div>
 
          <div className="header__item">
