@@ -12,12 +12,12 @@
     z-index: 99;
 }
 
-.aboutUs_block {
+/* .aboutUs_block {
     width: 100%;
     height: auto;
     position: relative;
     z-index: 2;
-}
+} */
 
 .aboutUs__item {
     display: flex;
@@ -32,9 +32,7 @@
     position: absolute;
 }
 
-.one {
-    top: 30%
-}
+
 
 .two {
     right: 5%;
@@ -71,7 +69,6 @@ svg g {
 
 .aboutUs__number-title {
     font-size: 20rem;
-    margin-right: 45px;
     color: #02020b;
 
     background: linear-gradient(94deg, #20C7ED 0%, #D251FD 99.79%);
@@ -261,4 +258,14 @@ svg g {
 
 .btn-3 span:after {
     width: 3%;
+}
+
+
+.test {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
 }
