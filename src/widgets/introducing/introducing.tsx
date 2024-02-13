@@ -1,15 +1,16 @@
 //Import components
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from '@gsap/react'
 
 //Import styles
-import './introducing.css'
+import './introducing.scss'
+
+//Register gsap plagin
+gsap.registerPlugin(ScrollTrigger)
 
 const Introducing: React.FC = () => {
-  gsap.registerPlugin(ScrollTrigger)
-
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const cometsRef = useRef<HTMLDivElement>(null)
@@ -19,148 +20,202 @@ const Introducing: React.FC = () => {
   useGSAP(() => {
     const options = {
       trigger: containerRef.current,
-      start: '-100px',
-      end: 'bottom center',
+      start: 'top bottom',
+      end: 'bottom top',
       toggleActions: 'restart none none reverse',
+      scrub: true,
     }
 
     gsap.from(contentRef.current, {
-      opacity: 0,
-      duration: 0.4,
-      scale: 0.8,
+      opacity: 0.3,
+      duration: 1,
+      scale: 0.6,
       scrollTrigger: options,
     })
 
     gsap.to(contentRef.current, {
-      opacity: 1,
-      duration: 0.4,
-      scale: 1,
       y: 0,
+      opacity: 1,
+      duration: 1,
+      scale: 1,
       scrollTrigger: options,
     })
   }, [])
 
   //Comets animation
-  useGSAP(() => {
-    const options = {
-      trigger: containerRef.current,
-      // start: '-100px',
-      end: 'center center',
-      toggleActions: 'restart none none reverse',
-    }
+  // useGSAP(() => {
+  //   const options = {
+  //     trigger: containerRef.current,
+  //     // start: '-100px',
+  //     end: 'center center',
+  //     toggleActions: 'restart none none reverse',
+  //   }
 
-    gsap.from(cometsRef.current, {
-      y: '100%',
-      opacity: 0,
-      duration: 0.8,
-      scale: 0.3,
-      scrollTrigger: options,
-    })
+  //   gsap.from(cometsRef.current, {
+  //     y: '100%',
+  //     opacity: 0,
+  //     duration: 0.8,
+  //     scale: 0.3,
+  //     scrollTrigger: options,
+  //   })
 
-    gsap.to(cometsRef.current, {
-      opacity: 1,
-      duration: 0.8,
-      scale: 1,
-      y: -500,
-      scrollTrigger: options,
-    })
+  //   gsap.to(cometsRef.current, {
+  //     opacity: 1,
+  //     duration: 0.8,
+  //     scale: 1.5,
+  //     y: -500,
+  //     scrollTrigger: options,
+  //   })
 
-    if (cometsRef.current) {
-      const maxX = window.innerWidth
-      const maxY = window.innerHeight
-      const angle = 40
+  //   if (cometsRef.current) {
+  //     const maxX = window.innerWidth
+  //     const maxY = window.innerHeight
+  //     const angle = 40
 
-      ;[...cometsRef.current.children].forEach((comet: Element) => {
-        const maxXPosition = maxX
-        const randomYPosition = gsap.utils.random(0, maxY)
+  //     ;[...cometsRef.current.children].forEach((comet: Element) => {
+  //       const maxXPosition = maxX
+  //       const randomYPosition = gsap.utils.random(0, maxY)
 
-        const radianAngle = (angle * Math.PI) / 180
-        const xComponent = Math.cos(radianAngle) * maxXPosition
-        const yComponent = Math.sin(radianAngle) * maxXPosition
+  //       const radianAngle = (angle * Math.PI) / 180
+  //       const xComponent = Math.cos(radianAngle) * maxXPosition
+  //       const yComponent = Math.sin(radianAngle) * maxXPosition
 
-        gsap.set(comet, {
-          x: xComponent,
-          y: randomYPosition,
-          scale: 0,
-          filter: `blur(${gsap.utils.random(0, 5)}px)`,
-        })
+  //       gsap.set(comet, {
+  //         x: xComponent,
+  //         y: randomYPosition,
+  //         scale: 0,
+  //         filter: `blur(${gsap.utils.random(0, 5)}px)`,
+  //       })
 
-        gsap.to(comet, {
-          x: -xComponent,
-          y: randomYPosition + yComponent,
-          scale: gsap.utils.random(0.8, 1),
-          duration: gsap.utils.random(3, 12),
-          repeat: -1,
-          opacity: 0,
-          ease: 'none',
-        })
-      })
-    }
-  }, [])
+  //       gsap.to(comet, {
+  //         x: -xComponent,
+  //         y: randomYPosition + yComponent,
+  //         scale: gsap.utils.random(0.5, 1),
+  //         duration: gsap.utils.random(3, 12),
+  //         repeat: -1,
+  //         opacity: 0,
+  //         ease: 'none',
+  //       })
+  //     })
+  //   }
+  // }, [])
 
   //Starts animation
-  useGSAP(() => {
-    const options = {
-      trigger: containerRef.current,
-      start: 'center center',
-      toggleActions: 'restart none none reverse',
-    }
+  useGSAP(
+    () => {
+      if (starsRef.current && containerRef.current) {
+        const stars = [...starsRef.current.children]
 
-    gsap.from(starsRef.current, {
-      // y: '100%',
-      opacity: 0,
-      duration: 0.8,
-      scale: 0.3,
-      scrollTrigger: options,
-    })
-    gsap.to(starsRef.current, {
-      opacity: 1,
-      duration: 0.8,
-      scale: 1,
-      y: 0,
-      scrollTrigger: options,
-    })
+        const starsOnEnter = {
+          scrub: true,
+          start: 'top +=1300',
+          trigger: containerRef.current,
+          toggleActions: 'restart none none reverse',
+          onEnter: () => {
+            if (starsRef.current && containerRef.current) {
+              //Max X & Y stars position
+              const maxX = containerRef.current.offsetWidth
+              const maxY = containerRef.current.offsetHeight
 
-    if (starsRef.current) {
-      const maxX = window.innerWidth
-      const maxY = window.innerHeight
+              //Place the star in a random place on the screen.
+              stars.forEach((star: Element) => {
+                //Indentation from the edges of the screen so that the stars do not extend beyond the screen
+                const maxXPosition = maxX - star.clientWidth * 1
+                const maxYPosition = maxY - star.clientHeight * 3
 
-      ;[...starsRef.current.children].forEach((star: Element) => {
-        const maxXPosition = maxX - star.clientWidth * 3
-        const maxYPosition = maxY - star.clientHeight * 3
-        gsap.set(star, {
-          x: gsap.utils.random(0, maxXPosition),
-          y: gsap.utils.random(0, maxYPosition),
-          scale: 0.4,
-          opacity: gsap.utils.random(0, 1),
+                //Making stars
+                gsap.set(star, {
+                  x: gsap.utils.random(-1000, maxXPosition),
+                  y: gsap.utils.random(0, maxYPosition),
+                  scale: gsap.utils.random(0.5, 2),
+                  opacity: gsap.utils.random(0.3, 1.3),
+                })
+              })
+
+              //Animation of stars
+              stars.slice(0, 45).forEach((star: Element) => {
+                gsap.to(star, {
+                  duration: gsap.utils.random(1, 1),
+                  repeat: -1,
+                  scale: gsap.utils.random(0.1, 2),
+                  opacity: gsap.utils.random(0.5, 1),
+                  yoyo: true,
+                })
+              })
+            }
+          },
+          onLeave: () => {
+            stars.forEach((star: Element) => {
+              gsap.killTweensOf(star)
+            })
+          },
+          onEnterBack: () => {
+            stars.slice(0, 45).forEach((star: Element) => {
+              gsap.to(star, {
+                duration: gsap.utils.random(1, 1),
+                repeat: -1,
+                scale: gsap.utils.random(0.1, 2),
+                opacity: gsap.utils.random(0.5, 1),
+                yoyo: true,
+              })
+            })
+          },
+          onLeaveBack: () => {
+            stars.forEach((star: Element) => {
+              gsap.killTweensOf(star)
+            })
+          },
+        }
+
+        //Animation of stars
+        stars.slice(0, 45).forEach((star: Element) => {
+          gsap.to(star, {
+            duration: gsap.utils.random(1, 1),
+            repeat: -1,
+            scale: gsap.utils.random(0.1, 2),
+            opacity: gsap.utils.random(0.5, 1),
+            yoyo: true,
+          })
         })
-        gsap.to(star, {
-          duration: gsap.utils.random(1, 2),
-          repeat: -1,
-          scale: 1.3,
-          opacity: gsap.utils.random(0, 1),
-          yoyo: true,
-        })
-      })
-    }
-  }, [])
 
+        //Animation of stars container
+        gsap.fromTo(
+          starsRef.current,
+          {
+            scale: 0.5,
+            opacity: 0,
+            duration: 0.5,
+            padding: '20px',
+            scrollTrigger: starsOnEnter,
+          },
+          {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            scrollTrigger: starsOnEnter,
+          }
+        )
+      }
+    },
+    { scope: containerRef }
+  )
+  
   return (
     <section
       className='introducing'
       ref={containerRef}>
       <div
-        className='introducing__content'
+        className='content'
         ref={contentRef}>
-        <h1 className='introducing__title'>Tortor, arcu si.</h1>
-        <h2 className='introducing__sub-title'>Sed in consectetur risus sed sit velit.</h2>
-        <p className='introducing__description'>
-          Sodales imperdiet mattis eleifend nec luctus elit. Lorem platea platea et dictum nulla sed sed vel sed arcu
-          dictum leo, lectus ipsum cras justo vitae eleifend quis, cras venenatis nunc mauris nunc ipsum venenatis
-          interdum eleifend nunc risus vulputate ultricies.
+        <h1>Tortor, arcu si.</h1>
+        <h2>Sed in consectetur risus sed sit velit.</h2>
+        <p>
+          Sodales imperdiet mattis eleifend nec luctus elit. Lorem platea platea et dictum nulla sed sed vel sed arcu dictum
+          leo, lectus ipsum cras justo vitae eleifend quis, cras venenatis nunc mauris nunc ipsum venenatis interdum eleifend
+          nunc risus vulputate ultricies.
         </p>
       </div>
-      <div
+      {/* <div
         className='comet-container'
         ref={cometsRef}>
         {[...Array(4)].map((_, index) => (
@@ -260,9 +315,9 @@ const Introducing: React.FC = () => {
             </defs>
           </svg>
         ))}
-      </div>
+      </div> */}
       <div
-        className='introducing__stars-container'
+        className='stars-container'
         ref={starsRef}>
         {[...Array(65)].map((_, index) => (
           <svg

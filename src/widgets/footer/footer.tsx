@@ -12,7 +12,7 @@ import telegram from '../../shared/assets/icons/telegram.svg'
 const Footer: React.FC = () => {
   return (
     <footer>
-      <div className='main'>
+      <div className='footer-main'>
         <div className='logo'>
           <img
             src={logo}
