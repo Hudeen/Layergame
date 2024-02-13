@@ -1,0 +1,277 @@
+.about {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 100px 10px;
+  gap: 10px;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: relative;
+    z-index: 998;
+    h2 {
+      font-size: 48px;
+      text-transform: capitalize;
+      text-align: center;
+      background: linear-gradient(134.13deg, rgb(32, 199, 237), rgb(210, 81, 253));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .cards {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-top: 100px;
+      width: 100%;
+      .container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        .card {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          max-width: 360px;
+          height: 220px;
+          position: relative;
+          background-color: #12111c;
+          padding: 20px;
+          border-radius: 25px;
+          border: solid 2px #d251fdff;
+          overflow: hidden;
+          p:nth-child(1) {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            color: #6c95f4;
+            font-size: 20px;
+            text-transform: uppercase;
+            z-index: 988;
+          }
+          p:nth-child(2) {
+            width: 100%;
+            display: flex;
+            color: #ffffff;
+            justify-content: space-between;
+            font-size: 20px;
+            text-transform: uppercase;
+            font-family: 'Clash Grotesk', sans-serif;
+            z-index: 988;
+          }
+          p:nth-child(3) {
+            width: 100%;
+            display: flex;
+            color: #ffffff;
+            justify-content: space-between;
+            font-size: 14px;
+            text-transform: uppercase;
+          }
+          .triangle {
+            height: 20px;
+            width: 20px;
+          }
+        }
+        &:nth-child(1) {
+          .card {
+            .earth {
+              position: absolute;
+              opacity: 0.8;
+              right: -50px;
+              bottom: -60px;
+              width: 200px;
+              height: 200px;
+              filter: blur(1.5px);
+            }
+            .rocket {
+              position: absolute;
+              opacity: 0.8;
+              left: 20px;
+              bottom: -50px;
+              width: 220px;
+              height: 220px;
+            }
+          }
+          .line-mobile {
+            padding: 0px 20px;
+            width: 100vw;
+            max-width: 360px;
+          }
+          .line-desktop {
+            display: none;
+          }
+        }
+        &:nth-child(2) {
+          .card {
+            .character {
+              position: absolute;
+              opacity: 0.9;
+              right: -20px;
+              bottom: -30px;
+              width: 200px;
+              height: 200px;
+            }
+            .spaceship {
+              position: absolute;
+              opacity: 0.9;
+              left: 40px;
+              bottom: -45px;
+              width: 220px;
+              height: 220px;
+            }
+          }
+          .line-mobile {
+            padding: 0px 20px;
+            width: 100vw;
+            max-width: 360px;
+          }
+          .line-desktop-two {
+            display: none;
+          }
+        }
+        &:nth-child(3) {
+          .card {
+            .character-two {
+              position: absolute;
+              opacity: 0.8;
+              right: 0;
+              bottom: -30px;
+              width: 250px;
+              height: 250px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .stars-container {
+    position: absolute;
+    width: 100vw;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  .about {
+    overflow: hidden;
+    .content {
+      width: 100%;
+      h2 {
+        font-size: 68px;
+        letter-spacing: 0%;
+        text-align: center;
+        text-transform: capitalize;
+        background: linear-gradient(134.13deg, rgb(32, 199, 237), rgb(210, 81, 253));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .cards {
+        width: 100%;
+        right: 15vw;
+        .container {
+          max-width: 100%;
+          width: 100%;
+          position: relative;
+          .card {
+            padding: 30px;
+            width: 100%;
+            max-width: 580px;
+            height: 350px;
+            p:nth-child(1) {
+              font-size: 25px;
+            }
+            p:nth-child(2) {
+              font-size: 40px;
+            }
+            p:nth-child(3) {
+              font-size: 20px;
+            }
+          }
+          &:nth-child(1) {
+            .card {
+              .earth {
+                right: -80px;
+                bottom: -140px;
+                width: 380px;
+                height: 380px;
+              }
+              .rocket {
+                left: 20px;
+                bottom: -50px;
+                width: 280px;
+                height: 280px;
+              }
+            }
+            .line-mobile {
+              display: none;
+            }
+            .line-desktop {
+              display: block;
+              position: absolute;
+              height: 400px;
+              left: -280px;
+              top: 250px;
+              width: 100%;
+            }
+          }
+          &:nth-child(2) {
+            .card {
+              position: relative;
+              left: 180px;
+              margin-top: 150px;
+              .character {
+                position: absolute;
+                opacity: 0.9;
+                right: -30px;
+                bottom: -50px;
+                width: 350px;
+                height: 350px;
+              }
+              .spaceship {
+                position: absolute;
+                opacity: 0.9;
+                left: 30px;
+                bottom: -65px;
+                width: 380px;
+                height: 380px;
+              }
+            }
+            .line-mobile {
+              display: none;
+            }
+            .line-desktop-two {
+              display: block;
+              position: absolute;
+              height: 400px;
+              right: -390px;
+              top: 400px;
+              width: 100%;
+            }
+          }
+          &:nth-child(3) {
+            .card {
+              margin-top: 150px;
+              .character-two {
+                position: absolute;
+                opacity: 0.8;
+                right: -20px;
+                bottom: -80px;
+                width: 450px;
+                height: 450px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
