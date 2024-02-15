@@ -28,15 +28,15 @@ function App() {
 
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Main />
       <Introducing />
-      {/* <Planets1 /> */}
-      {/* <AboutUs /> */}
+      <Planets1 />
+      <AboutUs />
       <About />
       <Projects />
       <Acquaintance />
-      <SpaceStation />
+      {/* <SpaceStation /> */}
       <Footer />
     </>
   )
