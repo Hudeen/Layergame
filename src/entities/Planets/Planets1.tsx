@@ -1,7 +1,7 @@
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { useGSAP } from "@gsap/react";
 import gsap from 'gsap';
-import './Planest1.css';
+import './Planets1.scss';
 import OrbitPurple from '../orbits/orbitPurple/OrbitPurple';
 import BluePlanetBig from '../../shared/assets/planets/BluePlanet/BluePlanetBig';
 

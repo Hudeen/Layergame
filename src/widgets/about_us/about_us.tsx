@@ -14,74 +14,74 @@ const AboutUs: React.FC = () => {
     const container2 = useRef<HTMLDivElement | null>(null);
     const container3 = useRef<HTMLDivElement | null>(null);
     useGSAP(() => {
-        gsap.to(".line", {
-            scrollTrigger: {
-                trigger: ".gaming",
-                start: "top+=1 center",
-                end: "bottom center",
-                scrub: true
-            },
-            opacity: 1,
-        });
+        // gsap.to(".line", {
+        //     scrollTrigger: {
+        //         trigger: ".gaming",
+        //         start: "top+=1 center",
+        //         end: "bottom center",
+        //         scrub: true
+        //     },
+        //     opacity: 1,
+        // });
 
-        const container = document.querySelector('.aboutUs__item') as HTMLElement;
-        const options = {
-            trigger: container,
-            start: 'top 40%',
-            end: '100px 40%',
-            toggleActions: 'restart none none reverse',
-        };
-        gsap.from(container, {
-            opacity: 0,
-            scrollTrigger: options,
-        });
-        gsap.to(container, {
-            opacity: 1,
-            duration: .4,
-            y: 0,
-            scrollTrigger: options,
-        });
+        // const container = document.querySelector('.aboutUs__item') as HTMLElement;
+        // const options = {
+        //     trigger: container,
+        //     start: 'top 40%',
+        //     end: '100px 40%',
+        //     toggleActions: 'restart none none reverse',
+        // };
+        // gsap.from(container, {
+        //     opacity: 0,
+        //     scrollTrigger: options,
+        // });
+        // gsap.to(container, {
+        //     opacity: 1,
+        //     duration: .4,
+        //     y: 0,
+        //     scrollTrigger: options,
+        // });
 
-        if (container2.current) {
-            const options2 = {
-                trigger: container2.current,
-                start: 'top 40%',
-                end: '100px 40%',
-                toggleActions: 'restart none none reverse',
-            };
-            gsap.from(container2.current, {
-                opacity: 0,
-                duration: .4,
-                scrollTrigger: options2,
-            });
-            gsap.to(container2.current, {
-                opacity: 1,
-                duration: .4,
-                y: 0,
-                scrollTrigger: options2,
-            });
-        }
+        // if (container2.current) {
+        //     const options2 = {
+        //         trigger: container2.current,
+        //         start: 'top 40%',
+        //         end: '100px 40%',
+        //         toggleActions: 'restart none none reverse',
+        //     };
+        //     gsap.from(container2.current, {
+        //         opacity: 0,
+        //         duration: .4,
+        //         scrollTrigger: options2,
+        //     });
+        //     gsap.to(container2.current, {
+        //         opacity: 1,
+        //         duration: .4,
+        //         y: 0,
+        //         scrollTrigger: options2,
+        //     });
+        // }
 
-        if (container3.current) {
-            const options3 = {
-                trigger: container3.current,
-                start: 'top 40%',
-                end: '100px 40%',
-                toggleActions: 'restart none none reverse',
-            };
-            gsap.from(container3.current, {
+        // if (container3.current) {
+        //     const options3 = {
+        //         trigger: container3.current,
+        //         start: 'top 40%',
+        //         end: '100px 40%',
+        //         toggleActions: 'restart none none reverse',
+        //     };
+        //     gsap.from(container3.current, {
 
-                opacity: 0,
-                duration: .4,
-                scrollTrigger: options3,
-            });
-            gsap.to(container3.current, {
-                opacity: 1,
-                duration: .4,
-                y: 0,
-                scrollTrigger: options3,
-            });
-        }
+        //         opacity: 0,
+        //         duration: .4,
+        //         scrollTrigger: options3,
+        //     });
+        //     gsap.to(container3.current, {
+        //         opacity: 1,
+        //         duration: .4,
+        //         y: 0,
+        //         scrollTrigger: options3,
+        //     });
+        // }
     }, [container2, container3]);
 
     return (
@@ -153,7 +153,7 @@ const AboutUs: React.FC = () => {
                     </defs>
                 </svg>
             </div>
-            <button className="custom-btn btn-3"><span>Explore Technology</span></button>
+            {/* <button className="custom-btn btn-3"><span>Explore Technology</span></button> */}
         </div>
     );
 }
