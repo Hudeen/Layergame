@@ -27,7 +27,7 @@ function App() {
   gsap.ticker.lagSmoothing(0)
 
   return (
-    <>
+    <div className='mainPage'>
       <Header />
       <Main />
       <Introducing />
@@ -38,7 +38,7 @@ function App() {
       <Acquaintance />
       {/* <SpaceStation /> */}
       <Footer />
-    </>
+    </div>
   )
 }
 
