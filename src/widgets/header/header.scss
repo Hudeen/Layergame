@@ -1,0 +1,346 @@
+header {
+    position: fixed;
+    height: 120px;
+    width: 100%;
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    z-index: 999;
+
+    .navigaion {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 600px;
+        transform: translateY(-100%);
+        transition: transform .8s ease-in-out;
+        z-index: -1;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .title {
+            font-size: 64px;
+            font-weight: 500;
+            font-family: "ClashGrotesk-Medium", sans-serif;
+
+            background-image: linear-gradient(93.97deg,
+                    rgba(48, 187, 238, 1) 0%,
+                    rgba(198, 89, 252, 1) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-family: "ClashGrotesk-Medium", sans-serif;
+            margin-top: 30px;
+            color: #ffffff;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            text-transform: capitalize;
+        }
+
+        .item {
+            margin-top: 120px;
+            color: #FFF;
+            font-family: "Clash Grotesk";
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: normal;
+            text-transform: capitalize;
+
+            .link {
+                font-family: "ClashGrotesk-Medium", sans-serif;
+                color: #FFF;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                text-transform: capitalize;
+                margin: 0 50px 0 50px;
+                transition: color 0.6s linear;
+
+                &:hover {
+                    cursor: pointer;
+                    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+        .glare {
+            background: linear-gradient(93.97deg, rgba(48, 187, 238, 1) 0%, rgba(198, 89, 252, 1) 100%);
+            border-radius: 50%;
+            width: 601px;
+            height: 601px;
+            position: absolute;
+            left: -170px;
+            top: 290px;
+            z-index: -1;
+            filter: blur(250px);
+        }
+
+        &.open {
+            transform: translateY(0);
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+:root {
+    --header-height: 50px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.header {
+    position: fixed;
+    height: 120px;
+    width: 100%;
+
+
+    padding-left: 10%;
+    padding-right: 10%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    z-index: 999;
+}
+
+.header__inner {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header__item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__buttons {
+    display: flex;
+}
+
+.header__logo {
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+    transition: 0.2s linear;
+}
+
+.header__title {
+    font-family: 'ClashGrotesk-Semibold';
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.header__button {
+    position: relative;
+    cursor: pointer;
+    fill: transparent;
+}
+
+.header__buttons-navigation {
+    display: flex;
+    cursor: pointer;
+}
+
+.navigaion {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 600px;
+    transform: translateY(-100%);
+    transition: transform .8s ease-in-out;
+    z-index: -1;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+
+    background:
+        linear-gradient(#000 0 0) padding-box,
+
+        linear-gradient(93.97deg,
+            rgba(32, 199, 237, 1) 0%,
+            rgba(210, 81, 253, 1) 100%) border-box;
+    color: #313149;
+    border: 1px solid transparent;
+    border-radius: 0 0 30px 30px;
+}
+
+.navigaion.open {
+    transform: translateY(0);
+}
+
+.navigaion__title {
+    font-size: 64px;
+    font-weight: 500;
+    font-family: "ClashGrotesk-Medium", sans-serif;
+
+    background-image: linear-gradient(93.97deg,
+            rgba(48, 187, 238, 1) 0%,
+            rgba(198, 89, 252, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navigaion__subtitle {
+    font-family: "ClashGrotesk-Medium", sans-serif;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.navigaion__item {
+    margin-top: 120px;
+}
+
+.navigaion__item-link {
+    font-family: "ClashGrotesk-Medium", sans-serif;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+    margin: 0 50px 0 50px;
+    transition: color 0.6s linear;
+}
+
+.navigaion__item-link:hover {
+    cursor: pointer;
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.navigaion-item {
+    color: #FFF;
+    font-family: "Clash Grotesk";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.navigaion__menu {
+    opacity: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 250px;
+    pointer-events: none;
+    transition: 0.2s linear;
+    padding: 0 15px 0 15px;
+}
+
+.navigaion__menu.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.navigaion__menu-link {
+    color: #FFF;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: capitalize;
+}
+
+.navigaion__menu-link:hover {
+    cursor: pointer;
+    background: linear-gradient(94deg, #30BBEE 0%, #C659FC 99.79%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}
+
+.navigation__glare {
+    background: linear-gradient(93.97deg, rgba(48, 187, 238, 1) 0%, rgba(198, 89, 252, 1) 100%);
+    border-radius: 50%;
+    width: 601px;
+    height: 601px;
+    position: absolute;
+    left: -170px;
+    top: 290px;
+    z-index: -1;
+    filter: blur(250px);
+}
+
+.link-with-info {
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 5px;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    display: none;
+}
+
+.link-with-info:hover .info {
+    display: block;
+}
+
+a.active {
+    /* Add your desired styles here */
+    /* For example: */
+    font-weight: bold;
+    color: blue;
+}

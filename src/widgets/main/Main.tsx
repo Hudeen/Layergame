@@ -64,9 +64,10 @@ const Main: React.FC = () => {
                 <img src={logo} />
                 <h1>LayerGame</h1>
             </div>
+            <div className="glarePurple"></div>
+            <div className="glareBlue"></div>
             <div className="animation" >
-                <div className="glarePurple"></div>
-                <div className="glareBlue"></div>
+
                 <Lottie className="animation" id="lottie-animation" animationData={groovyWalkAnimation} loop={true} />
                 <div className="item">
                     <h1>LAYERGAME</h1>

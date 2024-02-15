@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 2;
+
+    .gaming {
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            margin-bottom: 100px;
+            width: 100%;
+
+            .number {
+                position: relative;
+
+                .img {
+                    position: absolute;
+                }
+
+                .img.one {
+                    top: 35%;
+                    width: 30vw;
+                }
+
+                .img.two {
+                    right: -10%;
+                    top: 13%;
+                    scale: .7;
+                }
+
+                .num {
+                    font-size: 70vw;
+                    color: #02020b;
+                    background: linear-gradient(94deg, #20C7ED 0%, #D251FD 99.79%);
+                    -webkit-background-clip: text;
+                    -webkit-text-stroke: 6px transparent;
+                }
+            }
+
+            .text {
+                .h1 {
+                    width: 100%;
+                    padding: 0 5vw 0 5vw;
+                    color: #FFF;
+                    font-family: 'ClashGrotesk-Medium';
+                    font-size: 30px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-transform: uppercase;
+                }
+
+                .title {
+                    width: 100%;
+                    padding: 0 5vw 0 5vw;
+                    color: white;
+                    text-transform: uppercase;
+                    font-size: 8vw;
+                    font-family: 'ClashGrotesk-Semibold';
+                    margin-top: 10px;
+                    margin-bottom: 15px;
+                    background: linear-gradient(94deg, #20c7ed 0%, #d251fd 99.79%);
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+
+                .subtitle {
+                    width: 100%;
+                    padding: 0 5vw 0 5vw;
+                    color: #8C8B92;
+                    font-family: "ClashGrotesk-Semibold";
+                    font-size: 5vw;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                    text-transform: capitalize;
+                    font-family: "ClashGrotesk-Medium";
+                }
+            }
+        }
+        // .item.reverse {
+        //     flex-direction: column-reverse;
+        // }
+    }
+
+}
