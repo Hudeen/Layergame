@@ -207,12 +207,12 @@ const Introducing: React.FC = () => {
       <div
         className='content'
         ref={contentRef}>
-        <h1>Tortor, arcu si.</h1>
-        <h2>Sed in consectetur risus sed sit velit.</h2>
+        <h1>introducing</h1>
+        <h2>A gaming hub where everyone earns</h2>
         <p>
-          Sodales imperdiet mattis eleifend nec luctus elit. Lorem platea platea et dictum nulla sed sed vel sed arcu dictum
-          leo, lectus ipsum cras justo vitae eleifend quis, cras venenatis nunc mauris nunc ipsum venenatis interdum eleifend
-          nunc risus vulputate ultricies.
+        LayerGame is a single platform for interaction between various players in the
+gaming industry.
+It serves as a showcase for gaming projects seeking attention and investment by providing developers with powerful tools
         </p>
       </div>
       {/* <div

@@ -31,7 +31,7 @@ function App() {
       <Header />
       <Main />
       <Introducing />
-      <Planets1 />
+      {/* <Planets1 /> */}
       <AboutUs />
       <About />
       <Projects />
