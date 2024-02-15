@@ -1,0 +1,19 @@
+<svg width="21.337891" height="24.795471" viewBox="0 0 21.3379 24.7955" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<desc>
+			Created with Pixso.
+	</desc>
+	<defs>
+		<linearGradient id="paint_linear_776_3228_0" x1="16.611582" y1="20.254776" x2="4.562803" y2="0.128271" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#3D0A61"/>
+			<stop offset="0.230000" stop-color="#310964"/>
+			<stop offset="0.640000" stop-color="#240967"/>
+			<stop offset="1.000000" stop-color="#200969"/>
+		</linearGradient>
+		<linearGradient id="paint_linear_776_3229_0" x1="20.129915" y1="11.223509" x2="3.975946" y2="20.881157" gradientUnits="userSpaceOnUse">
+			<stop stop-color="#090D4C"/>
+			<stop offset="1.000000" stop-color="#180033"/>
+		</linearGradient>
+	</defs>
+	<path id="Vector" d="M17.9971 1.0163L21.3379 13.3537L8.99219 24.7953L0.924805 15.8375C0.924805 15.8375 -2.53906 8.71191 3.93945 0.52771C3.93945 0.52771 14.9814 -0.93811 18.0371 1.0163L17.9971 1.0163Z" fill="url(#paint_linear_776_3228_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+	<path id="Vector" d="M21.3369 13.3539L15.3066 9.4043L0.882812 15.8376L8.9502 24.7955C8.9502 24.7955 15.1846 20.9274 21.2959 13.3539L21.3369 13.3539Z" fill="url(#paint_linear_776_3229_0)" fill-opacity="1.000000" fill-rule="evenodd"/>
+</svg>

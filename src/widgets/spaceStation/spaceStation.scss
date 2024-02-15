@@ -1,0 +1,34 @@
+.space-station {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-x: hidden;
+  padding: 80px 20px;
+  margin: 150px 0px;
+  background: linear-gradient(180deg, rgb(8, 0, 57), rgb(0, 0, 0) 100%);
+  p {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+    width: 90%;
+    font-size: 40px;
+    text-align: start;
+    color: #ffffff;
+    span {
+      text-align: end;
+    }
+  }
+  img:first-of-type {
+    position: absolute;
+    bottom: 100px;
+    z-index: 1001;
+  }
+  img {
+    position: absolute;
+    bottom: 0;
+  }
+}

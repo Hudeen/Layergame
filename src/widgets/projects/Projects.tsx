@@ -9,28 +9,28 @@ gsap.registerPlugin(ScrollTrigger)
 
 const Projects = () => {
   const containerRef = useRef<HTMLDivElement>(null)
+  const cardsRef = useRef<HTMLDivElement>(null)
+  const progressRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
-      gsap.to('.card__container', {
+    if (containerRef.current && containerRef.current.offsetWidth >= 1180) {
+      gsap.to(cardsRef.current, {
         scrollTrigger: {
-          trigger: '.card__container',
+          trigger: cardsRef.current,
           start: 'top center-=220',
           end: 'bottom+=800 center',
           scrub: true,
-          pin: '.wrapper',
+          pin: containerRef.current,
           toggleActions: 'restart none none reverse',
           pinType: 'transform',
         },
-        x: -4200,
+        x: -4300,
       })
 
-      const progressValue = document.querySelector('.progress-value')
-      gsap.to(progressValue, {
+      gsap.to(progressRef.current, {
         scrollTrigger: {
-          trigger: '.card__container',
-          start: 'top center -=200',
-          end: 'bottom+=800 center',
+          trigger: cardsRef.current,
+          start: 'top center',
           scrub: 1,
         },
         width: '100%',
@@ -43,10 +43,15 @@ const Projects = () => {
       className='wrapper'
       ref={containerRef}>
       <div className='progress'>
-        <div className='progress-value'></div>
+        <div
+          className='progress-value'
+          ref={progressRef}
+        />
       </div>
       <p className='title'>the project team</p>
-      <div className='card__container'>
+      <div
+        className='cards'
+        ref={cardsRef}>
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />

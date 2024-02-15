@@ -11,6 +11,7 @@ import Planets1 from '../entities/Planets/Planets1'
 import Projects from '../widgets/projects/Projects'
 import Acquaintance from '../widgets/acquaintance/acquaintance'
 import Footer from '../widgets/footer/footer'
+import { SpaceStation } from '../widgets/spaceStation/spaceStation'
 
 function App() {
   const lenis = new Lenis({
@@ -27,14 +28,15 @@ function App() {
 
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Main />
       <Introducing />
-      <Planets1 />
-      <AboutUs />
+      {/* <Planets1 /> */}
+      {/* <AboutUs /> */}
       <About />
       <Projects />
       <Acquaintance />
+      <SpaceStation />
       <Footer />
     </>
   )
