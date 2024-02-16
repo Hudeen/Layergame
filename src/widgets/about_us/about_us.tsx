@@ -19,25 +19,24 @@ const AboutUs: React.FC = () => {
     return (
         <div className='wrapper'>
             <div className="gaming">
-                <div className="item aboutUs__item">
+            <div className="item aboutUs__item-2" ref={container3}>
                     <div className="number">
-                        <h1 className="num" style={{ marginTop: '50px' }}>01</h1>
+                        <h1 className="num" style={{paddingRight: "4vw"}} >01</h1>
                         <img className='img one' src={BlueAustro} alt="Blue Austro" />
                         <img className='img two' src={PurpleAustron} alt="Purple Austron" />
                     </div>
-                    <div className="text">
-                        <h1 className='h1'>LAYERGAME APP</h1>
-                        <h2 className='title'>VITALIZING THE GAMING<br />INDUSTRY</h2>
-                        <h1 className='subtitle'>In the rapidly expanding universe
-                            of digital entertainment, LayerGame stands as a beacon of innovation.
-                            We have harnessed the transformative power of WEB3 technologies to create a
-                            comprehensive gaming ecosystem that goes beyond play to creation, publication,
-                            and monetization.
+                    <section className="text">
+                    <h1 className='h1'>LAYERGAME own games</h1>
+                        <h2 className='title'>full potential of the LayerGame SDK</h2>
+                        <h1 className='subtitle'>We're not just building games; we're building worlds,
+                            communities, and experiences. LayerGame is where every gamer's preference is
+                            recognized and celebrated. Join us on this thrilling journey to explore, play,
+                            and discover where your next gaming adventure will take you.
                         </h1>
-                    </div>
+                    </section>
                 </div>
 
-                <svg className='line' width="4" height="100%" viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className='line' width="4" style={{maxHeight: window.innerHeight * 0.3}} viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 0L2.00008 1721" stroke="url(#paint0_linear_262_457)" strokeWidth="3" />
                     <defs>
                         <linearGradient id="paint0_linear_262_457" x1="2.5" y1="-2.18557e-08" x2="2.50008" y2="1721" gradientUnits="userSpaceOnUse">
