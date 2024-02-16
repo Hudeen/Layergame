@@ -21,6 +21,7 @@
         }
 
         .item {
+            max-width: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -125,23 +126,29 @@
 
 }
 
+.aboutUs__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 @media only screen and (min-width: 1024px) {
     .wrapper {
         .gaming {
             .line {
                 position: absolute;
                 left: 50%;
-                height: 105vw;
+                min-height: 250vh !important;
                 display: block;
-                opacity: 0;
+                opacity: 1;
             }
             .item {
+                min-width: 100%;
+                display: flex;
                 flex-direction: row;
                 justify-content: center;
                 .number {
                     position: relative;
-                    left: 4vw;
-                    width: 30%;
                     .img {
                         position: absolute;
                     }
@@ -158,7 +165,7 @@
                     .img.three {
                         top: 15%;
                         width: 9vw;
-                        left: -5%;
+                        left: 25%;
                     }
                     .img.four {
                         top: 55%;
@@ -200,7 +207,6 @@
                     }
 
                     .subtitle {
-                        width: 85%;
                         padding: 0 5vw 0 5vw;
                         color: #8C8B92;
                         font-family: 'ClashGrotesk-Bold';
@@ -378,4 +384,112 @@
 
 .btn-3 span:after {
     width: 3%;
+}
+
+/* Existing styles */
+
+/* Add media query for tablets and larger screens */
+@media only screen and (min-width: 768px) {
+    .wrapper {
+        .gaming {
+            .line {
+                display: block;
+            }
+            .item {
+                max-width: 100%; /* Adjust max-width for better responsiveness */
+                .number {
+                    .img.one {
+                        top: 36%;
+                        width: 7.5vw; /* Adjust image width */
+                        left: 5vw; /* Adjust image position */
+                    }
+                    .img.two {
+                        right: 3vw;
+                        top: 20%;
+                        width: 7vw;
+                    }
+                    .img.three {
+                        top: 15%;
+                        width: 9vw;
+                        left: 25%;
+                    }
+                    .img.four {
+                        top: 55%;
+                        width: 4.5vw;
+                        right: 10%;
+                    }
+                    .img.five {
+                        top: 40%;
+                        width: 8vw;
+                        left: 1%;
+                    }
+                    .num {
+                        font-size: 20vw;
+                    }
+                }
+                .text {
+                    width: 45%; /* Adjust text width */
+                    .h1 {
+                        font-size: 1.9vw; /* Adjust font size */
+                    }
+                    .title {
+                        font-size: 3vw; /* Adjust font size */
+                    }
+                    .subtitle {
+                        font-size: 1.5vw; /* Adjust font size */
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Add media query for desktop screens */
+@media only screen and (min-width: 1024px) {
+    .wrapper {
+        .gaming {
+            .item {
+                min-width: 100%;
+                .number {
+                    .img.one {
+                        width: 7.5vw;
+                        left: 5vw;
+                    }
+                    .img.two {
+                        right: 3vw;
+                        top: 20%;
+                        width: 7vw;
+                    }
+                    .img.three {
+                        width: 9vw;
+                        left: 25%;
+                    }
+                    .img.four {
+                        width: 4.5vw;
+                        right: 10%;
+                    }
+                    .img.five {
+                        width: 8vw;
+                        left: 1%;
+                    }
+                    .num {
+                        font-size: 20vw;
+                    }
+                }
+                .text {
+                    width: 45%;
+                    .h1 {
+                        font-size: 1.9vw;
+                    }
+                    .title {
+                        font-size: 3vw;
+                    }
+                    .subtitle {
+                        width: 40vw !important;
+                        font-size: 1.5vw;
+                    }
+                }
+            }
+        }
+    }
 }
