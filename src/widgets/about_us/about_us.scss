@@ -343,6 +343,7 @@
 
 @media only screen and (min-width: 375px) {
     .wrapper {
+        margin: 0 auto;
         overflow-x: hidden;
     }
 
@@ -355,7 +356,7 @@
     }
 
     .wrapper .gaming .item {
-        max-width: 100%;
+        min-width: 100%;
         width: 100%;
         padding-right: 0;
         padding-left: 0;
@@ -384,8 +385,61 @@
         width: 100%;
     }
 
-    .wrapper .gaming .item .text .subtitle {
-        padding: 0;
+    .h1 {
+        font-size: 5vw;
+    }
+
+    .title {
+        font-size: 4vw;
+    }
+
+    .subtitle {
+        font-size: 3vw;
+    }
+}
+
+@media only screen and (min-width: 375px) {
+    .wrapper {
+        margin: 0 auto;
+        overflow-x: hidden;
+    }
+
+    .gaming {
+        padding: 0 10px;
+    }
+
+    .line {
+        display: none;
+    }
+
+    .wrapper .gaming .item {
+        min-width: 100%;
+        width: 100%;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .item {
+        width: 100%;
+        margin-bottom: 50px;
+        display: block;
+    }
+
+    .number {
+        text-align: center;
+        padding: 0 20px; 
+    }
+
+    .img {
+        width: 60px;
+    }
+
+    .num {
+        font-size: 10vw;
+    }
+
+    .text * {
+        width: 100%;
     }
 
     .h1 {
