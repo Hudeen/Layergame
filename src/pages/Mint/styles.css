@@ -199,3 +199,7 @@ color: #8C8B92;
         height: 100vh;
         z-index: 2;
       }
+
+      .star {
+        overflow-x: hidden;
+      }
