@@ -7,6 +7,10 @@
     position: relative;
 }
 
+.mint * {
+    z-index: 1;
+}
+
 .mint__main {
     width: 40%;
     height: 75vh;
@@ -135,6 +139,7 @@ color: #8C8B92;
     position: absolute;
     left: 0;
     bottom: -25%;
+    z-index: 2;
 }
 
 .mint__main__timer {
@@ -201,6 +206,8 @@ color: #8C8B92;
       }
 
       .star {
+        width: 1.5vh;
+        height: 1.5vh;
         overflow-x: hidden;
       }
 
