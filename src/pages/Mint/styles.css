@@ -203,3 +203,29 @@ color: #8C8B92;
       .star {
         overflow-x: hidden;
       }
+
+      @media only screen and (max-width: 375px) {
+        .mint {
+            flex-direction: column;
+            padding: 0 5vw;
+            padding-top: 40vh;
+        }
+
+        .mint__text {
+            width: 100%;
+        }
+
+        .mint__main_mainimg {
+            width: 100%;
+            height: auto;
+        }
+
+        .mint__main {
+            width: 100%;
+            margin-bottom: 30vh;
+        }
+
+        .mint__planetImg {
+            display: none;
+        }
+      }
