@@ -131,6 +131,12 @@ color: #8C8B92;
     object-fit: contain;
 }
 
+.mint__planetImg {
+    position: absolute;
+    left: 0;
+    bottom: -25%;
+}
+
 .mint__main__timer {
 box-sizing: border-box;
 display: flex;
@@ -186,3 +192,10 @@ line-height: 61px;
 text-align: center;
 color: #8C8B92;
     }
+
+    .stars-container {
+        position: absolute;
+        width: 100vh;
+        height: 100vh;
+        z-index: 2;
+      }
