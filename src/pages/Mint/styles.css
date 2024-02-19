@@ -1,0 +1,188 @@
+.mint {
+    width: 100%;
+    min-height: 76vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.mint__main {
+    width: 40%;
+    height: 75vh;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+}
+
+.minted__live {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    border: 1px solid rgba(20, 209, 232, 1);;
+    border-radius: 20px;
+}
+
+.minted__live__inner {
+    width: 20px;
+    height: 20px;
+    background: rgba(20, 209, 232, 1);
+    border-radius: 10px;
+}
+
+.minted__num {
+    margin: 0 2vw;
+font-family: 'Clash Grotesk';
+font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 39px;
+color: #14D1E8;
+}
+
+.mint__text {
+font-family: 'Clash Grotesk';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 30px;
+color: #8F92D4;
+}
+
+.mint__title {
+    padding: 3vh 0;
+font-family: 'Clash Grotesk' sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 75px;
+line-height: 100%;
+letter-spacing: 0.03em;
+text-transform: capitalize;
+color: rgba(255, 255, 255, 1);
+}
+
+.mint__title span {
+    background: linear-gradient(94.36deg, #20C7ED 0%, #D251FD 79.2%),
+    linear-gradient(0deg, #A1A1A1, #A1A1A1),
+    linear-gradient(0deg, #FFFFFF, #FFFFFF);
+                    -webkit-background-clip: text;
+                    -webkit-text-stroke: 6px transparent;
+                    color: transparent;
+}
+
+.mint__main_button {
+    padding: 5vh 0;
+}
+
+.mint__main_button__mintNow {
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+margin-right: 5vw;
+padding: 20px 50px;
+gap: 10px;
+background: linear-gradient(93.97deg, #20C7ED 0%, #D251FD 99.79%), #A1A1A1;
+border-radius: 10px;
+font-family: 'Clash Grotesk Variable';
+font-weight: 600;
+font-size: 24px;
+line-height: 26px;
+color: #FFFFFF;
+}
+
+.mint__main_remaining {
+    display: flex;
+    flex-direction: column;
+    padding: 1vh 2vh;
+}
+.mint__main_remaining h3 {
+    margin-bottom: 1vh;
+font-family: 'Clash Grotesk';
+font-style: normal;
+font-weight: 600;
+font-size: 36px;
+line-height: 100%;
+letter-spacing: 0.03em;
+text-transform: capitalize;
+color: #FFFFFF;
+}
+
+.mint__main_remaining p {
+font-family: 'Clash Grotesk';
+font-weight: 500;
+font-size: 20px;
+line-height: 100%;
+letter-spacing: 0.03em;
+text-transform: capitalize;
+color: #8C8B92;
+}
+
+.mint__main_mainimg {
+    width: auto;
+    height: 60vh;
+    object-fit: contain;
+}
+
+.mint__main__timer {
+box-sizing: border-box;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+position: absolute;
+bottom: 5%;
+right: 38%;
+padding: 2vh 1.5vw;
+background: linear-gradient(180deg, rgba(195, 92, 252, 0) 0%, rgba(195, 92, 252, 0.4) 100%), rgba(0, 0, 0, 0.4);
+border: 1px solid rgba(255, 255, 255, 0.2);
+backdrop-filter: blur(4px);
+border-radius: 10px;
+}
+
+.hours, .minutes, .seconds {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.digit {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+    text-align: center;
+    color: #FFFF
+    }
+
+    .timer__text {
+        margin-top: .5vh;
+font-family: 'Clash Grotesk';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+color: #8C8B92;
+    }
+
+    .divider {
+        margin: 0 .5vw;
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 50px;
+line-height: 61px;
+text-align: center;
+color: #8C8B92;
+    }

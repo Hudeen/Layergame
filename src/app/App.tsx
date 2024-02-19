@@ -12,6 +12,7 @@ import Projects from '../widgets/projects/Projects'
 import Acquaintance from '../widgets/acquaintance/acquaintance'
 import Footer from '../widgets/footer/footer'
 import { SpaceStation } from '../widgets/spaceStation/spaceStation'
+import { Mint } from '../pages/Mint'
 
 function App() {
   const lenis = new Lenis({
@@ -29,14 +30,7 @@ function App() {
   return (
     <div className='mainPage'>
       <Header />
-      <Main />
-      <Introducing />
-      {/* <Planets1 /> */}
-      <AboutUs />
-      <About />
-      <Projects />
-      <Acquaintance />
-      {/* <SpaceStation /> */}
+      <Mint/>
       <Footer />
     </div>
   )
