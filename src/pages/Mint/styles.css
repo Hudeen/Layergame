@@ -204,6 +204,18 @@ color: #8C8B92;
         overflow-x: hidden;
       }
 
+      @media only screen and (max-width: 1024px) {
+        .mint {
+            padding-top: 15vh;
+        }
+      }
+
+      @media only screen and (max-width: 1024px) {
+        .mint__planetImg {
+            display: none;
+        }
+      }
+
       @media only screen and (max-width: 375px) {
         .mint {
             flex-direction: column;
