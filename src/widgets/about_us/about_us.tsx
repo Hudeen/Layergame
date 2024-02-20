@@ -8,25 +8,91 @@ import PurpleAustron from '../../shared/assets/images/PurpleAustron.svg';
 import Alien from '../../shared/assets/images/Alien.svg';
 import Ship from '../../shared/assets/images/Ship.svg';
 import Rocket from '../../shared/assets/images/Rocket.svg';
+import Orbit from '../orbit/orbit';
 
 gsap.registerPlugin(ScrollTrigger);
+
+
 
 const AboutUs: React.FC = () => {
     const container2 = useRef<HTMLDivElement | null>(null);
     const container3 = useRef<HTMLDivElement | null>(null);
-    useGSAP(() => {}, [container2, container3]);
+    useGSAP(() => {
+
+        gsap.fromTo(".line", {
+            opacity: 0,
+        }, {
+            scrollTrigger: {
+                trigger: ".gaming",
+                start: "top+=1 center",
+                end: "bottom center",
+                scrub: true
+            },
+            opacity: 1,
+        });
+
+        const container = document.querySelector('.aboutUs__item') as HTMLElement;
+        const options = {
+            trigger: container,
+            start: 'top 40%',
+            end: '100px 40%',
+            toggleActions: 'restart none none reverse',
+        };
+        gsap.fromTo(container, {
+            opacity: 0,
+        }, {
+            opacity: 1,
+            duration: 0.4,
+            y: 0,
+            scrollTrigger: options,
+        });
+
+        if (container2.current) {
+            const options2 = {
+                trigger: container2.current,
+                start: 'top 40%',
+                end: '100px 40%',
+                toggleActions: 'restart none none reverse',
+            };
+            gsap.fromTo(container2.current, {
+                opacity: 0,
+            }, {
+                opacity: 1,
+                duration: 0.4,
+                y: 0,
+                scrollTrigger: options2,
+            });
+        }
+
+        if (container3.current) {
+            const options3 = {
+                trigger: container3.current,
+                start: 'top 40%',
+                end: '100px 40%',
+                toggleActions: 'restart none none reverse',
+            };
+            gsap.fromTo(container3.current, {
+                opacity: 0,
+            }, {
+                opacity: 1,
+                duration: 0.4,
+                y: 0,
+                scrollTrigger: options3,
+            });
+        }
+    }, [container2, container3]);
 
     return (
-        <div className='wrapper'>
+        <div className='wrapper__gaming'>
             <div className="gaming">
-            <div className="item aboutUs__item-2" ref={container3}>
+                <div className="item aboutUs__item">
                     <div className="number">
-                        <h1 className="num" style={{paddingRight: "4vw"}} >01</h1>
+                        <h1 className="num" style={{ paddingRight: "4vw" }} >01</h1>
                         <img className='img one' src={BlueAustro} alt="Blue Austro" />
                         <img className='img two' src={PurpleAustron} alt="Purple Austron" />
                     </div>
                     <section className="text">
-                    <h1 className='h1'>LAYERGAME own games</h1>
+                        <h1 className='h1'>LAYERGAME own games</h1>
                         <h2 className='title'>full potential of the LayerGame SDK</h2>
                         <h1 className='subtitle'>We're not just building games; we're building worlds,
                             communities, and experiences. LayerGame is where every gamer's preference is
@@ -36,7 +102,7 @@ const AboutUs: React.FC = () => {
                     </section>
                 </div>
 
-                <svg className='line' width="4" style={{maxHeight: window.innerHeight * 0.3}} viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className='line' width="4" style={{ maxHeight: window.innerHeight * 0.3 }} viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 0L2.00008 1721" stroke="url(#paint0_linear_262_457)" strokeWidth="3" />
                     <defs>
                         <linearGradient id="paint0_linear_262_457" x1="2.5" y1="-2.18557e-08" x2="2.50008" y2="1721" gradientUnits="userSpaceOnUse">
@@ -49,7 +115,7 @@ const AboutUs: React.FC = () => {
                 </svg>
 
                 <div className="item reverse" ref={container2}>
-                    <div className="number reserve" style={{paddingLeft: "6vw"}} >
+                    <div className="number reserve" style={{ paddingLeft: "6vw" }} >
                         <h1 className="num">02</h1>
                         <img className='img three' src={Alien} alt="Alien" />
                         <img className='img four' src={Ship} alt="Ship" />
@@ -82,6 +148,7 @@ const AboutUs: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <Orbit />
         </div>
     );
 }

@@ -44,7 +44,7 @@ const PurplePlanet = () => {
                 </defs>
             </svg> */}
 
-            <svg className='purplePlanet'
+            <svg id="planet" className='purplePlanet'
                 width="162"
                 height="162"
                 viewBox="0 0 162 162"

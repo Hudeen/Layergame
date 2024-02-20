@@ -7,12 +7,10 @@ import Lenis from '@studio-freight/lenis'
 import AboutUs from '../widgets/about_us/about_us'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Planets1 from '../entities/Planets/Planets1'
+
 import Projects from '../widgets/projects/Projects'
 import Acquaintance from '../widgets/acquaintance/acquaintance'
 import Footer from '../widgets/footer/footer'
-import { SpaceStation } from '../widgets/spaceStation/spaceStation'
-import { Mint } from '../pages/Mint'
 
 function App() {
   const lenis = new Lenis({
@@ -30,7 +28,13 @@ function App() {
   return (
     <div className='mainPage'>
       <Header />
-      <Mint/>
+      <Main />
+      <Introducing />
+      <AboutUs />
+      <About />
+      <Projects />
+      <Acquaintance />
+      {/* <SpaceStation /> */}
       <Footer />
     </div>
   )

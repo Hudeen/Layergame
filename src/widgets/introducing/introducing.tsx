@@ -43,62 +43,49 @@ const Introducing: React.FC = () => {
   }, [])
 
   //Comets animation
-  // useGSAP(() => {
-  //   const options = {
-  //     trigger: containerRef.current,
-  //     // start: '-100px',
-  //     end: 'center center',
-  //     toggleActions: 'restart none none reverse',
-  //   }
+  useGSAP(
+    () => {
+      const options = {
+        trigger: containerRef.current,
+        start: '-100%',
+        end: 'center center',
+        toggleActions: 'restart none none reverse',
+      }
 
-  //   gsap.from(cometsRef.current, {
-  //     y: '100%',
-  //     opacity: 0,
-  //     duration: 0.8,
-  //     scale: 0.3,
-  //     scrollTrigger: options,
-  //   })
+      if (cometsRef.current) {
+        const maxX = window.innerWidth
+        const maxY = window.innerHeight
+        const angle = 40
 
-  //   gsap.to(cometsRef.current, {
-  //     opacity: 1,
-  //     duration: 0.8,
-  //     scale: 1.5,
-  //     y: -500,
-  //     scrollTrigger: options,
-  //   })
+        ;[...cometsRef.current.children].forEach((comet: Element) => {
+          const maxXPosition = maxX
+          const randomYPosition = gsap.utils.random(0, maxY)
 
-  //   if (cometsRef.current) {
-  //     const maxX = window.innerWidth
-  //     const maxY = window.innerHeight
-  //     const angle = 40
+          const radianAngle = (angle * Math.PI) / 180
+          const xComponent = Math.cos(radianAngle) * maxXPosition
+          const yComponent = Math.sin(radianAngle) * maxXPosition
 
-  //     ;[...cometsRef.current.children].forEach((comet: Element) => {
-  //       const maxXPosition = maxX
-  //       const randomYPosition = gsap.utils.random(0, maxY)
+          gsap.set(comet, {
+            x: xComponent - 100,
+            y: randomYPosition,
+            scale: 0,
+            filter: `blur(${gsap.utils.random(0, 5)}px)`,
+          })
 
-  //       const radianAngle = (angle * Math.PI) / 180
-  //       const xComponent = Math.cos(radianAngle) * maxXPosition
-  //       const yComponent = Math.sin(radianAngle) * maxXPosition
-
-  //       gsap.set(comet, {
-  //         x: xComponent,
-  //         y: randomYPosition,
-  //         scale: 0,
-  //         filter: `blur(${gsap.utils.random(0, 5)}px)`,
-  //       })
-
-  //       gsap.to(comet, {
-  //         x: -xComponent,
-  //         y: randomYPosition + yComponent,
-  //         scale: gsap.utils.random(0.5, 1),
-  //         duration: gsap.utils.random(3, 12),
-  //         repeat: -1,
-  //         opacity: 0,
-  //         ease: 'none',
-  //       })
-  //     })
-  //   }
-  // }, [])
+          gsap.to(comet, {
+            x: -xComponent,
+            y: randomYPosition + yComponent,
+            scale: gsap.utils.random(0.5, 1),
+            duration: gsap.utils.random(3, 12),
+            repeat: -1,
+            opacity: 0,
+            ease: 'none',
+          })
+        })
+      }
+    },
+    { scope: containerRef }
+  )
 
   //Starts animation
   useGSAP(
@@ -199,7 +186,7 @@ const Introducing: React.FC = () => {
     },
     { scope: containerRef }
   )
-  
+
   return (
     <section
       className='introducing'
@@ -210,12 +197,11 @@ const Introducing: React.FC = () => {
         <h1>introducing</h1>
         <h2>A gaming hub where everyone earns</h2>
         <p>
-        LayerGame is a single platform for interaction between various players in the
-gaming industry.
-It serves as a showcase for gaming projects seeking attention and investment by providing developers with powerful tools
+          LayerGame is a single platform for interaction between various players in the gaming industry. It serves as a
+          showcase for gaming projects seeking attention and investment by providing developers with powerful tools
         </p>
       </div>
-      {/* <div
+      <div
         className='comet-container'
         ref={cometsRef}>
         {[...Array(4)].map((_, index) => (
@@ -315,7 +301,7 @@ It serves as a showcase for gaming projects seeking attention and investment by 
             </defs>
           </svg>
         ))}
-      </div> */}
+      </div>
       <div
         className='stars-container'
         ref={starsRef}>

@@ -13,7 +13,7 @@ const Projects = () => {
   const progressRef = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
-    if (containerRef.current && containerRef.current.offsetWidth >= 1180) {
+    if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
       gsap.to(cardsRef.current, {
         scrollTrigger: {
           trigger: cardsRef.current,
