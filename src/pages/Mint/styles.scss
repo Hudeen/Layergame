@@ -1,5 +1,5 @@
 .mint {
-  width: 100мц;
+  width: 100vw;
   min-height: 76vh;
   display: flex;
   justify-content: center;
@@ -248,40 +248,30 @@
     overflow-x: hidden;
   }
   
-  @media only screen and (max-width: 1024px) {
-    .mint {
-      padding-top: 15vh;
-    }
-  }
-  
-  @media only screen and (max-width: 1024px) {
-    &__planetImg {
-      display: none; 
-    }
-  }
-
   @media only screen and (max-width: 375px) {
-    flex-direction: column;
-    padding: 0 5vw;
-    padding-top: 40vh;
-
-    &__text {
-      width: 100%;
+    .mint {
+        display: block;
+        padding: 0 5vw;
+        padding-top: 40vh;
     }
 
-    &__main {
+    .mint__text {
+        width: 100%;
+    }
 
-      &_mainimg {
+    .mint__main_mainimg {
         width: 100%;
         height: auto;
-      }
+    }
 
-      width: 100%;
-      margin-bottom: 30vh;
+    .mint .mint__main .mint__title {
+        width: 100% !important;
+        min-width: 100% !important;
+        margin-bottom: 30vh;
     }
-  
-    &__planetImg {
-      display: none;
+
+    .mint__planetImg {
+        display: none;
     }
-  }  
+  }
 }
