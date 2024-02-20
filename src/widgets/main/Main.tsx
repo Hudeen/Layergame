@@ -52,9 +52,9 @@ const Main: React.FC = () => {
                 pin: true,
                 pinType: "transform"
             },
-            // y: -50,
-            // scale: 1.5,
-            // opacity: 1,
+            y: -50,
+            scale: 1,
+            opacity: 0,
         });
     });
 
