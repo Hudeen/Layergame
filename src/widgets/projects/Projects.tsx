@@ -30,7 +30,8 @@ const Projects = () => {
       gsap.to(progressRef.current, {
         scrollTrigger: {
           trigger: cardsRef.current,
-          start: 'top center',
+          start: 'top center-=220',
+          end: 'bottom+=800 center',
           scrub: 1,
         },
         width: '100%',

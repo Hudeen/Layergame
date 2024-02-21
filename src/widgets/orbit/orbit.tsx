@@ -48,6 +48,10 @@ const Orbit = () => {
                 }
             });
 
+            gsap.set(".orbit", {
+                scale: 1
+            })
+
             gsap.to(".orbit", {
                 scrollTrigger: {
                     trigger: ".gaming",
@@ -56,7 +60,7 @@ const Orbit = () => {
                     scrub: true,
                 },
                 opacity: 1,
-                scale: 1,
+                scale: 1.2,
                 onComplete: () => {
                     gsap.to(".orbit", {
                         scrollTrigger: {
@@ -65,7 +69,7 @@ const Orbit = () => {
                             end: "bottom+=700 center",
                             scrub: true,
                         },
-                        scale: 1.2,
+                        scale: 1.4,
                         opacity: 0
                     });
                 }
