@@ -13,6 +13,7 @@ import Acquaintance from '../widgets/acquaintance/acquaintance'
 import Footer from '../widgets/footer/footer'
 import { SpaceStation } from '../widgets/spaceStation/spaceStation'
 import { Mint } from '../pages/Mint'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
   const lenis = new Lenis({
@@ -28,9 +29,14 @@ function App() {
   gsap.ticker.lagSmoothing(0)
 
   return (
-    <div >
+    <div className='mainPage'>
       <Header />
-      <Mint/>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main/>} />
+          <Route path="/mint" element={<Mint/>} />
+        </Routes>
+      </BrowserRouter>
       <Footer />
     </div>
   )
