@@ -117,6 +117,7 @@ export const Mint: React.FC = () => {
 
     return (
         <div className="mint" ref={containerRef}>
+            <section className="mint__wrapper">
             <section className="mint__main">
                 <section className="mint__minted row">
                     <div className="minted__live">
@@ -183,6 +184,7 @@ share art freely
 
         ))}
       </div>
+            </section>
         </div>
     )
 }
