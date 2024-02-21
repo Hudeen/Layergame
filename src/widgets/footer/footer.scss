@@ -1,7 +1,5 @@
-/* 
-   Основные стили для футера 
-*/
 footer {
+  position: relative;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -11,26 +9,16 @@ footer {
   border-top: solid 2px #bd60fb;
   box-shadow: -10px 10px 20px #29c1ee, -20px 20px 40px #bd60fb;
   background: linear-gradient(180deg, rgb(0, 0, 0), rgb(3, 3, 10) 73.318%);
-
-  /* 
-    Стили для главного блока внутри футера 
-  */
+  z-index: 1000;
   .footer-main {
     display: flex;
     flex-direction: column;
     gap: 20px;
-
-    /* 
-      Стили для логотипа внутри главного блока 
-    */
     .logo {
       display: flex;
       align-items: center;
       gap: 20px;
 
-      /* 
-        Стили для заголовка h1 внутри логотипа 
-      */
       h1 {
         font-size: 36px;
         font-weight: 600;
@@ -42,16 +30,10 @@ footer {
       }
     }
 
-    /* 
-      Стили для блока с социальными иконками внутри главного блока 
-    */
     .social {
       display: flex;
       gap: 12px;
 
-      /* 
-        Стили для изображений в блоке с социальными иконками 
-      */
       img {
         width: 32px;
         height: 32px;
@@ -62,26 +44,17 @@ footer {
     }
   }
 
-  /* 
-    Стили для блока с ссылками внутри футера 
-  */
   .links {
     display: flex;
     flex-direction: column;
     gap: 10px;
 
-    /* 
-      Стили для абзацев в блоке с ссылками 
-    */
     p {
       cursor: pointer;
       color: #505050;
       font-size: 18px;
       font-weight: 400;
 
-      /* 
-        Стили для первого абзаца в блоке с ссылками 
-      */
       &:first-of-type {
         color: #ffffff;
         font-size: 32px;
@@ -90,9 +63,6 @@ footer {
         margin-bottom: 10px;
       }
 
-      /* 
-        Эффект при наведении на абзац 
-      */
       &:hover {
         transition: color 0.3s ease-in-out;
         color: #ffffff;
@@ -101,9 +71,6 @@ footer {
   }
 }
 
-/* 
-  Медиазапрос для экранов шириной более 1200px 
-*/
 @media only screen and (min-width: 1280px) {
   footer {
     width: 100vw;
@@ -112,12 +79,3 @@ footer {
     justify-content: space-around;
   }
 }
-
-// & в SCSS:
-
-// & используется для ссылки на родительский селектор вложенного правила.
-// Например, &:hover будет применять стили к родительскому элементу при наведении на него курсора.
-// first-of-type:
-
-// first-of-type - это псевдокласс, который выбирает первый элемент определенного типа внутри своего родителя.
-// В данном коде, &:first-of-type применяет стили только к первому абзацу в блоке .links, позволяя выделить его с другими абзацами.

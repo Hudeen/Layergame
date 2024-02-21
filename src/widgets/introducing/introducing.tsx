@@ -52,6 +52,11 @@ const Introducing: React.FC = () => {
         toggleActions: 'restart none none reverse',
       }
 
+      gsap.set(cometsRef.current, {
+        y: -300,
+        scrollTrigger: options,
+      })
+
       if (cometsRef.current) {
         const maxX = window.innerWidth
         const maxY = window.innerHeight
@@ -95,7 +100,7 @@ const Introducing: React.FC = () => {
 
         const starsOnEnter = {
           scrub: true,
-          start: 'top +=1300',
+          start: 'top +=1500',
           trigger: containerRef.current,
           toggleActions: 'restart none none reverse',
           onEnter: () => {
@@ -184,7 +189,7 @@ const Introducing: React.FC = () => {
         )
       }
     },
-    { scope: containerRef }
+    { scope: containerRef || undefined }
   )
 
   return (

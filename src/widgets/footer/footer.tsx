@@ -18,7 +18,6 @@ const Footer: React.FC = () => {
             src={logo}
             alt='logo'
           />
-          <h1>LayerGame</h1>
         </div>
         <div className='social'>
           <img
