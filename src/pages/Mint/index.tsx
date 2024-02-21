@@ -127,7 +127,7 @@ export const Mint: React.FC = () => {
                 </section>
                 <h1 className="mint__title">
                     Remove borders <br/>
-                        with <span>NFTs</span>
+                        with <h1 className="mint__title__color">NFTs</h1>
                         <br/>
 share art freely
                 </h1>
@@ -180,7 +180,7 @@ share art freely
             fillOpacity='0.3'
           />
         </svg>
-        
+
         ))}
       </div>
         </div>

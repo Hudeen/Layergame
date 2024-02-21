@@ -28,7 +28,7 @@ function App() {
   gsap.ticker.lagSmoothing(0)
 
   return (
-    <div className='mainPage'>
+    <div >
       <Header />
       <Mint/>
       <Footer />
