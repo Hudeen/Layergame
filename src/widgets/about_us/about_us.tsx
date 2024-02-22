@@ -9,7 +9,6 @@ import Alien from '../../shared/assets/images/Alien.svg'
 import Ship from '../../shared/assets/images/Ship.svg'
 import Rocket from '../../shared/assets/images/Rocket.svg'
 import Orbit from '../orbit/orbit'
-import Star from '../../entities/stars/Star'
 import BluePlanetMobile from '../../shared/assets/planets/BluePlanet/BluePlanetMobile'
 import PurplePlanetMobile from '../../shared/assets/planets/PurplePlanet/PurplePlanetMobile'
 

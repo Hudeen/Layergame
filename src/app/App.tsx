@@ -1,17 +1,11 @@
 import './App.css'
 import Header from '../widgets/header/header'
 import MainPage from '../pages/Main/MainPage'
-import About from '../widgets/about/about'
-import Introducing from '../widgets/introducing/introducing'
 import Lenis from '@studio-freight/lenis'
-import AboutUs from '../widgets/about_us/about_us'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-import Projects from '../widgets/projects/Projects'
-import Acquaintance from '../widgets/acquaintance/acquaintance'
 import Footer from '../widgets/footer/footer'
-import { SpaceStation } from '../widgets/spaceStation/spaceStation'
 import { Mint } from '../pages/Mint'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 

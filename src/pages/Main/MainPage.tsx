@@ -7,14 +7,12 @@ import Lenis from '@studio-freight/lenis'
 // import AboutUs from '../widgets/about_us/about_us'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
-import Header from '../../widgets/header/header'
 import Main from '../../widgets/main/Main'
 import Introducing from '../../widgets/introducing/introducing'
 import AboutUs from '../../widgets/about_us/about_us'
 import About from '../../widgets/about/about'
 import Projects from '../../widgets/projects/Projects'
 import Acquaintance from '../../widgets/acquaintance/acquaintance'
-import Footer from '../../widgets/footer/footer'
 import Partners from '../../widgets/partners/partners'
 
 // import Projects from '../widgets/projects/Projects'
@@ -36,7 +34,6 @@ function MainPage() {
 
   return (
     <div className='mainPage'>
-      {/* <Header /> */}
       <Main />
       <Introducing />
       <AboutUs />
@@ -44,8 +41,6 @@ function MainPage() {
       <Partners />
       <Projects />
       <Acquaintance />
-      {/* <SpaceStation /> */}
-      {/* <Footer /> */}
     </div>
   )
 }
