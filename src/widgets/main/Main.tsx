@@ -5,7 +5,6 @@ import { useGSAP } from "@gsap/react";
 import Lottie from "lottie-react";
 import React, { useEffect, useRef } from "react";
 import groovyWalkAnimation from "./animation.json";
-import logo from '../../shared/assets/icons/logo.svg'
 import Saturn from "../../shared/assets/planets/Saturn/Saturn";
 import PurplePlanet from "../../shared/assets/planets/PurplePlanet/PurplePlanetMain";
 
