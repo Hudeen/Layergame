@@ -68,11 +68,11 @@ const Header: React.FC = () => {
         onAnimationEnd={handleAnimationEnd}>
         <h1 className='title'>Platea vitae interdum.</h1>
         <h2 className='subtitle'>Dui cras et. Malesuada eget odio. Pellentesque orci.</h2>
-        <div className='item'>
+        {/* <div className='item'>
           <a className='link'>Link1</a>
           <a className='link'>Link2</a>
           <a className='link'>Link3</a>
-        </div>
+        </div> */}
         <div className='glare'></div>
       </div>
 
