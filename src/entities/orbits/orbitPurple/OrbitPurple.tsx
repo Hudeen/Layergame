@@ -1,7 +1,7 @@
 import React from 'react';
 import gsap from 'gsap';
 import { useGSAP } from "@gsap/react";
-import PurplePlanet from "../../../shared/assets/planets/PurplePlanet/PurplePlanet";
+import PurplePlanet from "../../../shared/assets/planets/PurplePlanet/PurplePlanetMain";
 import "./OrbitPurple.css";
 
 const OrbitBlue: React.FC = () => {

@@ -7,6 +7,25 @@
     height: auto;
     position: relative;
     z-index: 2;
+    overflow: hidden;
+
+    .bluePlanetMobile {
+        display: block;
+        position: absolute;
+        top: 26%;
+        right: 50%;
+        width: 80vw;
+        height: 80vw;
+    }
+
+    .purplePlanetMobile {
+        display: block;
+        position: absolute;
+        top: 74%;
+        left: 65%;
+        width: 65vw;
+        height: 65vw;
+    }
 
     .gaming {
         width: 100%;
@@ -22,7 +41,6 @@
         }
 
         .item {
-            max-width: 50%;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -138,6 +156,16 @@
         margin-bottom: 400px;
         margin-top: 400px;
         position: relative;
+        overflow: visible;
+
+        .bluePlanetMobile {
+            display: none;   
+        }
+
+        .purplePlanetMobile {
+            display: none;
+        }
+
         .orbit {
             position: absolute;
             top: -40%;
@@ -146,9 +174,8 @@
             .line {
                 position: absolute;
                 left: 50%;
-                min-height: 250vh !important;
+                height: 100%;
                 display: block;
-                opacity: 1;
             }
             .item {
                 min-width: 100%;
@@ -303,59 +330,3 @@
     }
 }
 
-@media only screen and (min-width: 375px) {
-    .wrapper {
-        margin: 0 auto;
-        overflow-x: hidden;
-    }
-
-    .gaming {
-        padding: 0 10px;
-    }
-
-    .line {
-        display: none;
-    }
-
-    .wrapper .gaming .item {
-        min-width: 100%;
-        width: 100%;
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .item {
-        width: 100%;
-        margin-bottom: 50px;
-        display: block;
-    }
-
-    .number {
-        text-align: center;
-        padding: 0 20px; 
-    }
-
-    .img {
-        width: 60px;
-    }
-
-    .num {
-        font-size: 10vw;
-    }
-
-    .text * {
-        width: 100%;
-    }
-
-    .h1 {
-        font-size: 5vw;
-    }
-
-    .title {
-        font-size: 4vw;
-    }
-
-    .subtitle {
-        font-size: 3vw;
-    }
-}

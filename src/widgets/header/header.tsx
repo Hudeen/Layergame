@@ -61,7 +61,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <div
-        className={`navigaion ${isOpened ? 'open' : ''}`}
+        className={`navigaion h__mobile_hidden ${isOpened ? 'open' : ''}`}
         ref={navigationRef}
         onMouseLeave={handleMouseLeave}
         onAnimationStart={handleAnimationStart}
@@ -83,7 +83,7 @@ const Header: React.FC = () => {
         />
       </div>
 
-      <div className='header__item'>
+      <div className='header__item h__mobile_hidden'>
         <div className={`navigaion__menu ${isOpened ? 'open' : ''}`}>
           <a className='navigaion__menu-link'>Technology</a>
           <a className='navigaion__menu-link'>Our Mission</a>

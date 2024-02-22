@@ -4,8 +4,9 @@ import { useGSAP } from "@gsap/react";
 import MotionPathPlugin from 'gsap/MotionPathPlugin';
 
 import Path from './path';
-import PurplePlanet from '../../shared/assets/planets/PurplePlanet/PurplePlanet';
-import BluePlanet from '../../shared/assets/planets/BluePlanet/BluePlanetBig';
+import PurplePlanetGaming from '../../shared/assets/planets/PurplePlanet/PurplePlanetGaming';
+import BluePlanetBig from '../../shared/assets/planets/BluePlanet/BluePlanetBig';
+
 
 gsap.registerPlugin(MotionPathPlugin);
 const Orbit = () => {
@@ -34,25 +35,26 @@ const Orbit = () => {
                     pinType: "transform",
                     scrub: true,
                     onEnter: () => {
-                        animatePlanet('#planet', '#path');
+                        animatePlanet('.purplePlanetGaming', '#path');
                     },
                     onLeave: () => {
-                        gsap.killTweensOf('#planet');
+                        gsap.killTweensOf('.purplePlanetGaming');
                     },
                     onLeaveBack: () => {
-                        gsap.killTweensOf('#planet');
+                        gsap.killTweensOf('.purplePlanetGaming');
                     },
                     onEnterBack: () => {
-                        animatePlanet('#planet', '#path');
+                        animatePlanet('.purplePlanetGaming', '#path');
                     }
                 }
             });
 
-            gsap.set(".orbit", {
-                scale: 1
-            })
+            gsap.set(".test, .bluePlanetBig", {
+                scale: 1,
+                opacity: 0
+              }); 
 
-            gsap.to(".orbit", {
+            gsap.to(".test", {
                 scrollTrigger: {
                     trigger: ".gaming",
                     start: "top-=200 center",
@@ -62,7 +64,7 @@ const Orbit = () => {
                 opacity: 1,
                 scale: 1.2,
                 onComplete: () => {
-                    gsap.to(".orbit", {
+                    gsap.to(".test", {
                         scrollTrigger: {
                             trigger: ".gaming",
                             start: "bottom+=400 center",
@@ -74,16 +76,43 @@ const Orbit = () => {
                     });
                 }
             });
-
         }
+
+
+        gsap.to(".bluePlanetBig", {
+            scrollTrigger: {
+                trigger: ".gaming",
+                start: "top-=200 center",
+                end: "top+=150 center",
+                scrub: true,
+            },
+            opacity: 1,
+            scale: 1.2,
+            onComplete: () => {
+                gsap.to(".bluePlanetBig", {
+                    scrollTrigger: {
+                        trigger: ".gaming",
+                        start: "bottom+=400 center",
+                        end: "bottom+=700 center",
+                        scrub: true,
+                    },
+                    scale: 1.4,
+                    opacity: 0
+                });
+            }
+        });
     });
+
+    // bluePlanetBig
 
     return (
         <>
-            <div style={{ opacity: 0 }} className='orbit'>
-                <Path />
-                <PurplePlanet />
-                <BluePlanet />
+            <div className='orbit'>
+                <div className='test'>
+                    <Path />
+                    <PurplePlanetGaming />
+                </div>
+                <BluePlanetBig />
             </div>
         </>
     )

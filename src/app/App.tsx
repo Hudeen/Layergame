@@ -15,6 +15,8 @@ import { SpaceStation } from '../widgets/spaceStation/spaceStation'
 import { Mint } from '../pages/Mint'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
+import MobileNav from '../entities/mobileNav/mobileNav'
+
 function App() {
   const lenis = new Lenis({
     duration: 1.5,
@@ -30,7 +32,8 @@ function App() {
 
   return (
     <div className='mainPage'>
-      {/* <Header /> */}
+      <Header />
+      <MobileNav />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage />} />

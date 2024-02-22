@@ -2,6 +2,7 @@ header {
   position: fixed;
   height: 120px;
   width: 100%;
+  top: 0;
 
   padding-left: 10%;
   padding-right: 10%;
@@ -324,4 +325,10 @@ a.active {
   /* For example: */
   font-weight: bold;
   color: blue;
+}
+
+@media only screen and (max-width: 1024px) {
+  .h__mobile_hidden {
+    display: none;
+  }
 }

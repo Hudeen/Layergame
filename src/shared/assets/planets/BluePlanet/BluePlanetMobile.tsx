@@ -1,8 +1,8 @@
-const BluePlanetBig = () => {
+const BluePlanetMobile = () => {
 
     return (
         <>
-            <svg className="bluePlanetBig" width="1256.000000" height="1255.939941" viewBox="0 0 1256 1255.94" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg className="bluePlanetMobile" width="1256.000000" height="1255.939941" viewBox="0 0 1256 1255.94" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="paint_linear_221_2034_0" x1="627.686401" y1="134.419434" x2="627.686401" y2="1121.514893" gradientUnits="userSpaceOnUse">
                         <stop stop-color="#2AC0EE" />
@@ -88,4 +88,4 @@ const BluePlanetBig = () => {
     )
 }
 
-export default BluePlanetBig
+export default BluePlanetMobile

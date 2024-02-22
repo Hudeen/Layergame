@@ -10,6 +10,8 @@ import Ship from '../../shared/assets/images/Ship.svg';
 import Rocket from '../../shared/assets/images/Rocket.svg';
 import Orbit from '../orbit/orbit';
 import Star from '../../entities/stars/Star';
+import BluePlanetMobile from '../../shared/assets/planets/BluePlanet/BluePlanetMobile';
+import PurplePlanetMobile from '../../shared/assets/planets/PurplePlanet/PurplePlanetMobile';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,103 +24,122 @@ const AboutUs: React.FC = () => {
 
     const container2 = useRef<HTMLDivElement | null>(null);
     const container3 = useRef<HTMLDivElement | null>(null);
-    useGSAP(() => {
 
-        gsap.fromTo(".line", {
-            opacity: 0,
-        }, {
-            scrollTrigger: {
-                trigger: ".gaming",
-                start: "top+=1 center",
-                end: "bottom center",
-                scrub: true
-            },
-            opacity: 1,
-        });
+    if (window.innerWidth > 1023) {
+        useGSAP(() => {
 
-        const container = document.querySelector('.aboutUs__item') as HTMLElement;
-        const options = {
-            trigger: container,
-            start: 'top 40%',
-            end: '100px 40%',
-            toggleActions: 'restart none none reverse',
-        };
-        gsap.fromTo(container, {
-            opacity: 0,
-        }, {
-            opacity: 1,
-            duration: 0.4,
-            y: 0,
-            scrollTrigger: options,
-        });
+            gsap.fromTo(".line", {
+                opacity: 0,
+            }, {
+                scrollTrigger: {
+                    trigger: ".gaming",
+                    start: "top+=1 center",
+                    end: "bottom center",
+                    scrub: true
+                },
+                opacity: 1,
+            });
 
-        if (container2.current) {
-            const options2 = {
-                trigger: container2.current,
+            const container = document.querySelector('.aboutUs__item') as HTMLElement;
+            const options = {
+                trigger: container,
                 start: 'top 40%',
                 end: '100px 40%',
                 toggleActions: 'restart none none reverse',
             };
-            gsap.fromTo(container2.current, {
+            gsap.fromTo(container, {
                 opacity: 0,
             }, {
                 opacity: 1,
                 duration: 0.4,
                 y: 0,
-                scrollTrigger: options2,
+                scrollTrigger: options,
             });
-        }
 
-        if (container3.current) {
-            const options3 = {
-                trigger: container3.current,
-                start: 'top 40%',
-                end: '100px 40%',
-                toggleActions: 'restart none none reverse',
-            };
-            gsap.fromTo(container3.current, {
-                opacity: 0,
-            }, {
-                opacity: 1,
-                duration: 0.4,
-                y: 0,
-                scrollTrigger: options3,
-            });
-        }
-    }, [container2, container3]);
-
-    useGSAP(
-        () => {
-            if (starsRef.current && containerRef.current) {
-                const stars = [...starsRef.current.children]
-
-                const starsOnEnter = {
-                    scrub: true,
-                    start: 'top +=1300',
-                    trigger: containerRef.current,
+            if (container2.current) {
+                const options2 = {
+                    trigger: container2.current,
+                    start: 'top 40%',
+                    end: '100px 40%',
                     toggleActions: 'restart none none reverse',
-                    onEnter: () => {
-                        if (starsRef.current && containerRef.current) {
-                            //Max X & Y stars position
-                            const maxX = containerRef.current.offsetWidth
-                            const maxY = containerRef.current.offsetHeight
+                };
+                gsap.fromTo(container2.current, {
+                    opacity: 0,
+                }, {
+                    opacity: 1,
+                    duration: 0.4,
+                    y: 0,
+                    scrollTrigger: options2,
+                });
+            }
 
-                            //Place the star in a random place on the screen.
-                            stars.forEach((star: Element) => {
-                                //Indentation from the edges of the screen so that the stars do not extend beyond the screen
-                                const maxXPosition = maxX - star.clientWidth * 1
-                                const maxYPosition = maxY - star.clientHeight * 3
+            if (container3.current) {
+                const options3 = {
+                    trigger: container3.current,
+                    start: 'top 40%',
+                    end: '100px 40%',
+                    toggleActions: 'restart none none reverse',
+                };
+                gsap.fromTo(container3.current, {
+                    opacity: 0,
+                }, {
+                    opacity: 1,
+                    duration: 0.4,
+                    y: 0,
+                    scrollTrigger: options3,
+                });
+            }
+        }, [container2, container3]);
 
-                                //Making stars
-                                gsap.set(star, {
-                                    x: gsap.utils.random(-1000, maxXPosition),
-                                    y: gsap.utils.random(0, maxYPosition),
-                                    scale: gsap.utils.random(0.5, 2),
-                                    opacity: gsap.utils.random(0.3, 1.3),
+        useGSAP(
+            () => {
+                if (starsRef.current && containerRef.current) {
+                    const stars = [...starsRef.current.children]
+
+                    const starsOnEnter = {
+                        scrub: true,
+                        start: 'top +=1300',
+                        trigger: containerRef.current,
+                        toggleActions: 'restart none none reverse',
+                        onEnter: () => {
+                            if (starsRef.current && containerRef.current) {
+                                //Max X & Y stars position
+                                const maxX = containerRef.current.offsetWidth
+                                const maxY = containerRef.current.offsetHeight
+
+                                //Place the star in a random place on the screen.
+                                stars.forEach((star: Element) => {
+                                    //Indentation from the edges of the screen so that the stars do not extend beyond the screen
+                                    const maxXPosition = maxX - star.clientWidth * 1
+                                    const maxYPosition = maxY - star.clientHeight * 3
+
+                                    //Making stars
+                                    gsap.set(star, {
+                                        x: gsap.utils.random(-1000, maxXPosition),
+                                        y: gsap.utils.random(0, maxYPosition),
+                                        scale: gsap.utils.random(0.5, 2),
+                                        opacity: gsap.utils.random(0.3, 1.3),
+                                    })
                                 })
-                            })
 
-                            //Animation of stars
+                                //Animation of stars
+                                stars.slice(0, 45).forEach((star: Element) => {
+                                    gsap.to(star, {
+                                        duration: gsap.utils.random(1, 1),
+                                        repeat: -1,
+                                        scale: gsap.utils.random(0.1, 2),
+                                        opacity: gsap.utils.random(0.5, 1),
+                                        yoyo: true,
+                                    })
+                                })
+                            }
+                        },
+                        onLeave: () => {
+                            stars.forEach((star: Element) => {
+                                gsap.killTweensOf(star)
+                            })
+                        },
+                        onEnterBack: () => {
                             stars.slice(0, 45).forEach((star: Element) => {
                                 gsap.to(star, {
                                     duration: gsap.utils.random(1, 1),
@@ -128,63 +149,47 @@ const AboutUs: React.FC = () => {
                                     yoyo: true,
                                 })
                             })
-                        }
-                    },
-                    onLeave: () => {
-                        stars.forEach((star: Element) => {
-                            gsap.killTweensOf(star)
-                        })
-                    },
-                    onEnterBack: () => {
-                        stars.slice(0, 45).forEach((star: Element) => {
-                            gsap.to(star, {
-                                duration: gsap.utils.random(1, 1),
-                                repeat: -1,
-                                scale: gsap.utils.random(0.1, 2),
-                                opacity: gsap.utils.random(0.5, 1),
-                                yoyo: true,
+                        },
+                        onLeaveBack: () => {
+                            stars.forEach((star: Element) => {
+                                gsap.killTweensOf(star)
                             })
-                        })
-                    },
-                    onLeaveBack: () => {
-                        stars.forEach((star: Element) => {
-                            gsap.killTweensOf(star)
-                        })
-                    },
-                }
-
-                //Animation of stars
-                stars.slice(0, 45).forEach((star: Element) => {
-                    gsap.to(star, {
-                        duration: gsap.utils.random(1, 1),
-                        repeat: -1,
-                        scale: gsap.utils.random(0.1, 2),
-                        opacity: gsap.utils.random(0.5, 1),
-                        yoyo: true,
-                    })
-                })
-
-                //Animation of stars container
-                gsap.fromTo(
-                    starsRef.current,
-                    {
-                        scale: 0.5,
-                        opacity: 0,
-                        duration: 0.5,
-                        padding: '20px',
-                        scrollTrigger: starsOnEnter,
-                    },
-                    {
-                        y: 0,
-                        scale: 1,
-                        opacity: 1,
-                        scrollTrigger: starsOnEnter,
+                        },
                     }
-                )
-            }
-        },
-        { scope: containerRef }
-    )
+
+                    //Animation of stars
+                    stars.slice(0, 45).forEach((star: Element) => {
+                        gsap.to(star, {
+                            duration: gsap.utils.random(1, 1),
+                            repeat: -1,
+                            scale: gsap.utils.random(0.1, 2),
+                            opacity: gsap.utils.random(0.5, 1),
+                            yoyo: true,
+                        })
+                    })
+
+                    //Animation of stars container
+                    gsap.fromTo(
+                        starsRef.current,
+                        {
+                            scale: 0.5,
+                            opacity: 0,
+                            duration: 0.5,
+                            padding: '20px',
+                            scrollTrigger: starsOnEnter,
+                        },
+                        {
+                            y: 0,
+                            scale: 1,
+                            opacity: 1,
+                            scrollTrigger: starsOnEnter,
+                        }
+                    )
+                }
+            },
+            { scope: containerRef }
+        )
+    }
 
     return (
         <div className='wrapper__gaming' ref={containerRef}>
@@ -206,7 +211,7 @@ const AboutUs: React.FC = () => {
                     </section>
                 </div>
 
-                <svg className='line' width="4" style={{ maxHeight: window.innerHeight * 0.3 }} viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg className='line' width="4" viewBox="0 0 4 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2 0L2.00008 1721" stroke="url(#paint0_linear_262_457)" strokeWidth="3" />
                     <defs>
                         <linearGradient id="paint0_linear_262_457" x1="2.5" y1="-2.18557e-08" x2="2.50008" y2="1721" gradientUnits="userSpaceOnUse">
@@ -252,6 +257,8 @@ const AboutUs: React.FC = () => {
                     </div>
                 </div>
             </div>
+            <BluePlanetMobile />
+            <PurplePlanetMobile/>
             <Orbit />
         </div>
     );

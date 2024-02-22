@@ -7,7 +7,7 @@ import React, { useEffect, useRef } from "react";
 import groovyWalkAnimation from "./animation.json";
 import logo from '../../shared/assets/icons/logo.svg'
 import Saturn from "../../shared/assets/planets/Saturn/Saturn";
-import PurplePlanet from "../../shared/assets/planets/PurplePlanet/PurplePlanet";
+import PurplePlanet from "../../shared/assets/planets/PurplePlanet/PurplePlanetMain";
 
 const Main: React.FC = () => {
     const lottieContainerRef = useRef<HTMLDivElement>(null);
@@ -42,28 +42,27 @@ const Main: React.FC = () => {
 
     }, []);
 
-    useGSAP(() => {
-        gsap.to(".animation", {
-            scrollTrigger: {
-                trigger: ".main",
-                start: "top+=1 top",
-                end: "500px top",
-                scrub: true,
-                pin: true,
-                pinType: "transform"
-            },
-            y: -50,
-            scale: 1,
-            opacity: 0,
+    if (window.innerWidth > 1023) {
+        useGSAP(() => {
+            gsap.to(".animation", {
+                scrollTrigger: {
+                    trigger: ".main",
+                    start: "top+=1 top",
+                    end: "500px top",
+                    scrub: true,
+                    pin: true,
+                    pinType: "transform"
+                },
+                y: -50,
+                scale: 1,
+                opacity: 0,
+            });
         });
-    });
+    }
 
     return (
         <main ref={lottieContainerRef}>
-            <div className="header">
-                <img src={logo} />
-                <h1>LayerGame</h1>
-            </div>
+
             <div className="glarePurple"></div>
             <div className="glareBlue"></div>
             <div className="animation" >
