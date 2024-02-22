@@ -22,9 +22,12 @@ const Orbit = () => {
                     },
                     ease: 'none',
                     repeat: -1,
-                    toggleActions: 'reverse none none reverse',
                 });
             };
+
+            gsap.set(".purplePlanetGaming", {
+                opacity: 1
+            });
 
             gsap.to(".orbit", {
                 scrollTrigger: {
@@ -39,6 +42,11 @@ const Orbit = () => {
                     },
                     onLeave: () => {
                         gsap.killTweensOf('.purplePlanetGaming');
+                        document.addEventListener("DOMContentLoaded", function() {
+                            gsap.set(".purplePlanetGaming", {
+                                opacity: 0
+                            });
+                        });
                     },
                     onLeaveBack: () => {
                         gsap.killTweensOf('.purplePlanetGaming');
@@ -52,7 +60,7 @@ const Orbit = () => {
             gsap.set(".test, .bluePlanetBig", {
                 scale: 1,
                 opacity: 0
-              }); 
+            });
 
             gsap.to(".test", {
                 scrollTrigger: {
@@ -78,6 +86,25 @@ const Orbit = () => {
             });
         }
 
+        gsap.to(".bluePlanetBig", {
+            scrollTrigger: {
+                trigger: ".gaming",
+                start: "top-=200 center",
+                end: "bottom+=700 center",
+                scrub: true,
+            },
+            y: -500
+        })
+
+        gsap.to(".test", {
+            scrollTrigger: {
+                trigger: ".gaming",
+                start: "top-=200 center",
+                end: "bottom+=700 center",
+                scrub: true,
+            },
+            y: -500
+        })
 
         gsap.to(".bluePlanetBig", {
             scrollTrigger: {
