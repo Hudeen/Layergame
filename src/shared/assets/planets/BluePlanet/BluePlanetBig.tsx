@@ -1,7 +1,6 @@
 const BluePlanetBig = () => {
-
-    return (
-        <>
+  return (
+    <>
             <svg className="bluePlanetBig" width="1256.000000" height="1255.939941" viewBox="0 0 1256 1255.94" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="paint_linear_221_2034_0" x1="627.686401" y1="134.419434" x2="627.686401" y2="1121.514893" gradientUnits="userSpaceOnUse">
@@ -82,10 +81,8 @@ const BluePlanetBig = () => {
                     </g>
                 </g>
             </svg>
-
-
-        </>
-    )
+    </>
+  )
 }
 
 export default BluePlanetBig
