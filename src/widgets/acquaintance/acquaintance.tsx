@@ -80,7 +80,6 @@ const Acquaintance: React.FC = () => {
         const stars = [...starsRef.current.children]
 
         const starsOnEnter = {
-          scrub: true,
           start: 'top +=1300',
           trigger: containerRef.current,
           toggleActions: 'restart none none reverse',

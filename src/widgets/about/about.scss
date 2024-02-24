@@ -171,7 +171,7 @@
     .content {
       width: 100%;
       h2 {
-        font-size: 68px;
+        font-size: 52px;
         letter-spacing: 0%;
         text-align: center;
         text-transform: capitalize;
@@ -182,7 +182,7 @@
       }
       .cards {
         width: 100%;
-        right: 15vw;
+        right: 5vw;
         .container {
           max-width: 100%;
           width: 100%;
@@ -190,8 +190,8 @@
           .card {
             padding: 30px;
             width: 100%;
-            max-width: 580px;
-            height: 350px;
+            max-width: 530px;
+            height: 310px;
             p:nth-child(1) {
               font-size: 25px;
             }
@@ -258,7 +258,7 @@
               display: block;
               position: absolute;
               height: 400px;
-              right: -390px;
+              right: -360px;
               top: 400px;
               width: 100%;
             }
@@ -266,11 +266,14 @@
           &:nth-child(3) {
             .card {
               margin-top: 150px;
+              position: relative;
+              left: -120px;
+              margin-top: 150px;
               .character-two {
                 position: absolute;
                 opacity: 0.8;
                 right: -20px;
-                bottom: -80px;
+                bottom: -120px;
                 width: 450px;
                 height: 450px;
               }

@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  overflow-y: hidden;
+  overflow: hidden;
   .content {
     width: 100%;
     display: flex;
@@ -16,13 +16,13 @@
     h1 {
       color: white;
       text-transform: uppercase;
-      font-size: 28px;
+      font-size: 20px;
     }
     h2 {
       margin-top: 10px;
       color: white;
       text-transform: uppercase;
-      font-size: 38px;
+      font-size: 28px;
       text-align: center;
       background: linear-gradient(94deg, #20c7ed 0%, #d251fd 99.79%);
       background-clip: text;
@@ -33,7 +33,7 @@
       padding: 0px 50px;
       color: #8c8b92;
       text-align: center;
-      font-size: 18px;
+      font-size: 16px;
       width: 100%;
       max-width: 1000px;
       font-style: normal;
@@ -91,4 +91,23 @@
       height: 100%;
     }
   }
+}
+
+.bluePlanetMobile {
+  display: block;
+  position: absolute;
+
+  top: 44%;
+  width: 15vw;
+  height: 15vw;
+  left: 0%;
+}
+
+.purplePlanetMobile {
+  display: block;
+  position: absolute;
+  top: 10%;
+  left: 65%;
+  width: 50vw;
+  height: 50vw;
 }

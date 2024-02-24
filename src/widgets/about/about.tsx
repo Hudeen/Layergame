@@ -19,6 +19,9 @@ import spaceship from '../../shared/assets/icons/spaceship.svg'
 import character2 from '../../shared/assets/icons/character2.svg'
 import lineOneMobile from '../../shared/assets/icons/lineOneMobile.svg'
 import lineTwoMobile from '../../shared/assets/icons/lineTwoMobile.svg'
+import Orbit from '../orbit/orbit'
+import BluePlanetMobile from '../../shared/assets/planets/BluePlanet/BluePlanetMobile'
+import PurplePlanetMobile from '../../shared/assets/planets/PurplePlanet/PurplePlanetMobile'
 
 const About: React.FC = () => {
   gsap.registerPlugin(ScrollTrigger)
@@ -102,7 +105,6 @@ const About: React.FC = () => {
         const stars = [...starsRef.current.children]
 
         const starsOnEnter = {
-          scrub: true,
           start: 'top +=1300',
           trigger: containerRef.current,
           toggleActions: 'restart none none reverse',
@@ -194,6 +196,46 @@ const About: React.FC = () => {
     },
     { scope: containerRef }
   )
+
+  if (window.innerWidth > 1023) {
+    useGSAP(() => {
+      gsap.fromTo(
+        '.line',
+        {
+          opacity: 0,
+        },
+        {
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: 'top+=1 center',
+            end: 'bottom center',
+            scrub: true,
+          },
+          opacity: 1,
+        }
+      )
+
+      // const container = document.querySelector('.aboutUs__item') as HTMLElement
+      const options = {
+        trigger: containerRef.current,
+        start: 'top 40%',
+        end: '100px 40%',
+        toggleActions: 'restart none none reverse',
+      }
+      gsap.fromTo(
+        containerRef.current,
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          duration: 0.4,
+          y: 0,
+          scrollTrigger: options,
+        }
+      )
+    }, [])
+  }
 
   return (
     <section
@@ -308,6 +350,14 @@ const About: React.FC = () => {
           <Star key={index} />
         ))}
       </div>
+      {containerRef.current && containerRef.current.offsetWidth >= 1280 ? (
+        <Orbit />
+      ) : (
+        <>
+          <BluePlanetMobile />
+          <PurplePlanetMobile />
+        </>
+      )}
     </section>
   )
 }

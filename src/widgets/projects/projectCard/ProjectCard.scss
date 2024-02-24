@@ -69,13 +69,13 @@
 @media only screen and (min-width: 1280px) {
   .card {
     width: 100%;
-    max-width: 860px;
+    max-width: 460px;
     .card-container {
-      width: 860px;
+      width: 460px;
       padding: 30px;
       gap: 50px;
       p {
-        font-size: 22px;
+        font-size: 18px;
       }
       .image-container {
         img {
@@ -92,20 +92,24 @@
       }
     }
     .card-text {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
       width: 100%;
       max-width: 860px;
       padding: 10px;
       .text-info {
         p:nth-child(1) {
-          font-size: 28px;
+          font-size: 22px;
         }
         p:nth-child(2) {
-          font-size: 20px;
+          font-size: 18px;
         }
       }
       .text-description {
         width: 500px;
-        font-size: 18px;
+        font-size: 16px;
+        text-align: end;
       }
     }
   }

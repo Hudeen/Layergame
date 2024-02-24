@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+.purplePlanetGaming {
+  filter: drop-shadow(0px 0px 60px #c643eabf);
+}
+
+.bluePlanetBig {
+  filter: drop-shadow(0px 0px 60px #1c7e9e90);
+}
+
 .wrapper__gaming {
   width: 100%;
   height: auto;
@@ -47,6 +55,7 @@
       justify-content: space-around;
       margin-bottom: 100px;
       width: 100%;
+      padding: 20px;
 
       .number {
         position: relative;
@@ -100,7 +109,7 @@
           padding: 0 5vw 0 5vw;
           color: #fff;
           font-family: 'ClashGrotesk-Medium';
-          font-size: 8vw;
+          font-size: 22px;
           font-style: normal;
           font-weight: 500;
           line-height: normal;
@@ -112,7 +121,7 @@
           padding: 0 5vw 0 5vw;
           color: white;
           text-transform: uppercase;
-          font-size: 6vw;
+          font-size: 20px;
           font-family: 'ClashGrotesk-Semibold';
           margin-top: 10px;
           margin-bottom: 15px;
@@ -131,7 +140,7 @@
           padding: 0 5vw 0 5vw;
           color: #8c8b92;
           font-family: 'ClashGrotesk-Semibold';
-          font-size: 5vw;
+          font-size: 16px;
           font-style: normal;
           font-weight: 400;
           line-height: normal;
@@ -140,6 +149,15 @@
         }
       }
     }
+  }
+  .stars-container {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+  }
+  .star {
+    overflow-x: hidden;
+    position: absolute;
   }
 }
 
@@ -225,7 +243,7 @@
             padding: 0 5vw 0 5vw;
             color: #fff;
             font-family: 'ClashGrotesk-Medium';
-            font-size: 1.9vw;
+            font-size: 24px;
             font-style: normal;
             font-weight: 500;
             line-height: normal;
@@ -233,7 +251,7 @@
           }
 
           .title {
-            font-size: 3vw;
+            font-size: 36px;
             .desktop {
               display: block;
             }
@@ -244,7 +262,7 @@
             color: #8c8b92;
             font-family: 'ClashGrotesk-Bold';
             font-weight: 700;
-            font-size: 1.5vw;
+            font-size: 18px;
             font-style: normal;
             font-weight: 400;
             line-height: normal;
@@ -265,6 +283,16 @@
       }
     }
   }
+}
+
+.stars-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.star {
+  overflow-x: hidden;
+  position: absolute;
 }
 
 @media only screen and (min-width: 375px) {

@@ -17,14 +17,14 @@ const Projects = () => {
       gsap.to(cardsRef.current, {
         scrollTrigger: {
           trigger: cardsRef.current,
-          start: 'top center-=220',
+          start: 'top center-=120',
           end: 'bottom+=800 center',
           scrub: true,
           pin: containerRef.current,
           toggleActions: 'restart none none reverse',
           pinType: 'transform',
         },
-        x: -4300,
+        x: -1800,
       })
 
       gsap.to(progressRef.current, {

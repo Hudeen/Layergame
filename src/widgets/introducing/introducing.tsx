@@ -20,26 +20,28 @@ const Introducing: React.FC = () => {
   useGSAP(() => {
     const options = {
       trigger: containerRef.current,
-      start: 'top bottom',
+      start: 'top top',
       end: 'bottom top',
       toggleActions: 'restart none none reverse',
       scrub: true,
+      pin: true,
+      markers: true,
     }
 
     gsap.from(contentRef.current, {
-      opacity: 0.3,
       duration: 1,
       scale: 0.6,
+      pin: true,
       scrollTrigger: options,
     })
 
-    gsap.to(contentRef.current, {
-      y: 0,
-      opacity: 1,
-      duration: 1,
-      scale: 1,
-      scrollTrigger: options,
-    })
+    // gsap.to(contentRef.current, {
+    //   y: 0,
+    //   opacity: 1,
+    //   duration: 1,
+    //   scale: 1,
+    //   scrollTrigger: options,
+    // })
   }, [])
 
   //Comets animation
@@ -99,7 +101,6 @@ const Introducing: React.FC = () => {
         const stars = [...starsRef.current.children]
 
         const starsOnEnter = {
-          scrub: true,
           start: 'top +=1500',
           trigger: containerRef.current,
           toggleActions: 'restart none none reverse',
@@ -118,7 +119,7 @@ const Introducing: React.FC = () => {
                 //Making stars
                 gsap.set(star, {
                   x: gsap.utils.random(-1000, maxXPosition),
-                  y: gsap.utils.random(0, maxYPosition),
+                  y: gsap.utils.random(0, maxYPosition + 500),
                   scale: gsap.utils.random(0.5, 2),
                   opacity: gsap.utils.random(0.3, 1.3),
                 })
@@ -166,6 +167,7 @@ const Introducing: React.FC = () => {
             repeat: -1,
             scale: gsap.utils.random(0.1, 2),
             opacity: gsap.utils.random(0.5, 1),
+            pin: true,
             yoyo: true,
           })
         })

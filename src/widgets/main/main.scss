@@ -1,173 +1,172 @@
 main {
-    width: 100%;
-    overflow: hidden;
-    max-width: 100%;
-    height: auto;
+  width: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  height: 100vh;
+  position: relative;
+  padding-top: 120px;
+
+  .animation {
+    overflow: hidden !important;
+    scale: 1.1;
     position: relative;
-    padding-top: 120px;
 
+    .item {
+      position: absolute;
+      top: 33%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+
+      h1 {
+        font-size: 12vw;
+        color: #02020b;
+        background: linear-gradient(90deg, #30bbee 20%, #c659fc 70%);
+        -webkit-background-clip: text;
+        -webkit-text-stroke: 2px transparent;
+      }
+
+      h2 {
+        font-size: 2.8vw;
+        font-weight: 400;
+        font-family: 'ClashGrotesk-Medium';
+        background: linear-gradient(90deg, #30bbee 20%, #c659fc 70%);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 5px) brightness(110%);
+      }
+    }
+
+    .saturn {
+      position: absolute;
+      z-index: 999;
+      top: 72%;
+      left: 5%;
+      transform: translate(-50%, -50%);
+      width: 75vw;
+      height: 75vw;
+      rotate: 12deg;
+    }
+
+    .purplePlanet {
+      position: absolute;
+      z-index: 9;
+      top: 58%;
+      right: -21%;
+      transform: translate(-50%, -50%);
+      width: 32vw;
+      height: 32vw;
+    }
+  }
+
+  .glarePurple {
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    top: 40%;
+    right: -5%;
+    filter: blur(15vw);
+    background: rgb(195, 92, 252);
+    z-index: 999;
+    border-radius: 100px;
+    opacity: 0.5;
+  }
+
+  .glareBlue {
+    position: absolute;
+    z-index: 9;
+    top: 60%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    width: 40vw;
+    height: 40vw;
+
+    filter: blur(100px);
+    background: rgb(20, 209, 232);
+    z-index: 999;
+    border-radius: 100px;
+    opacity: 0.2;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  main {
+    height: auto;
+    padding: 0;
+    .header {
+      display: none;
+    }
     .animation {
-        overflow: hidden !important;
-        scale: 1.1;
-        position: relative;
-
-        .item {
-            position: absolute;
-            top: 33%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-
-            h1 {
-                font-size: 12vw;
-                color: #02020b;
-                background: linear-gradient(90deg, #30BBEE 20%, #C659FC 70%);
-                -webkit-background-clip: text;
-                -webkit-text-stroke: 2px transparent;
-            }
-
-            h2 {
-                font-size: 2.8vw;
-                font-weight: 400;
-                font-family: 'ClashGrotesk-Medium';
-                background: linear-gradient(90deg, #30BBEE 20%, #C659FC 70%);
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                filter: drop-shadow(0 0 5px) brightness(110%);
-            }
+      scale: 0.85;
+      top: -150px;
+      .item {
+        top: 25%;
+        h1 {
+          font-size: 10.5vw;
+          -webkit-text-stroke: 0.5vw transparent;
         }
-
-        .saturn {
-            position: absolute;
-            z-index: 999;
-            top: 72%;
-            left: 5%;
-            transform: translate(-50%, -50%);
-            width: 75vw;
-            height: 75vw;
-            rotate: 12deg;
+        h2 {
+          font-size: 1.95vw;
         }
+      }
+      .saturn {
+        top: 43%;
+        left: 37%;
+        width: 20vw;
+        height: 20vw;
+        rotate: 0deg;
+      }
 
-        .purplePlanet {
-            position: absolute;
-            z-index: 9;
-            top: 58%;
-            right: -21%;
-            transform: translate(-50%, -50%);
-            width: 32vw;
-            height: 32vw;
-        }
+      .purplePlanet {
+        top: 40%;
+        right: 25%;
+        width: 9vw;
+        height: 9vw;
+      }
     }
 
     .glarePurple {
-        position: absolute;
-        width: 30vw;
-        height: 30vw;
-        top: 40%;
-        right: -5%;
-        filter: blur(15vw);
-        background: rgb(195, 92, 252);
-        z-index: 999;
-        border-radius: 100px;
-        opacity: .5;
+      width: 30vw;
+      height: 30vw;
+      top: 7%;
+      right: -20%;
+      filter: blur(10vw);
+      background: rgb(195, 92, 252);
+      z-index: 999;
+      border-radius: 100%;
+      opacity: 0.5;
     }
 
     .glareBlue {
-        position: absolute;
-        z-index: 9;
-        top: 60%;
-        left: 15%;
-        transform: translate(-50%, -50%);
-        width: 40vw;
-        height: 40vw;
+      z-index: 9;
+      top: 32%;
+      left: 0;
+      transform: translate(-50%, -50%);
+      width: 30vw;
+      height: 30vw;
 
-        filter: blur(100px);
-        background: rgb(20, 209, 232);
-        z-index: 999;
-        border-radius: 100px;
-        opacity: .2;
+      filter: blur(100px);
+      background: rgb(20, 209, 232);
+      z-index: 999;
+      border-radius: 100%;
+      opacity: 0.2;
     }
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-
-    main {
-        height: auto;
-        padding: 0;
-        .header {
-            display: none;
-        }
-        .animation {
-            scale: .85;
-            top: -150px;
-            .item {
-                top: 25%;
-                h1 {
-                    font-size: 10.5vw;
-                    -webkit-text-stroke: .5vw transparent;
-                }
-                h2 {
-                    font-size: 1.95vw;
-                }
-            }
-            .saturn {
-                top: 43%;
-                left: 37%;
-                width: 20vw;
-                height: 20vw;
-                rotate: 0deg;
-            }
-
-            .purplePlanet {
-                top: 40%;
-                right: 25%;
-                width: 9vw;
-                height: 9vw;
-            }
-        }
-
-        .glarePurple {
-            width: 30vw;
-            height: 30vw;
-            top: 7%;
-            right: -20%;
-            filter: blur(10vw);
-            background: rgb(195, 92, 252);
-            z-index: 999;
-            border-radius: 100%;
-            opacity: .5;
-        }
-
-        .glareBlue {
-            z-index: 9;
-            top: 32%;
-            left: 0;
-            transform: translate(-50%, -50%);
-            width: 30vw;
-            height: 30vw;
-
-            filter: blur(100px);
-            background: rgb(20, 209, 232);
-            z-index: 999;
-            border-radius: 100%;
-            opacity: .2;
-        }
+  main {
+    .animation {
+      top: -50px;
     }
-}
-
-@media only screen and (min-width: 1024px) {
-    main {
-        .animation {
-            top: -50px;
-        }
-    }
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-    main {
-        .animation {
-            top: -150px;
-        }
+  main {
+    .animation {
+      top: -150px;
     }
+  }
 }
