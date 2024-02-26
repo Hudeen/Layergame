@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './styles.scss'
@@ -6,12 +6,102 @@ import Planet from '../../shared/assets/images/planet.png'
 import NFT from '../../shared/assets/images/imgNFT.png'
 import live from '../../assets/images/livedro.svg'
 import { GrBottomCorner } from 'react-icons/gr'
+import { useGSAP } from '@gsap/react'
+import Modal from '../../widgets/modal/modal'
+import metamask from '../../shared/assets/images/metamask.svg'
+import Coinbase from '../../shared/assets/images/Coinbase.svg'
+import TrustWallet from '../../shared/assets/images/TrustWallet.svg'
+import WalletConnect from '../../shared/assets/images/WalletConnect.svg'
+
+import { IoCloseOutline } from 'react-icons/io5'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const Mint: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
+
+  const [active, setActive] = useState(true)
+
+  //Starts animation
+  useGSAP(
+    () => {
+      if (starsRef.current && containerRef.current) {
+        const stars = [...starsRef.current.children]
+
+        const starsOnEnter = {
+          start: 'top +=1500',
+          trigger: containerRef.current,
+          toggleActions: 'restart none none reverse',
+          onEnter: () => {
+            if (starsRef.current && containerRef.current) {
+              //Max X & Y stars position
+              const maxX = containerRef.current.offsetWidth
+              const maxY = containerRef.current.offsetHeight
+
+              //Place the star in a random place on the screen.
+              stars.forEach((star: Element) => {
+                //Indentation from the edges of the screen so that the stars do not extend beyond the screen
+                const maxXPosition = maxX - star.clientWidth * 1
+                const maxYPosition = maxY - star.clientHeight * 3
+
+                //Making stars
+                gsap.set(star, {
+                  x: gsap.utils.random(0, maxXPosition),
+                  y: gsap.utils.random(-200, maxYPosition),
+                  scale: gsap.utils.random(0.5, 2),
+                  opacity: gsap.utils.random(0.3, 1.3),
+                })
+              })
+
+              if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
+                //Animation of stars
+                stars.slice(0, 45).forEach((star: Element) => {
+                  gsap.to(star, {
+                    duration: gsap.utils.random(1, 1),
+                    repeat: -1,
+                    scale: gsap.utils.random(0.1, 2),
+                    opacity: gsap.utils.random(0.5, 1),
+                    yoyo: true,
+                  })
+                })
+              }
+            }
+          },
+        }
+
+        //Animation of stars
+        stars.slice(0, 35).forEach((star: Element) => {
+          gsap.to(star, {
+            duration: gsap.utils.random(1, 1),
+            repeat: -1,
+            scale: gsap.utils.random(0.1, 2),
+            opacity: gsap.utils.random(0.5, 1),
+            pin: true,
+            yoyo: true,
+          })
+        })
+
+        //Animation of stars container
+        gsap.fromTo(
+          starsRef.current,
+          {
+            scale: 0.5,
+            opacity: 0,
+            duration: 0.5,
+            scrollTrigger: starsOnEnter,
+          },
+          {
+            y: 0,
+            scale: 1,
+            opacity: 1,
+            scrollTrigger: starsOnEnter,
+          }
+        )
+      }
+    },
+    { scope: containerRef || undefined }
+  )
 
   return (
     <div
@@ -33,7 +123,7 @@ export const Mint: React.FC = () => {
         </h3>
         <p className='sub-title'>Discover the power of NFTs for a unique digital experience.</p>
         <div className='buttons'>
-          <button>Mint Now</button>
+          <button onClick={() => setActive(true)}>Mint Now</button>
           <div>
             <p>
               0/777
@@ -67,7 +157,7 @@ export const Mint: React.FC = () => {
         <img
           src={NFT}
           alt='MintImg'
-          className='mint-img'
+          className='mint-img mobile'
         />
         <div>
           <p>
@@ -89,7 +179,12 @@ export const Mint: React.FC = () => {
         alt='Planet'
         className='planet'
       />
-      {/* <div
+      <img
+        src={NFT}
+        alt='MintImg'
+        className='mint-img desktop'
+      />
+      <div
         className='stars-container'
         ref={starsRef}>
         {[...Array(65)].map((_, index) => (
@@ -108,7 +203,50 @@ export const Mint: React.FC = () => {
             />
           </svg>
         ))}
-      </div> */}
+      </div>
+      <Modal active={active}>
+        <div className='wallet-modal'>
+          <div className='title'>
+            <p>
+              Connect <b>Wallet </b>
+            </p>
+            <span>Connect to any wallet to securely store your digital goods NFT</span>
+            <div
+              className='modal-close'
+              onClick={() => setActive(false)}>
+              <IoCloseOutline />
+            </div>
+          </div>
+          <div className='wallet'>
+            <img
+              src={metamask}
+              alt='metamask'
+            />
+            <p>MetaMask</p>
+          </div>
+          <div className='wallet'>
+            <img
+              src={Coinbase}
+              alt='Coinbase'
+            />
+            <p>Coinbase</p>
+          </div>
+          <div className='wallet'>
+            <img
+              src={WalletConnect}
+              alt='WalletConnect'
+            />
+            <p>WalletConnect</p>
+          </div>
+          <div className='wallet'>
+            <img
+              src={TrustWallet}
+              alt='TrustWallet'
+            />
+            <p>Trust Wallet</p>
+          </div>
+        </div>
+      </Modal>
     </div>
   )
 }
