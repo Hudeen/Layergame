@@ -116,7 +116,7 @@ export const Mint: React.FC = () => {
             />
             624
           </span>
-          Live Minted
+          Live Mintedd
         </p>
         <h3>
           Remove borders with <span>NFTs</span> share art freely
