@@ -105,6 +105,7 @@ const AboutUs: React.FC = () => {
 
   useGSAP(
     () => {
+
       if (starsRef.current && containerRef.current) {
         const stars = [...starsRef.current.children]
 
@@ -340,7 +341,7 @@ const AboutUs: React.FC = () => {
       <div
         className='stars-container'
         ref={starsRef}>
-        {[...Array(125)].map((_, index) => (
+        {[...Array(60)].map((_, index) => (
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='11'
@@ -357,6 +358,7 @@ const AboutUs: React.FC = () => {
           </svg>
         ))}
       </div>
+      <button className="custom-btn btn-3"><span>Explore Technology</span></button>
     </div>
   )
 }
