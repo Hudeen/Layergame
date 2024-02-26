@@ -64,8 +64,7 @@ const Header: React.FC = () => {
         ref={navigationRef}
         onMouseLeave={handleMouseLeave}
         onAnimationStart={handleAnimationStart}
-        onAnimationEnd={handleAnimationEnd}
-        >
+        onAnimationEnd={handleAnimationEnd}>
         <h1 className='title'>Platea vitae interdum.</h1>
         <h2 className='subtitle'>Dui cras et. Malesuada eget odio. Pellentesque orci.</h2>
         {/* <div className='item'>

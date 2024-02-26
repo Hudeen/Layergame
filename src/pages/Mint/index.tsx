@@ -21,7 +21,7 @@ export const Mint: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
 
-  const [active, setActive] = useState(true)
+  const [active, setActive] = useState(false)
 
   //Starts animation
   useGSAP(
