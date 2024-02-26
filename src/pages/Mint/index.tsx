@@ -14,6 +14,8 @@ import TrustWallet from '../../shared/assets/images/TrustWallet.svg'
 import WalletConnect from '../../shared/assets/images/WalletConnect.svg'
 
 import { IoCloseOutline } from 'react-icons/io5'
+import { WalletOptions } from './WalletOptions'
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -217,6 +219,7 @@ export const Mint: React.FC = () => {
               <IoCloseOutline />
             </div>
           </div>
+          <WalletOptions />
           <div className='wallet'>
             <img
               src={metamask}
