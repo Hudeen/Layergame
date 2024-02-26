@@ -35,13 +35,6 @@ const Introducing: React.FC = () => {
       scrollTrigger: options,
     })
 
-    // gsap.to(contentRef.current, {
-    //   y: 0,
-    //   opacity: 1,
-    //   duration: 1,
-    //   scale: 1,
-    //   scrollTrigger: options,
-    // })
   }, [])
 
   //Comets animation
@@ -312,7 +305,7 @@ const Introducing: React.FC = () => {
       <div
         className='stars-container'
         ref={starsRef}>
-        {[...Array(65)].map((_, index) => (
+        {[...Array(60)].map((_, index) => (
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='11'
