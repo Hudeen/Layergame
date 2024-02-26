@@ -220,34 +220,6 @@ export const Mint: React.FC = () => {
             </div>
           </div>
           <WalletOptions />
-          <div className='wallet'>
-            <img
-              src={metamask}
-              alt='metamask'
-            />
-            <p>MetaMask</p>
-          </div>
-          <div className='wallet'>
-            <img
-              src={Coinbase}
-              alt='Coinbase'
-            />
-            <p>Coinbase</p>
-          </div>
-          <div className='wallet'>
-            <img
-              src={WalletConnect}
-              alt='WalletConnect'
-            />
-            <p>WalletConnect</p>
-          </div>
-          <div className='wallet'>
-            <img
-              src={TrustWallet}
-              alt='TrustWallet'
-            />
-            <p>Trust Wallet</p>
-          </div>
         </div>
       </Modal>
     </div>
