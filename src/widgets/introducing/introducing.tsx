@@ -18,70 +18,70 @@ const Introducing: React.FC = () => {
 
   //Content animation
   useGSAP(() => {
-    const options = {
-      trigger: containerRef.current,
-      start: 'top top',
-      end: 'bottom top',
-      toggleActions: 'restart none none reverse',
-      scrub: true,
-      pin: true,
-      markers: true,
+    if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
+      const options = {
+        trigger: containerRef.current,
+        start: 'top top',
+        end: 'bottom top',
+        toggleActions: 'restart none none reverse',
+        scrub: true,
+        pin: true,
+      }
+
+      gsap.from(contentRef.current, {
+        duration: 1,
+        scale: 0.6,
+        scrollTrigger: options,
+      })
     }
-
-    gsap.from(contentRef.current, {
-      duration: 1,
-      scale: 0.6,
-      pin: true,
-      scrollTrigger: options,
-    })
-
   }, [])
 
   //Comets animation
   useGSAP(
     () => {
-      const options = {
-        trigger: containerRef.current,
-        start: '-100%',
-        end: 'center center',
-        toggleActions: 'restart none none reverse',
-      }
+      if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
+        const options = {
+          trigger: containerRef.current,
+          start: '-100%',
+          end: 'center center',
+          toggleActions: 'restart none none reverse',
+        }
 
-      gsap.set(cometsRef.current, {
-        y: -300,
-        scrollTrigger: options,
-      })
-
-      if (cometsRef.current) {
-        const maxX = window.innerWidth
-        const maxY = window.innerHeight
-        const angle = 40
-
-        ;[...cometsRef.current.children].forEach((comet: Element) => {
-          const maxXPosition = maxX
-          const randomYPosition = gsap.utils.random(0, maxY)
-
-          const radianAngle = (angle * Math.PI) / 180
-          const xComponent = Math.cos(radianAngle) * maxXPosition
-          const yComponent = Math.sin(radianAngle) * maxXPosition
-
-          gsap.set(comet, {
-            x: xComponent - 100,
-            y: randomYPosition,
-            scale: 0,
-            filter: `blur(${gsap.utils.random(0, 5)}px)`,
-          })
-
-          gsap.to(comet, {
-            x: -xComponent,
-            y: randomYPosition + yComponent,
-            scale: gsap.utils.random(0.5, 1),
-            duration: gsap.utils.random(3, 12),
-            repeat: -1,
-            opacity: 0,
-            ease: 'none',
-          })
+        gsap.set(cometsRef.current, {
+          y: -300,
+          scrollTrigger: options,
         })
+
+        if (cometsRef.current) {
+          const maxX = window.innerWidth
+          const maxY = window.innerHeight
+          const angle = 40
+
+          ;[...cometsRef.current.children].forEach((comet: Element) => {
+            const maxXPosition = maxX
+            const randomYPosition = gsap.utils.random(0, maxY)
+
+            const radianAngle = (angle * Math.PI) / 180
+            const xComponent = Math.cos(radianAngle) * maxXPosition
+            const yComponent = Math.sin(radianAngle) * maxXPosition
+
+            gsap.set(comet, {
+              x: xComponent - 100,
+              y: randomYPosition,
+              scale: 0,
+            })
+
+            gsap.to(comet, {
+              x: -xComponent,
+              y: randomYPosition + yComponent,
+              scale: gsap.utils.random(0.5, 1),
+              duration: gsap.utils.random(3, 12),
+              repeat: -1,
+              opacity: 0,
+              ease: 'none',
+            })
+          })
+        }
       }
     },
     { scope: containerRef }
@@ -111,14 +111,34 @@ const Introducing: React.FC = () => {
 
                 //Making stars
                 gsap.set(star, {
-                  x: gsap.utils.random(-1000, maxXPosition),
-                  y: gsap.utils.random(0, maxYPosition + 500),
+                  x: gsap.utils.random(0, maxXPosition),
+                  y: gsap.utils.random(0, maxYPosition),
                   scale: gsap.utils.random(0.5, 2),
                   opacity: gsap.utils.random(0.3, 1.3),
                 })
               })
 
-              //Animation of stars
+              if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
+                //Animation of stars
+                stars.slice(0, 45).forEach((star: Element) => {
+                  gsap.to(star, {
+                    duration: gsap.utils.random(1, 1),
+                    repeat: -1,
+                    scale: gsap.utils.random(0.1, 2),
+                    opacity: gsap.utils.random(0.5, 1),
+                    yoyo: true,
+                  })
+                })
+              }
+            }
+          },
+          onLeave: () => {
+            stars.forEach((star: Element) => {
+              gsap.killTweensOf(star)
+            })
+          },
+          onEnterBack: () => {
+            if (containerRef.current && containerRef.current.offsetWidth >= 1280) {
               stars.slice(0, 45).forEach((star: Element) => {
                 gsap.to(star, {
                   duration: gsap.utils.random(1, 1),
@@ -130,22 +150,6 @@ const Introducing: React.FC = () => {
               })
             }
           },
-          onLeave: () => {
-            stars.forEach((star: Element) => {
-              gsap.killTweensOf(star)
-            })
-          },
-          onEnterBack: () => {
-            stars.slice(0, 45).forEach((star: Element) => {
-              gsap.to(star, {
-                duration: gsap.utils.random(1, 1),
-                repeat: -1,
-                scale: gsap.utils.random(0.1, 2),
-                opacity: gsap.utils.random(0.5, 1),
-                yoyo: true,
-              })
-            })
-          },
           onLeaveBack: () => {
             stars.forEach((star: Element) => {
               gsap.killTweensOf(star)
@@ -153,35 +157,35 @@ const Introducing: React.FC = () => {
           },
         }
 
-        //Animation of stars
-        stars.slice(0, 45).forEach((star: Element) => {
-          gsap.to(star, {
-            duration: gsap.utils.random(1, 1),
-            repeat: -1,
-            scale: gsap.utils.random(0.1, 2),
-            opacity: gsap.utils.random(0.5, 1),
-            pin: true,
-            yoyo: true,
+          //Animation of stars
+          stars.slice(0, 35).forEach((star: Element) => {
+            gsap.to(star, {
+              duration: gsap.utils.random(1, 1),
+              repeat: -1,
+              scale: gsap.utils.random(0.1, 2),
+              opacity: gsap.utils.random(0.5, 1),
+              pin: true,
+              yoyo: true,
+            })
           })
-        })
 
-        //Animation of stars container
-        gsap.fromTo(
-          starsRef.current,
-          {
-            scale: 0.5,
-            opacity: 0,
-            duration: 0.5,
-            padding: '20px',
-            scrollTrigger: starsOnEnter,
-          },
-          {
-            y: 0,
-            scale: 1,
-            opacity: 1,
-            scrollTrigger: starsOnEnter,
-          }
-        )
+          //Animation of stars container
+          gsap.fromTo(
+            starsRef.current,
+            {
+              scale: 0.5,
+              opacity: 0,
+              duration: 0.5,
+              padding: '20px',
+              scrollTrigger: starsOnEnter,
+            },
+            {
+              y: 0,
+              scale: 1,
+              opacity: 1,
+              scrollTrigger: starsOnEnter,
+            }
+          )
       }
     },
     { scope: containerRef || undefined }
@@ -204,7 +208,7 @@ const Introducing: React.FC = () => {
       <div
         className='comet-container'
         ref={cometsRef}>
-        {[...Array(4)].map((_, index) => (
+        {[...Array(3)].map((_, index) => (
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='379'
@@ -235,7 +239,7 @@ const Introducing: React.FC = () => {
             </defs>
           </svg>
         ))}
-        {[...Array(4)].map((_, index) => (
+        {[...Array(3)].map((_, index) => (
           <svg
             xmlns='http://www.w3.org/2000/svg'
             width='162'
@@ -266,7 +270,7 @@ const Introducing: React.FC = () => {
             </defs>
           </svg>
         ))}
-        {[...Array(4)].map((_, index) => (
+        {[...Array(3)].map((_, index) => (
           <svg
             width='325'
             height='383'

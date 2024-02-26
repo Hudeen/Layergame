@@ -5,111 +5,13 @@ import './styles.scss'
 import Planet from '../../shared/assets/images/planet.png'
 import NFT from '../../shared/assets/images/imgNFT.png'
 import live from '../../assets/images/livedro.svg'
+import { GrBottomCorner } from 'react-icons/gr'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const Mint: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
-
-  // useGSAP(
-  //   () => {
-  //     if (starsRef.current && containerRef.current) {
-  //       const stars = [...starsRef.current.children]
-
-  //       const starsOnEnter = {
-  //         scrub: true,
-  //         start: 'top +=1300',
-  //         trigger: containerRef.current,
-  //         toggleActions: 'restart none none reverse',
-  //         onEnter: () => {
-  //           if (starsRef.current && containerRef.current) {
-  //             //Max X & Y stars position
-  //             const maxX = containerRef.current.offsetWidth
-  //             const maxY = containerRef.current.offsetHeight
-
-  //             //Place the star in a random place on the screen.
-  //             stars.forEach((star: Element) => {
-  //               //Indentation from the edges of the screen so that the stars do not extend beyond the screen
-  //               const maxXPosition = maxX - star.clientWidth * 1
-  //               const maxYPosition = maxY - star.clientHeight * 3
-
-  //               //Making stars
-  //               gsap.set(star, {
-  //                 x: gsap.utils.random(-1000, maxXPosition),
-  //                 y: gsap.utils.random(0, maxYPosition),
-  //                 scale: gsap.utils.random(0.5, 2),
-  //                 opacity: gsap.utils.random(0.3, 1.3),
-  //               })
-  //             })
-
-  //             //Animation of stars
-  //             stars.slice(0, 45).forEach((star: Element) => {
-  //               gsap.to(star, {
-  //                 duration: gsap.utils.random(1, 1),
-  //                 repeat: -1,
-  //                 scale: gsap.utils.random(0.1, 2),
-  //                 opacity: gsap.utils.random(0.5, 1),
-  //                 yoyo: true,
-  //               })
-  //             })
-  //           }
-  //         },
-  //         onLeave: () => {
-  //           stars.forEach((star: Element) => {
-  //             gsap.killTweensOf(star)
-  //           })
-  //         },
-  //         onEnterBack: () => {
-  //           stars.slice(0, 45).forEach((star: Element) => {
-  //             gsap.to(star, {
-  //               duration: gsap.utils.random(1, 1),
-  //               repeat: -1,
-  //               scale: gsap.utils.random(0.1, 2),
-  //               opacity: gsap.utils.random(0.5, 1),
-  //               yoyo: true,
-  //             })
-  //           })
-  //         },
-  //         onLeaveBack: () => {
-  //           stars.forEach((star: Element) => {
-  //             gsap.killTweensOf(star)
-  //           })
-  //         },
-  //       }
-
-  //       //Animation of stars
-  //       stars.slice(0, 45).forEach((star: Element) => {
-  //         gsap.to(star, {
-  //           duration: gsap.utils.random(1, 1),
-  //           repeat: -1,
-  //           scale: gsap.utils.random(0.1, 2),
-  //           opacity: gsap.utils.random(0.5, 1),
-  //           yoyo: true,
-  //         })
-  //       })
-
-  //       //Animation of stars container
-  //       gsap.fromTo(
-  //         starsRef.current,
-  //         {
-  //           scale: 0.5,
-  //           opacity: 0,
-  //           duration: 0.5,
-  //           padding: '20px',
-  //           scrollTrigger: starsOnEnter,
-  //         },
-  //         {
-  //           y: 0,
-  //           scale: 1,
-  //           opacity: 1,
-  //           scrollTrigger: starsOnEnter,
-  //         }
-  //       )
-  //     }
-  //   },
-  //   { scope: containerRef }
-  // )
 
   return (
     <div
@@ -137,12 +39,28 @@ export const Mint: React.FC = () => {
               0/777
               <span>Remaining NSTs</span>
             </p>
+            <GrBottomCorner />
+            <GrBottomCorner />
           </div>
         </div>
-        <div className='info'>
-          <p>
-            365 <span>Total Items</span>
-          </p>
+
+        <div className='information'>
+          <div>
+            <p>365</p>
+            <span>Total Items</span>
+          </div>
+          <div>
+            <p>12K+</p>
+            <span>Total Owners</span>
+          </div>
+          <div>
+            <p>1.72</p>
+            <span>Floor Price</span>
+          </div>
+          <div>
+            <p>42.2K</p>
+            <span>Volume Traded</span>
+          </div>
         </div>
       </div>
       <div className='nft'>
@@ -171,7 +89,7 @@ export const Mint: React.FC = () => {
         alt='Planet'
         className='planet'
       />
-      <div
+      {/* <div
         className='stars-container'
         ref={starsRef}>
         {[...Array(65)].map((_, index) => (
@@ -190,7 +108,7 @@ export const Mint: React.FC = () => {
             />
           </svg>
         ))}
-      </div>
+      </div> */}
     </div>
   )
 }
