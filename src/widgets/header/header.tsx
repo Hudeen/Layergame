@@ -95,7 +95,7 @@ const Header: React.FC = () => {
               width='108'
               height='50'
               viewBox='0 0 128 50'
-              fill='none'
+              fill='#000'
               xmlns='http://www.w3.org/2000/svg'>
               <path
                 className='header__button'

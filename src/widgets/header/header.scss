@@ -11,7 +11,7 @@ header {
   flex-direction: row;
   justify-content: space-between;
 
-  z-index: 999;
+  z-index: 1011;
 
   .navigaion {
     position: absolute;
@@ -165,7 +165,7 @@ header {
 .header__button {
   position: relative;
   cursor: pointer;
-  fill: transparent;
+  fill: #000;
 }
 
 .header__buttons-navigation {
