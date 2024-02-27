@@ -1,11 +1,14 @@
 import * as React from 'react'
-import { Connector, useConnect } from 'wagmi'
+import { Connector, useConnect, useAccount } from 'wagmi'
 import Coinbase from '../../shared/assets/images/Coinbase.svg'
 import MetaMask from '../../shared/assets/images/metamask.svg'
 import WalletConnect from '../../shared/assets/images/WalletConnect.svg'
 
 export function WalletOptions() {
   const { connectors, connect } = useConnect()
+  const { isConnected } = useAccount();
+
+
 
   return connectors.map((connector) => (
     <button

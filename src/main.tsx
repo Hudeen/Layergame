@@ -5,35 +5,37 @@ import App from './app/App.tsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 import { http, createConfig, WagmiProvider, useAccount } from 'wagmi'
-import { base, mainnet, sepolia } from 'wagmi/chains'
-import { injected, coinbaseWallet, metaMask, walletConnect } from 'wagmi/connectors'
+import { bscTestnet, bsc } from 'wagmi/chains'
+import { metaMask, walletConnect } from 'wagmi/connectors'
 
 
 import { WalletOptions } from './pages/Mint/WalletOptions.tsx'
 const queryClient = new QueryClient()
 
-const projectId = '<WALLETCONNECT_PROJECT_ID>'
+const projectId = '4f01fbdf8b89bb19b0909f4b57c7e040'
+
 
 export const config = createConfig({
-  chains: [mainnet, base, sepolia],
+  chains: [bscTestnet, bsc],
   connectors: [
     walletConnect({ projectId }),
-    metaMask(),
-    coinbaseWallet({
-      appName: 'My Wagmi App',
-    })
+    metaMask()
   ],
   transports: {
-    [mainnet.id]: http(),
-    [base.id]: http(),
-    [sepolia.id]: http()
+    [bscTestnet.id]: http(),
+    [bsc.id]: http()
   },
 })
 
-function ConnectWallet() { 
-  const { isConnected } = useAccount()  
-  return <WalletOptions /> 
-} 
+
+
+
+function ConnectWallet() {
+
+
+  const { isConnected } = useAccount()
+  return <WalletOptions />
+}
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
