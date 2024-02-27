@@ -8,12 +8,11 @@ import live from '../../assets/images/livedro.svg'
 import { GrBottomCorner } from 'react-icons/gr'
 import { useGSAP } from '@gsap/react'
 import Modal from '../../widgets/modal/modal'
-import metamask from '../../shared/assets/images/metamask.svg'
-import Coinbase from '../../shared/assets/images/Coinbase.svg'
-import TrustWallet from '../../shared/assets/images/TrustWallet.svg'
-import WalletConnect from '../../shared/assets/images/WalletConnect.svg'
 
 import { IoCloseOutline } from 'react-icons/io5'
+import { WalletOptions } from './WalletOptions'
+import { MintNFT} from './mint-nft' 
+
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -117,6 +116,7 @@ export const Mint: React.FC = () => {
             624
           </span>
           Live Minted
+          <MintNFT /> 
         </p>
         <h3>
           Remove borders with <span>NFTs</span> share art freely
@@ -217,34 +217,7 @@ export const Mint: React.FC = () => {
               <IoCloseOutline />
             </div>
           </div>
-          <div className='wallet'>
-            <img
-              src={metamask}
-              alt='metamask'
-            />
-            <p>MetaMask</p>
-          </div>
-          <div className='wallet'>
-            <img
-              src={Coinbase}
-              alt='Coinbase'
-            />
-            <p>Coinbase</p>
-          </div>
-          <div className='wallet'>
-            <img
-              src={WalletConnect}
-              alt='WalletConnect'
-            />
-            <p>WalletConnect</p>
-          </div>
-          <div className='wallet'>
-            <img
-              src={TrustWallet}
-              alt='TrustWallet'
-            />
-            <p>Trust Wallet</p>
-          </div>
+          <WalletOptions />
         </div>
       </Modal>
     </div>
