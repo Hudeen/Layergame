@@ -3,15 +3,22 @@ import planet from '../../../shared/assets/icons/planet.svg'
 import TwitterIcon from '../../../shared/assets/icons/TwitterIcon'
 import TelegramIcon from '../../../shared/assets/icons/TelegramIcon'
 import FacebookIcon from '../../../shared/assets/icons/FacebookIcon'
+interface ProjectCardProps {
+  image: string
+  name: string
+  role: string
+  description: string
 
-const ProjectCard = () => {
+}
+
+const ProjectCard: React.FC<ProjectCardProps> = ({ image, name, role, description }) => {
   return (
     <div className='card'>
       <div className='card-container'>
         <p>info</p>
         <div className='image-container'>
           <img
-            src={planet}
+            src={image}
             alt='planet'
           />
         </div>
@@ -23,11 +30,11 @@ const ProjectCard = () => {
       </div>
       <div className='card-text'>
         <div className='text-info'>
-          <p>MaxusWeb</p>
-          <p>Designer</p>
+          <p>{name}</p>
+          <p>{role}</p>
         </div>
         <p className='text-description'>
-          Id venenatis nulla nunc sodales vitae vulputate hac nec leo, nec odio. Dui vitae dictumst.
+          {description}
         </p>
       </div>
     </div>

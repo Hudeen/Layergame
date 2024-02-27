@@ -44,6 +44,7 @@
     width: 100%;
     max-width: 860px;
     padding: 10px;
+    gap: 10px;
     .text-info {
       p:nth-child(1) {
         font-size: 18px;
@@ -69,18 +70,20 @@
 @media only screen and (min-width: 1280px) {
   .card {
     width: 100%;
-    max-width: 460px;
+    max-width: 580px;
     .card-container {
-      width: 460px;
+      width: 580px;
       padding: 30px;
-      gap: 50px;
+      gap: 5px;
       p {
         font-size: 18px;
       }
       .image-container {
+        height: 100%;
+        width: 100%;
         img {
-          width: 55%;
-          height: 55%;
+          width: 40%;
+          height: 40%;
         }
       }
       .social-media {
@@ -100,6 +103,7 @@
       padding: 10px;
       .text-info {
         p:nth-child(1) {
+          width: 200px;
           font-size: 22px;
         }
         p:nth-child(2) {

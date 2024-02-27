@@ -215,7 +215,7 @@ const About: React.FC = () => {
         }
       )
 
-      // const container = document.querySelector('.aboutUs__item') as HTMLElement
+      const container = containerRef.current
       const options = {
         trigger: containerRef.current,
         start: 'top 40%',

@@ -6,6 +6,7 @@
   position: relative;
   padding: 100px 10px;
   gap: 10px;
+  z-index: 1010;
   overflow: hidden;
   .content {
     display: flex;
@@ -14,7 +15,6 @@
     align-items: center;
     width: 100%;
     position: relative;
-    z-index: 998;
 
     h2 {
       font-size: 48px;
@@ -31,6 +31,7 @@
       position: relative;
       margin-top: 100px;
       width: 100%;
+      z-index: 1001;
       .container {
         display: flex;
         flex-direction: column;
@@ -38,6 +39,7 @@
         align-items: center;
         position: relative;
         width: 100%;
+        z-index: 1001;
         .card {
           display: flex;
           flex-direction: column;
@@ -51,9 +53,9 @@
           border-radius: 25px;
           border: solid 2px #d251fdff;
           overflow: hidden;
+          transition: all 0.3s ease-in-out;
           &:hover {
-            transition: scale 0.3s;
-            scale: 1.015;
+            transform: scale(1.015);
           }
           p:nth-child(1) {
             width: 100%;
@@ -213,7 +215,7 @@
               .rocket {
                 left: 20px;
                 bottom: -50px;
-                width: 280px;
+                width: 220px;
                 height: 280px;
               }
             }
@@ -239,7 +241,7 @@
                 opacity: 0.9;
                 right: -30px;
                 bottom: -50px;
-                width: 350px;
+                width: 250px;
                 height: 350px;
               }
               .spaceship {
