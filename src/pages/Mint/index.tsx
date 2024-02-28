@@ -11,7 +11,20 @@ import Modal from '../../widgets/modal/modal'
 
 import { IoCloseOutline } from 'react-icons/io5'
 import { WalletOptions } from './WalletOptions'
-import { MintNFT} from './mint-nft' 
+
+import {
+  type BaseError,
+  useWaitForTransactionReceipt,
+  useWriteContract,
+  useReadContract,
+  useAccount
+} from 'wagmi'
+
+
+import { contractAbi } from './contractAbi '
+import { parseEther } from 'viem'
+import { switchChain, getConnections, switchAccount } from '@wagmi/core'
+
 
 
 gsap.registerPlugin(ScrollTrigger)
@@ -19,6 +32,54 @@ gsap.registerPlugin(ScrollTrigger)
 export const Mint: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
+
+  const {
+    data: hash,
+    error,
+    isPending,
+    writeContract
+  } = useWriteContract()
+
+  let price = useReadContract({
+    abi: contractAbi,
+    address: '0xb481483C20365caA330399da77A0CfF039a8546f',
+    functionName: 'price'
+  })
+
+
+
+
+  async function submit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+
+    // await switchChain(config, {
+    //     chainId: bsc.id
+    // })
+
+    await window.ethereum.request({
+      "method": "wallet_switchEthereumChain",
+      "params": [
+        {
+          "chainId": "0x38"
+        }
+      ]
+    });
+
+    const formData = new FormData(e.target as HTMLFormElement)
+
+    writeContract({
+      address: '0xb481483C20365caA330399da77A0CfF039a8546f',
+      abi: contractAbi,
+      functionName: 'mint',
+      args: [1],
+      value: parseEther('0.1')
+    })
+  }
+  const { isLoading: isConfirming, isSuccess: isConfirmed } =
+    useWaitForTransactionReceipt({
+      hash,
+    })
+
 
   const [active, setActive] = useState(false)
 
@@ -116,14 +177,30 @@ export const Mint: React.FC = () => {
             624
           </span>
           Live Minted
-          <MintNFT /> 
+
         </p>
         <h3>
           Remove borders with <span>NFTs</span> share art freely
         </h3>
         <p className='sub-title'>Discover the power of NFTs for a unique digital experience.</p>
         <div className='buttons'>
-          <button onClick={() => setActive(true)}>Mint Now</button>
+
+          <form onSubmit={submit}>
+            <button
+              disabled={isPending}
+              type="submit"
+              onClick={() => setActive(true)}
+            >
+              {isPending ? 'Consfirming...' : 'Mint'}
+            </button>
+            {hash && <div>Transaction Hash: {hash}</div>}
+            {isConfirming && <div>Waiting for confirmation...</div>}
+            {isConfirmed && <div>Transaction confirmed.</div>}
+            {error && (
+              <div>Error: {(error as BaseError).shortMessage || error.message}</div>
+            )}
+          </form>
+
           <div>
             <p>
               0/777
@@ -204,6 +281,7 @@ export const Mint: React.FC = () => {
           </svg>
         ))}
       </div>
+
       <Modal active={active}>
         <div className='wallet-modal'>
           <div className='title'>

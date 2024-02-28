@@ -7,6 +7,7 @@ import {
 
 } from 'wagmi'
 
+import { useState } from 'react'
 
 import { contractAbi } from './contractAbi '
 import { parseEther } from 'viem'
@@ -14,11 +15,6 @@ import { switchChain, getConnections, switchAccount } from '@wagmi/core'
 
 import { bsc } from '@wagmi/core/chains'
 import { config } from './config'
-
-
-
-
-
 
 
 
@@ -39,12 +35,23 @@ export function MintNFT() {
 
     
 
+    
+
     async function submit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
 
-        await switchChain(config, {
-            chainId: bsc.id
-        })
+        // await switchChain(config, {
+        //     chainId: bsc.id
+        // })
+
+        await window.ethereum.request({
+            "method": "wallet_switchEthereumChain",
+            "params": [
+              {
+                "chainId": "0x38"
+              }
+            ]
+          });
 
         const formData = new FormData(e.target as HTMLFormElement)
   
@@ -62,10 +69,10 @@ export function MintNFT() {
             hash,
         })
 
+        const [active, setActive] = useState(false);
+
     return (
         <form onSubmit={submit}>
-
-
             <button
                 disabled={isPending}
                 type="submit"
