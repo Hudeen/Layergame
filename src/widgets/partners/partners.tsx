@@ -27,10 +27,6 @@ const Partners: React.FC = () => {
           alt='bnb'
         />
         <img
-          src={tonstarter}
-          alt='tonstarter'
-        />
-        <img
           src={microsoft}
           alt='microsoft'
         />
