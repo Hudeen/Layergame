@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './styles.scss'
@@ -11,6 +11,10 @@ import Modal from '../../widgets/modal/modal'
 
 import { IoCloseOutline } from 'react-icons/io5'
 import { WalletOptions } from './WalletOptions'
+
+import { getAccount } from '@wagmi/core'
+import { config } from './config'
+
 
 import {
   type BaseError,
@@ -46,6 +50,9 @@ export const Mint: React.FC = () => {
     functionName: 'price'
   })
 
+  const { address, isConnected } = useAccount()
+console.log(isConnected)
+
 
 
 
@@ -65,6 +72,9 @@ export const Mint: React.FC = () => {
       ]
     });
 
+    
+
+
     const formData = new FormData(e.target as HTMLFormElement)
 
     writeContract({
@@ -75,7 +85,9 @@ export const Mint: React.FC = () => {
       value: parseEther('0.1')
     })
   }
-  const { isLoading: isConfirming, isSuccess: isConfirmed } =
+  // const { 
+  //   isLoading: isConfirming, isSuccess: isConfirmed 
+  // } =
     useWaitForTransactionReceipt({
       hash,
     })
@@ -193,12 +205,12 @@ export const Mint: React.FC = () => {
             >
               {isPending ? 'Consfirming...' : 'Mint'}
             </button>
-            {hash && <div>Transaction Hash: {hash}</div>}
+            {/* {hash && <div>Transaction Hash: {hash}</div>}
             {isConfirming && <div>Waiting for confirmation...</div>}
             {isConfirmed && <div>Transaction confirmed.</div>}
             {error && (
               <div>Error: {(error as BaseError).shortMessage || error.message}</div>
-            )}
+            )} */}
           </form>
 
           <div>
@@ -282,6 +294,7 @@ export const Mint: React.FC = () => {
         ))}
       </div>
 
+          {!isConnected &&
       <Modal active={active}>
         <div className='wallet-modal'>
           <div className='title'>
@@ -298,6 +311,7 @@ export const Mint: React.FC = () => {
           <WalletOptions />
         </div>
       </Modal>
+      }
     </div>
   )
 }
