@@ -2,15 +2,7 @@ const BluePlanetSmall = () => {
 
     return (
         <>
-            <svg
-                style={{
-                    position: "absolute",
-                    zIndex: 9,
-                    top: "55%",
-                    left: "66%",
-                    transform: "translate(-50%, -50%)",
-                    width: "7vw"
-                }}
+            <svg className="BluePlanetSmall"
                 width="1256.000000" height="1255.939941" viewBox="0 0 1256 1255.94" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                     <linearGradient id="paint_linear_221_2034_0" x1="627.686401" y1="134.419434" x2="627.686401" y2="1121.514893" gradientUnits="userSpaceOnUse">
