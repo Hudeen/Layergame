@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import './styles.scss'
@@ -12,20 +12,11 @@ import Modal from '../../widgets/modal/modal'
 import { IoCloseOutline } from 'react-icons/io5'
 import { WalletOptions } from './WalletOptions'
 
-import {
-  type BaseError,
-  useWaitForTransactionReceipt,
-  useWriteContract,
-  useReadContract,
-  useAccount
-} from 'wagmi'
-
+import { type BaseError, useWaitForTransactionReceipt, useWriteContract, useReadContract, useAccount } from 'wagmi'
 
 import { contractAbi } from './contractAbi '
 import { parseEther } from 'viem'
 import { switchChain, getConnections, switchAccount } from '@wagmi/core'
-
-
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -33,21 +24,13 @@ export const Mint: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
 
-  const {
-    data: hash,
-    error,
-    isPending,
-    writeContract
-  } = useWriteContract()
+  const { data: hash, error, isPending, writeContract } = useWriteContract()
 
   let price = useReadContract({
     abi: contractAbi,
     address: '0xb481483C20365caA330399da77A0CfF039a8546f',
-    functionName: 'price'
+    functionName: 'price',
   })
-
-
-
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -57,13 +40,13 @@ export const Mint: React.FC = () => {
     // })
 
     await window.ethereum.request({
-      "method": "wallet_switchEthereumChain",
-      "params": [
+      method: 'wallet_switchEthereumChain',
+      params: [
         {
-          "chainId": "0x38"
-        }
-      ]
-    });
+          chainId: '0x38',
+        },
+      ],
+    })
 
     const formData = new FormData(e.target as HTMLFormElement)
 
@@ -72,14 +55,15 @@ export const Mint: React.FC = () => {
       abi: contractAbi,
       functionName: 'mint',
       args: [1],
-      value: parseEther('0.1')
+      value: parseEther('0.1'),
     })
   }
-  const { isLoading: isConfirming, isSuccess: isConfirmed } =
-    useWaitForTransactionReceipt({
-      hash,
-    })
+  const { isLoading: isConfirming, isSuccess: isConfirmed } = useWaitForTransactionReceipt({
+    hash,
+  })
 
+  const { address, isConnected } = useAccount()
+  console.log(address)
 
   const [active, setActive] = useState(false)
 
@@ -177,28 +161,23 @@ export const Mint: React.FC = () => {
             624
           </span>
           Live Minted
-
         </p>
         <h3>
           Remove borders with <span>NFTs</span> share art freely
         </h3>
         <p className='sub-title'>Discover the power of NFTs for a unique digital experience.</p>
         <div className='buttons'>
-
           <form onSubmit={submit}>
             <button
               disabled={isPending}
-              type="submit"
-              onClick={() => setActive(true)}
-            >
+              type='submit'
+              onClick={() => setActive(true)}>
               {isPending ? 'Consfirming...' : 'Mint'}
             </button>
             {hash && <div>Transaction Hash: {hash}</div>}
             {isConfirming && <div>Waiting for confirmation...</div>}
             {isConfirmed && <div>Transaction confirmed.</div>}
-            {error && (
-              <div>Error: {(error as BaseError).shortMessage || error.message}</div>
-            )}
+            {error && <div>Error: {(error as BaseError).shortMessage || error.message}</div>}
           </form>
 
           <div>

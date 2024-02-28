@@ -59,7 +59,6 @@ const Footer: React.FC = () => {
       </div>
       <div className='links'>
         <p>Contact</p>
-        <p>+7 999 000 01 23</p>
         <p>w3bz@company.com</p>
       </div>
     </footer>

@@ -26,15 +26,21 @@ function App() {
 
   return (
     <div className='mainPage'>
-      <Header />
-      <MobileNav />
       <BrowserRouter>
+        <Header />
+        <MobileNav />
         <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/mint" element={<Mint/>} />
+          <Route
+            path='/'
+            element={<MainPage />}
+          />
+          <Route
+            path='/mint'
+            element={<Mint />}
+          />
         </Routes>
+        <Footer />
       </BrowserRouter>
-      <Footer />
     </div>
   )
 }

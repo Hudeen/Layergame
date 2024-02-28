@@ -4,6 +4,7 @@ import { gsap } from 'gsap'
 
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import logo from '../../shared/assets/icons/logo.svg'
+import { Link } from 'react-router-dom'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -86,7 +87,11 @@ const Header: React.FC = () => {
         <div className={`navigaion__menu ${isOpened ? 'open' : ''}`}>
           <a className='navigaion__menu-link'>Technology</a>
           <a className='navigaion__menu-link'>Our Mission</a>
-          <a className='navigaion__menu-link'>Mint</a>
+          <Link
+            to='/mint'
+            className='navigaion__menu-link'>
+            Mint
+          </Link>
         </div>
 
         <div className='header__buttons'>
