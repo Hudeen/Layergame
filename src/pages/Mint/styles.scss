@@ -225,7 +225,7 @@ wcm-modal {
     position: absolute;
     width: 100vw;
     height: 100vh;
-    z-index: 900;
+    z-index: -1;
   }
   .mint-img.desktop {
     display: none;
