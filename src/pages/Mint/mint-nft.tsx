@@ -33,25 +33,9 @@ export function MintNFT() {
         functionName: 'price'
     })
 
-    
-
-    
 
     async function submit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-
-        // await switchChain(config, {
-        //     chainId: bsc.id
-        // })
-
-        await window.ethereum.request({
-            "method": "wallet_switchEthereumChain",
-            "params": [
-              {
-                "chainId": "0x38"
-              }
-            ]
-          });
 
         const formData = new FormData(e.target as HTMLFormElement)
   

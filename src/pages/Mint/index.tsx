@@ -8,13 +8,13 @@ import live from '../../assets/images/livedro.svg'
 import { GrBottomCorner } from 'react-icons/gr'
 import { useGSAP } from '@gsap/react'
 import Modal from '../../widgets/modal/modal'
+import Header from '../../widgets/header/header'
 
 import { IoCloseOutline } from 'react-icons/io5'
 import { WalletOptions } from './WalletOptions'
 
 import { getAccount } from '@wagmi/core'
 import { config } from './config'
-
 
 import {
   type BaseError,
@@ -24,12 +24,9 @@ import {
   useAccount
 } from 'wagmi'
 
-
 import { contractAbi } from './contractAbi '
 import { parseEther } from 'viem'
 import { switchChain, getConnections, switchAccount } from '@wagmi/core'
-
-
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -37,6 +34,7 @@ export const Mint: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const starsRef = useRef<HTMLDivElement>(null)
 
+  
   const {
     data: hash,
     error,
@@ -51,29 +49,34 @@ export const Mint: React.FC = () => {
   })
 
   const { address, isConnected } = useAccount()
-console.log(isConnected)
-
-
-
 
   async function submit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
 
-    // await switchChain(config, {
-    //     chainId: bsc.id
-    // })
-
+async function addBscNetwork() {
+  try {
     await window.ethereum.request({
-      "method": "wallet_switchEthereumChain",
-      "params": [
+      method: 'wallet_addEthereumChain',
+      params: [
         {
-          "chainId": "0x38"
-        }
-      ]
+          chainId: '0x38',
+          chainName: 'Binance Smart Chain',
+          rpcUrls: ['https://bsc-dataseed.binance.org/'],
+          nativeCurrency: {
+            name: 'Binance Coin',
+            symbol: 'BNB',
+            decimals: 18,
+          },
+          blockExplorerUrls: ['https://bscscan.com/'],
+        },
+      ],
     });
+  } catch (error) {
+    console.error('Error adding Binance Smart Chain network:', error);
+  }
+}
 
-    
-
+addBscNetwork();
 
     const formData = new FormData(e.target as HTMLFormElement)
 
@@ -85,15 +88,16 @@ console.log(isConnected)
       value: parseEther('0.1')
     })
   }
-  // const { 
-  //   isLoading: isConfirming, isSuccess: isConfirmed 
-  // } =
-    useWaitForTransactionReceipt({
-      hash,
-    })
 
+  useWaitForTransactionReceipt({
+    hash,
+  })
 
   const [active, setActive] = useState(false)
+
+
+
+
 
   //Starts animation
   useGSAP(
@@ -176,6 +180,8 @@ console.log(isConnected)
   )
 
   return (
+
+  
     <div
       className='mint'
       ref={containerRef}>
@@ -216,14 +222,14 @@ console.log(isConnected)
           <div>
             <p>
               0/777
-              <span>Remaining NSTs</span>
+              <span>Remaining NFTs</span>
             </p>
             <GrBottomCorner />
             <GrBottomCorner />
           </div>
         </div>
 
-        <div className='information'>
+        {/* <div className='information'>
           <div>
             <p>365</p>
             <span>Total Items</span>
@@ -240,7 +246,7 @@ console.log(isConnected)
             <p>42.2K</p>
             <span>Volume Traded</span>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className='nft'>
         <img
@@ -294,23 +300,23 @@ console.log(isConnected)
         ))}
       </div>
 
-          {!isConnected &&
-      <Modal active={active}>
-        <div className='wallet-modal'>
-          <div className='title'>
-            <p>
-              Connect <b>Wallet </b>
-            </p>
-            <span>Connect to any wallet to securely store your digital goods NFT</span>
-            <div
-              className='modal-close'
-              onClick={() => setActive(false)}>
-              <IoCloseOutline />
+      {!isConnected &&
+        <Modal active={active}>
+          <div className='wallet-modal'>
+            <div className='title'>
+              <p>
+                Connect <b>Wallet </b>
+              </p>
+              <span>Connect to any wallet to securely store your digital goods NFT</span>
+              <div
+                className='modal-close'
+                onClick={() => setActive(false)}>
+                <IoCloseOutline />
+              </div>
             </div>
+            <WalletOptions />
           </div>
-          <WalletOptions />
-        </div>
-      </Modal>
+        </Modal>
       }
     </div>
   )

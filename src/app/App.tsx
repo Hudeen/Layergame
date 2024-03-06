@@ -9,7 +9,7 @@ import Footer from '../widgets/footer/footer'
 import { Mint } from '../pages/Mint'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import MobileNav from '../entities/mobileNav/mobileNav'
+
 
 function App() {
   const lenis = new Lenis({
@@ -27,8 +27,6 @@ function App() {
   return (
     <div className='mainPage'>
       <BrowserRouter>
-        <Header />
-        <MobileNav />
         <Routes>
           <Route
             path='/'

@@ -14,6 +14,8 @@ import About from '../../widgets/about/about'
 import Projects from '../../widgets/projects/Projects'
 import Acquaintance from '../../widgets/acquaintance/acquaintance'
 import Partners from '../../widgets/partners/partners'
+import Header from '../../widgets/header/header'
+import MobileNav from '../../entities/mobileNav/mobileNav'
 
 // import Projects from '../widgets/projects/Projects'
 // import Acquaintance from '../widgets/acquaintance/acquaintance'
@@ -34,6 +36,8 @@ function MainPage() {
 
   return (
     <div className='mainPage'>
+      <Header />
+      <MobileNav />
       <Main />
       <Introducing />
       <AboutUs />
